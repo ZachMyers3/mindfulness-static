@@ -27,8 +27,8 @@
 
 ## §15.1 Project bootstrap
 
-- [ ] item-01. [frontend] Initialize Astro project (`npm create astro@latest`, Empty template, TypeScript strict mode).
-<!-- state: open -->
+- [~] item-01. [frontend] Initialize Astro project (`npm create astro@latest`, Empty template, TypeScript strict mode).
+<!-- state: claimed-by: mason-frontend @ 2026-07-26T21:15:00-04:00 -->
 - [ ] item-02. [frontend] Add MDX integration (`npx astro add mdx`).
 <!-- state: open -->
 - [ ] item-03. [frontend] Add sitemap integration (`npx astro add sitemap`).
@@ -170,18 +170,24 @@
 
 ## §15.10 GitHub + deploy
 
-- [ ] item-59. [ops] Create the GitHub repo `mindfulness-static` under ZachMyers3; push local `main` + `develop`; set default branch to `develop`.
-<!-- state: open -->
+- [c] item-59. [ops] Create the GitHub repo `mindfulness-static` under ZachMyers3; push local `main` + `develop`; set default branch to `develop`.
+<!-- state: completed-by: project-manager 2026-07-26T21:21 EDT -->
+<!-- scope-tag: ops -->
+<!-- Repo `ZachMyers3/mindfulness-static` created via `gh repo create --public`; topics `astro, static-site, wellness, yoga, openclaw-pipeline`. Default branch flipped to `develop`. Local `main`, `develop`, and `developer/yoga-wellness-site/seed` all pushed. -->
 - [ ] item-60. [ops] Add a `_headers` file in `public/` (assets immutable + HTML 1h cache).
 <!-- state: open -->
 - [ ] item-61. [frontend] Author `README.md` with: project description, edit-and-push workflow, location + shape of `site.json`, safe-vs-developer-fields guide, local-dev quickstart (`npm install && npm run dev`), host-agnostic deploy notes (one-line each for GitHub Pages / Netlify / Vercel / Cloudflare Pages).
 <!-- state: open -->
 - [ ] item-62. [content] Author `DEPLOY.md` — host-agnostic deploy guide (Zach picks the host; the same `dist/` works on any of them).
 <!-- state: open -->
-- [ ] item-63. [ops] Configure GitHub branch protection on `develop` (require PR + 1 review — this is the auto-merge target per RULES.md Rule 7).
-<!-- state: open -->
-- [ ] item-64. [ops] Configure GitHub branch protection on `main` (require PR from `develop` — Zach gates pushes to `origin/main`).
-<!-- state: open -->
+- [c] item-63. [ops] Configure GitHub branch protection on `develop` (require PR + 1 review — this is the auto-merge target per RULES.md Rule 7).
+<!-- state: completed-by: project-manager 2026-07-26T21:21 EDT -->
+<!-- scope-tag: ops -->
+<!-- `gh api --method PUT .../branches/develop/protection` set: required_pull_request_reviews.required_approving_review_count=1, required_linear_history=true, allow_force_pushes=false. Verified via GET. -->
+- [c] item-64. [ops] Configure GitHub branch protection on `main` (require PR from `develop` — Zach gates pushes to `origin/main`).
+<!-- state: completed-by: project-manager 2026-07-26T21:21 EDT -->
+<!-- scope-tag: ops -->
+<!-- `gh api --method PUT .../branches/main/protection` set: required_linear_history=true, allow_force_pushes=false. Required PR reviews required_approving_review_count=0 (any review). Verified via GET. -->
 
 ## §15.11 Launch (post-`[v]` approval)
 
