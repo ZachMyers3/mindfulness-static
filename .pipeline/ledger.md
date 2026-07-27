@@ -130,17 +130,20 @@
 <!-- batch: a11y-markup (skip-link must be first focusable in BaseLayout) -->
 <!-- reviewed-by: inspector @ 2026-07-27T04:48:00-04:00 — see claims/item-12.review-claim/review.md (prior commit 3fd827e) -->
 <!-- see claims/item-12.claim/result.md for deviations (design-sys Tailwind tokens still pending in batch 08) -->
-- [R] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
-<!-- state: rework-by: inspector @ 2026-07-27T05:58:00-04:00 -->
-<!-- state: completed-by: mason-frontend @ 2026-07-27T04:30:00-04:00 -- commit 3fd827e -- verify: build ok (orphan recovery) -->
+- [c] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
+<!-- state: rework-complete: mason-frontend @ 2026-07-27T06:27:30-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T06:17:59-04:00 -- commit e224dd6 -- verify: build ok; all 6 routes emit <meta name="robots" content="noindex"> -->
 <!-- batch: base-layout -->
-<!-- see claims/item-13.review-claim/review.md for rework context (staging noindex missing — schema default is false, defeating item-42 staging-safety contract) -->
+<!-- see claims/item-13.review-claim/review.md for rework context (staging noindex missing — schema default was false, defeating item-42 staging-safety contract) -->
+<!-- see claims/item-13.claim/result.md for rework verification details -->
 — rework requested by inspector @ 2026-07-27T05:58:00-04:00 — see claims/item-13.review-claim/review.md (prior commit 3fd827e)
-— claimed by mason-frontend @ 2026-07-27T06:14:00-04:00 (rework)
-- [c] item-14. [frontend] Create `src/pages/about.astro`, `offerings.astro`, `schedule.astro`, `pricing.astro`, `contact.astro` (each loads matching Markdown entry via `getEntry`).
+— rework claimed + completed by mason-frontend @ 2026-07-27T06:14:00-04:00 → 2026-07-27T06:27:30-04:00
+- [v] item-14. [frontend] Create `src/pages/about.astro`, `offerings.astro`, `schedule.astro`, `pricing.astro`, `contact.astro` (each loads matching Markdown entry via `getEntry`).
+<!-- state: approved-by: inspector @ 2026-07-27T06:14:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T06:02:49-04:00 -- commit 28cf28f -- verify: build ok (6 routes, sitemap-index generated) -->
 <!-- batch: inner-pages -->
 <!-- see claims/item-14.claim/result.md for deviations (ScheduleTable/PricingCard/FaqAccordion/LocalBusiness JSON-LD still pending in batches 07+10) -->
+<!-- reviewed-by: inspector @ 2026-07-27T06:14:00-04:00 — see claims/item-14.review-claim/review.md (prior commit 28cf28f) -->
 - [ ] item-15. [frontend] Create `src/pages/privacy.astro` and `src/pages/terms.astro` (simple prose pages).
 <!-- state: open -->
 <!-- batch: inner-pages -->
@@ -154,9 +157,11 @@
 
 ## §15.4 Components
 
-- [c] item-18. [frontend] `src/components/SeoHead.astro` (title, description, image?, noindex?; emits meta description, canonical, OG/Twitter, theme-color; respects noindex).
+- [v] item-18. [frontend] `src/components/SeoHead.astro` (title, description, image?, noindex?; emits meta description, canonical, OG/Twitter, theme-color; respects noindex).
+<!-- state: approved-by: inspector @ 2026-07-27T06:20:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T04:30:00-04:00 -- commit 3fd827e -- verify: build ok (orphan recovery) -->
 <!-- batch: base-layout -->
+<!-- reviewed-by: inspector @ 2026-07-27T06:20:00-04:00 — see claims/item-18.review-claim/review.md (prior commit 3fd827e) -->
 <!-- see claims/item-18.claim/result.md for deviations (theme-color hex hard-coded until design-sys batch 08) -->
 - [v] item-19. [frontend] `src/components/SiteHeader.astro` (reads `site.nav`, renders logo + nav items, marks active route with `aria-current="page"`, includes skip-link).
 <!-- state: approved-by: inspector @ 2026-07-27T04:18:00-04:00 -->
