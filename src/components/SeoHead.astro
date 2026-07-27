@@ -1,0 +1,49 @@
+---
+/**
+ * SeoHead.astro
+ * Emits: <title>, meta description, canonical, OG tags, Twitter Card, theme-color,
+ * and optionally noindex meta tag.
+ * Props:
+ *   title       - Page title (used in <title> and og:title)
+ *   description - Meta description (used in meta[name="description"] and og:description)
+ *   image       - Optional OG image path (defaults to /og-default.jpg)
+ *   noindex     - Whether to add noindex meta (default: false)
+ */
+import { site } from '../lib/site';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const { title, description, image, noindex = false } = Astro.props;
+// Astro.site is the configured `site:` URL from astro.config.mjs; use it as the
+// canonical base so the resulting <link rel="canonical"> and og:url are absolute
+// and consistent regardless of which host is serving the build.
+const siteBase = Astro.site ?? new URL(Astro.url.origin);
+const canonicalURL = new URL(Astro.url.pathname, siteBase).toString();
+const ogImage = image ? new URL(image, siteBase).toString() : new URL('/og-default.jpg', siteBase).toString();
+const siteName = site.business.name;
+---
+
+<title>{title === siteName ? title : `${title} | ${siteName}`}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalURL} />
+
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={siteName} />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<meta name="theme-color" content="#3a7268" />
+
+{noindex && <meta name="robots" content="noindex" />}

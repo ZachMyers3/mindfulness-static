@@ -1,0 +1,214 @@
+/**
+ * global.css
+ * Modern CSS reset + base typography + .prose class for Markdown content
+ * Imports tokens.css for design tokens
+ */
+
+@import './tokens.css';
+
+/* Modern reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  color: var(--color-ink);
+  background: var(--color-surface);
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-primary);
+  color: var(--color-surface);
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 0 0 var(--radius-md) 0;
+  z-index: var(--z-skip-link);
+  transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+  top: 0;
+  left: 0;
+}
+
+/* Prose class for Markdown-rendered content */
+.prose {
+  max-width: 65ch;
+  margin: 0 auto;
+  padding: 0 var(--space-2);
+}
+
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4,
+.prose h5,
+.prose h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-ink);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+}
+
+.prose h1 { font-size: clamp(2rem, 5vw, 3rem); }
+.prose h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+.prose h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+.prose h4 { font-size: clamp(1.125rem, 2vw, 1.5rem); }
+
+.prose p {
+  margin: var(--space-4) 0;
+  color: var(--color-ink);
+  line-height: 1.7;
+}
+
+.prose a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: var(--color-primary-hover);
+}
+
+.prose ul,
+.prose ol {
+  margin: var(--space-4) 0;
+  padding-left: var(--space-6);
+}
+
+.prose li {
+  margin: var(--space-2) 0;
+  line-height: 1.6;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--color-primary);
+  padding-left: var(--space-4);
+  margin: var(--space-6) 0;
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+.prose code {
+  font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.9em;
+  background: var(--color-surface-alt);
+  padding: 0.125rem 0.375rem;
+  border-radius: var(--radius-sm);
+}
+
+.prose pre {
+  background: var(--color-ink);
+  color: var(--color-surface);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  margin: var(--space-6) 0;
+}
+
+.prose pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.prose img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+.prose hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-10) 0;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+.prose em {
+  font-style: italic;
+}
+
+/* Image with caption (for MDX) */
+.prose figure {
+  margin: var(--space-8) 0;
+}
+
+.prose figcaption {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--color-muted);
+  margin-top: var(--space-2);
+  font-style: italic;
+}
+
+/* Tables */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--space-6) 0;
+}
+
+.prose th,
+.prose td {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.prose th {
+  background: var(--color-surface-alt);
+  font-weight: 600;
+}
+
+/* Reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

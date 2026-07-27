@@ -1,0 +1,104 @@
+---
+/**
+ * BaseLayout.astro
+ * Base layout for all pages.
+ * Props:
+ *   title       - Page title
+ *   description - Meta description
+ *   noindex     - Whether to add noindex meta tag (default: true for staging safety)
+ */
+import SeoHead from '../components/SeoHead.astro';
+import AnnouncementBar from '../components/AnnouncementBar.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  noindex?: boolean;
+}
+
+const { title, description, noindex = true } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <SeoHead title={title} description={description} noindex={noindex} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <AnnouncementBar />
+
+    <SiteHeader />
+
+    <main id="main" tabindex="-1">
+      <slot />
+    </main>
+
+    <SiteFooter />
+
+    <script is:inline>
+      // Ensure skip-link target gets focus
+      const skipLink = document.querySelector('.skip-link');
+      const main = document.getElementById('main');
+      if (skipLink && main) {
+        skipLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          main.focus();
+          window.scrollTo({ top: main.offsetTop, behavior: 'smooth' });
+        });
+      }
+    </script>
+  </body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 0.5rem 1rem;
+    background: #3a7268;
+    color: #fff;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 0 0 4px 0;
+    font-weight: 600;
+  }
+
+  .skip-link:focus {
+    top: 0;
+    left: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1;
+  }
+
+  main:focus {
+    outline: none;
+  }
+</style>
