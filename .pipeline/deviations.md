@@ -19,3 +19,11 @@ See `claims/item-12.claim/result.md`, `claims/item-13.claim/result.md`, `claims/
 - **item-17**: no related-posts section on detail page. Doc §9.1 lists "related posts" as one of the Primary blocks but the prose is not prescriptive; deferred until Zach confirms it is wanted.
 
 See `claims/item-16.claim/result.md`, `claims/item-17.claim/result.md` for full rationale.
+
+### 2026-07-27 — item-22, item-23, item-24, item-25 (components batch part 1, commit 7811940)
+- **Hero.astro imports `./Button.astro`** (item-24, same batch) — Hero cannot be used without Button.
+- **Hero.astro and PageHeader.astro hard-code the brand palette** (`#3a7268`, `#f8f5f0`, etc.) instead of using Tailwind v4 theme tokens. The design-sys batch (items 32-36) will install `@theme static { ... }` in `src/styles/main.css`. When it lands, these hard-coded values should be replaced with `var(--color-sage-600)` etc.
+- **Button.astro adds `target="_blank"` for external URLs** in addition to the ledger-required `rel="noopener"`. Strict superset; conventional safe default for static marketing sites.
+- **PageHeader.astro accepts an optional `breadcrumb` prop** beyond the ledger minimum — implements the optional breadcrumb explicitly mentioned in design-doc §9.2. Documented in the component's docstring; left unused by current inner-pages routes.
+- **Hero, PageHeader, Callout are not yet wired into any page route.** Wiring is a separate scope item (the existing inner-pages route templates only load Markdown via `getEntry`; refactoring them to compose Hero/PageHeader/Callout belongs to a future batch).
+- **Commit hash in ledger is `64672d67...` but actual commit is `7811940`** — the post-commit amend replaced `<pending>` with the pre-amend hash, then the amend changed the content and produced a new hash. Per skill rule "no amends after step 5", the stale pre-amend hash was left in the ledger lines; `git log` is the source of truth (head: `7811940`).
