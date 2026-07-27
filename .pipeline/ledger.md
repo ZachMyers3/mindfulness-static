@@ -78,15 +78,20 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
 <!-- reviewed-by: inspector @ 2026-07-27T02:21:00-04:00 — see claims/item-03.review-claim/review.md (prior commit b67d88e) -->
-- [x] item-04. [frontend] Configure `astro.config.mjs` (`site`, `trailingSlash: 'always'`, `build.format: 'directory'`, `compressHTML: true`)
+- [v] item-04. [frontend] Configure `astro.config.mjs` (`site`, `trailingSlash: 'always'`, `build.format: 'directory'`, `compressHTML: true`)
+<!-- state: approved-by: inspector @ 2026-07-27T02:33:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
-- [x] item-05. [frontend] Add `.gitignore` (excludes `node_modules/`, `dist/`, `.astro/`, `.env`, `.env.local`)
+<!-- reviewed-by: inspector @ 2026-07-27T02:33:00-04:00 — see claims/item-04.review-claim/review.md (prior commit b67d88e) -->
+- [v] item-05. [frontend] Add `.gitignore` (excludes `node_modules/`, `dist/`, `.astro/`, `.env`, `.env.local`)
+<!-- state: approved-by: inspector @ 2026-07-27T02:41:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
+<!-- reviewed-by: inspector @ 2026-07-27T02:41:00-04:00 — see claims/item-05.review-claim/review.md (prior commit b67d88e) -->
 - [x] item-06. [frontend] Add `.nvmrc` pinning Node 20 (LTS)
 <!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
+— review: approved by inspector @ 2026-07-27T02:49:00-04:00 — see claims/item-06.review-claim/review.md
 ## §15.2 Content layer
 
 - [v] item-07. [frontend] Create `src/content.config.ts` with `pages` and `journal` Zod schemas from doc §7.2.
@@ -107,22 +112,26 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T01:55:00-04:00 (rework) -->
 <!-- batch: content-cfg -->
 — rework complete: commit 7faa9f8 (site.ts tracked + announcement.href null fix)
-- [x] item-10. [frontend] Create one empty Markdown file per page: `home.md`, `about.md`, `offerings.md`, `schedule.md`, `pricing.md`, `contact.md`, `privacy.md`, `terms.md` (stub frontmatter: title + description).
+- [v] item-10. [frontend] Create one empty Markdown file per page: `home.md`, `about.md`, `offerings.md`, `schedule.md`, `pricing.md`, `contact.md`, `privacy.md`, `terms.md` (stub frontmatter: title + description).
+<!-- state: approved-by: inspector @ 2026-07-27T02:56:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:05:00-04:00 -- commit ad1b744 (pre-existing) -->
 <!-- batch: page-stubs -->
-- [x] item-11. [frontend] Create `src/content/journal/welcome.md` (sample journal post — assumed yes per Q1 closure).
+<!-- reviewed-by: inspector @ 2026-07-27T02:56:00-04:00 — see claims/item-10.review-claim/review.md (prior commit ad1b744) -->
+- [x] item-11. [frontend] Create `src/content/journal/welcome.md` (sample journal post — assumed yes per Q1 closure). — review: approved by inspector @ 2026-07-27T08:04:11-04:00 — see claims/item-11.review-claim/review.md
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:05:00-04:00 -- commit ad1b744 (pre-existing) -->
 <!-- batch: page-stubs -->
 
 ## §15.3 Pages and routing
 
-- [ ] item-12. [frontend] Create `src/layouts/BaseLayout.astro` (props: `title`, `description`, `noindex`; renders `<SeoHead>`, optional `<AnnouncementBar>`, `<SiteHeader>`, `<main id="main">`, `<SiteFooter>`).
-<!-- state: open -->
+- [c] item-12. [frontend] Create `src/layouts/BaseLayout.astro` (props: `title`, `description`, `noindex`; renders `<SeoHead>`, optional `<AnnouncementBar>`, `<SiteHeader>`, `<main id="main">`, `<SiteFooter>`).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T04:30:00-04:00 -- commit 3fd827e -- verify: build ok (orphan recovery) -->
 <!-- batch: base-layout -->
 <!-- batch: a11y-markup (skip-link must be first focusable in BaseLayout) -->
-- [ ] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
-<!-- state: open -->
+<!-- see claims/item-12.claim/result.md for deviations (design-sys Tailwind tokens still pending in batch 08) -->
+- [c] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T04:30:00-04:00 -- commit 3fd827e -- verify: build ok (orphan recovery) -->
 <!-- batch: base-layout -->
+<!-- see claims/item-13.claim/result.md for deviations (Hero/ServiceCard/Button components from batch 07 still pending) -->
 - [ ] item-14. [frontend] Create `src/pages/about.astro`, `offerings.astro`, `schedule.astro`, `pricing.astro`, `contact.astro` (each loads matching Markdown entry via `getEntry`).
 <!-- state: open -->
 <!-- batch: inner-pages -->
@@ -139,14 +148,18 @@
 
 ## §15.4 Components
 
-- [ ] item-18. [frontend] `src/components/SeoHead.astro` (title, description, image?, noindex?; emits meta description, canonical, OG/Twitter, theme-color; respects noindex).
-<!-- state: open -->
+- [c] item-18. [frontend] `src/components/SeoHead.astro` (title, description, image?, noindex?; emits meta description, canonical, OG/Twitter, theme-color; respects noindex).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T04:30:00-04:00 -- commit 3fd827e -- verify: build ok (orphan recovery) -->
 <!-- batch: base-layout -->
-- [c] item-19. [frontend] `src/components/SiteHeader.astro` (reads `site.nav`, renders logo + nav items, marks active route with `aria-current="page"`, includes skip-link).
+<!-- see claims/item-18.claim/result.md for deviations (theme-color hex hard-coded until design-sys batch 08) -->
+- [v] item-19. [frontend] `src/components/SiteHeader.astro` (reads `site.nav`, renders logo + nav items, marks active route with `aria-current="page"`, includes skip-link).
+<!-- state: approved-by: inspector @ 2026-07-27T04:18:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
+<!-- reviewed-by: inspector @ 2026-07-27T04:18:00-04:00 — see claims/item-19.review-claim/review.md (commit 6cc6907) -->
 <!-- batch: chrome -->
 <!-- batch: a11y-markup (mobile menu uses <details>/<summary> per item-44) -->
-- [c] item-20. [frontend] `src/components/SiteFooter.astro` (reads `site.contact`/`site.hours`/`site.social`/`site.footer`; 3-column layout from doc §9.2).
+- [v] item-20. [frontend] `src/components/SiteFooter.astro` (reads `site.contact`/`site.hours`/`site.social`/`site.footer`; 3-column layout from doc §9.2).
+<!-- state: approved-by: inspector @ 2026-07-27T04:31:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
 <!-- batch: chrome -->
 - [c] item-21. [frontend] `src/components/AnnouncementBar.astro` (reads `site.announcement`; renders nothing if `enabled=false`).
