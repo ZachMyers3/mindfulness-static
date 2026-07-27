@@ -66,19 +66,24 @@
 
 - [~] item-01. [frontend] Initialize Astro project (`npm create astro@latest`, Empty template, TypeScript strict mode).
 <!-- state: claimed-by: mason-frontend @ 2026-07-26T22:20:00-04:00 -->
-- [ ] item-02. [frontend] Add MDX integration (`npx astro add mdx`).
+- [~] item-02. [frontend] Add MDX integration (`npx astro add mdx`)
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T00:35:00-04:00 -->
 <!-- state: open -->
 <!-- batch: bootstrap -->
-- [ ] item-03. [frontend] Add sitemap integration (`npx astro add sitemap`).
+- [~] item-03. [frontend] Add sitemap integration (`npx astro add sitemap`)
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T00:35:00-04:00 -->
 <!-- state: open -->
 <!-- batch: bootstrap -->
-- [ ] item-04. [frontend] Configure `astro.config.mjs` (`site`, `trailingSlash: 'always'`, `build.format: 'directory'`, `compressHTML: true`).
+- [~] item-04. [frontend] Configure `astro.config.mjs` (`site`, `trailingSlash: 'always'`, `build.format: 'directory'`, `compressHTML: true`)
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T00:35:00-04:00 -->
 <!-- state: open -->
 <!-- batch: bootstrap -->
-- [ ] item-05. [frontend] Add `.gitignore` (excludes `node_modules/`, `dist/`, `.astro/`, `.env`, `.env.local`).
+- [~] item-05. [frontend] Add `.gitignore` (excludes `node_modules/`, `dist/`, `.astro/`, `.env`, `.env.local`)
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T00:35:00-04:00 -->
 <!-- state: open -->
 <!-- batch: bootstrap -->
-- [ ] item-06. [frontend] Add `.nvmrc` pinning Node 20 (LTS).
+- [~] item-06. [frontend] Add `.nvmrc` pinning Node 20 (LTS)
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T00:35:00-04:00 -->
 <!-- state: open -->
 <!-- batch: bootstrap -->
 <!-- doc-pinned: 20.x; package.json engines >=22.12 was Mason WIP default — keep nvmrc at 20 per doc §5 -->

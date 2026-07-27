@@ -27,3 +27,9 @@ pnpm-debug.log*
 # Playwright / test artifacts
 test-results/
 playwright-report/
+
+# Pipeline runtime state (lane lock + driver orphans)
+.pipeline/.frontend-lock.d/
+.pipeline/.backend-lock.d/
+.pipeline/.orphan-notified-*
+
