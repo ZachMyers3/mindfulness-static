@@ -27,3 +27,9 @@ See `claims/item-16.claim/result.md`, `claims/item-17.claim/result.md` for full 
 - **PageHeader.astro accepts an optional `breadcrumb` prop** beyond the ledger minimum — implements the optional breadcrumb explicitly mentioned in design-doc §9.2. Documented in the component's docstring; left unused by current inner-pages routes.
 - **Hero, PageHeader, Callout are not yet wired into any page route.** Wiring is a separate scope item (the existing inner-pages route templates only load Markdown via `getEntry`; refactoring them to compose Hero/PageHeader/Callout belongs to a future batch).
 - **Commit hash in ledger is `64672d67...` but actual commit is `7811940`** — the post-commit amend replaced `<pending>` with the pre-amend hash, then the amend changed the content and produced a new hash. Per skill rule "no amends after step 5", the stale pre-amend hash was left in the ledger lines; `git log` is the source of truth (head: `7811940`).
+
+### 2026-07-27 — item-32 (design-sys palette + reset, commit 557362a)
+- **`src/styles/main.css` is a one-line `@import` aggregator**, not a Tailwind v4 `@theme static { ... }` block as the ledger item text references. The design doc §15.5 specifies custom properties in `tokens.css` (no Tailwind mention). The project ships plain CSS custom properties; components use `<style>` blocks with `var(--color-sage-600)` etc. When/if Tailwind v4 is added in a future batch, `tokens.css` is the canonical palette source — the `@theme static` block would be derived from it, not replace it.
+- **`tokens.css` and `global.css` already implement §15.5's palette + reset** (sage 50–950, mauve 50–950, cream 50–950, Inter + Plus Jakarta Sans, modern reset, `.prose` class, `prefers-reduced-motion` queries, WCAG AA focus styles). They were committed before this cycle (separate `items` not item-32). Item-32 only adds the aggregator + a one-line BaseLayout import change.
+
+See `claims/item-32.claim/result.md` for full rationale.
