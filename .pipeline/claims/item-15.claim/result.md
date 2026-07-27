@@ -4,7 +4,7 @@
 
 **Scope**: frontend (inner-pages batch, content-copy batch)
 
-**Commit**: TBD (will be filled in after second commit that records the real hash)
+**Commit**: `762d21d9ae15957ffda74cbb46c953bdd98c39b4` (full hash recorded for traceability; ledger references the short hash `762d21d`)
 
 **Files touched**:
 - `src/pages/privacy.astro` (new) — loads `pages/privacy` via `getEntry`, renders in `BaseLayout`

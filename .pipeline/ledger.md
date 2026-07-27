@@ -145,7 +145,7 @@
 <!-- see claims/item-14.claim/result.md for deviations (ScheduleTable/PricingCard/FaqAccordion/LocalBusiness JSON-LD still pending in batches 07+10) -->
 <!-- reviewed-by: inspector @ 2026-07-27T06:14:00-04:00 — see claims/item-14.review-claim/review.md (prior commit 28cf28f) -->
 - [x] item-15. [frontend] Create `src/pages/privacy.astro` and `src/pages/terms.astro` (simple prose pages).
-<!-- state: completed-by: mason-frontend @ 2026-07-27T06:46:42-04:00 -- commit (this commit) -- verify: build ok (8 routes incl. /privacy/ + /terms/, sitemap-index updated) -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T06:46:42-04:00 -- commit 762d21d -- verify: build ok (8 routes incl. /privacy/ + /terms/, sitemap-index updated) -->
 <!-- batch: inner-pages -->
 <!-- batch: content-copy (real privacy/terms text populated in tandem with item-67) -->
 <!-- see claims/item-15.claim/result.md -->
