@@ -1,0 +1,27 @@
+---
+/**
+ * src/pages/schedule.astro
+ * Schedule page — loads the `pages/schedule` Markdown entry and renders it
+ * inside BaseLayout. The ScheduleTable component (item-29) is available
+ * but currently receives no `rows` prop; once a `schedule:` array lands in
+ * the Markdown frontmatter (or a `schedule.json` file), this page will
+ * render the structured grid above the prose body. For now the page
+ * faithfully renders the Markdown body so the route is live and
+ * SEO-indexable.
+ */
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const entry = await getEntry('pages', 'schedule');
+if (!entry) {
+  throw new Error('pages/schedule entry not found in src/content/pages/schedule.md');
+}
+const { Content } = await render(entry);
+const { title, description, noindex = true } = entry.data;
+---
+
+<BaseLayout title={title} description={description} noindex={noindex}>
+  <article class="prose">
+    <Content />
+  </article>
+</BaseLayout>

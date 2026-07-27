@@ -123,18 +123,21 @@
 
 ## §15.3 Pages and routing
 
-- [c] item-12. [frontend] Create `src/layouts/BaseLayout.astro` (props: `title`, `description`, `noindex`; renders `<SeoHead>`, optional `<AnnouncementBar>`, `<SiteHeader>`, `<main id="main">`, `<SiteFooter>`).
+- [v] item-12. [frontend] Create `src/layouts/BaseLayout.astro` (props: `title`, `description`, `noindex`; renders `<SeoHead>`, optional `<AnnouncementBar>`, `<SiteHeader>`, `<main id="main">`, `<SiteFooter>`).
+<!-- state: approved-by: inspector @ 2026-07-27T04:48:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T04:30:00-04:00 -- commit 3fd827e -- verify: build ok (orphan recovery) -->
 <!-- batch: base-layout -->
 <!-- batch: a11y-markup (skip-link must be first focusable in BaseLayout) -->
+<!-- reviewed-by: inspector @ 2026-07-27T04:48:00-04:00 — see claims/item-12.review-claim/review.md (prior commit 3fd827e) -->
 <!-- see claims/item-12.claim/result.md for deviations (design-sys Tailwind tokens still pending in batch 08) -->
 - [c] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T04:30:00-04:00 -- commit 3fd827e -- verify: build ok (orphan recovery) -->
 <!-- batch: base-layout -->
 <!-- see claims/item-13.claim/result.md for deviations (Hero/ServiceCard/Button components from batch 07 still pending) -->
-- [ ] item-14. [frontend] Create `src/pages/about.astro`, `offerings.astro`, `schedule.astro`, `pricing.astro`, `contact.astro` (each loads matching Markdown entry via `getEntry`).
-<!-- state: open -->
+- [c] item-14. [frontend] Create `src/pages/about.astro`, `offerings.astro`, `schedule.astro`, `pricing.astro`, `contact.astro` (each loads matching Markdown entry via `getEntry`).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T06:02:49-04:00 -- verify: build ok (6 routes, sitemap-index generated) -->
 <!-- batch: inner-pages -->
+<!-- see claims/item-14.claim/result.md for deviations (ScheduleTable/PricingCard/FaqAccordion/LocalBusiness JSON-LD still pending in batches 07+10) -->
 - [ ] item-15. [frontend] Create `src/pages/privacy.astro` and `src/pages/terms.astro` (simple prose pages).
 <!-- state: open -->
 <!-- batch: inner-pages -->

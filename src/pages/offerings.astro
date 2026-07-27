@@ -1,0 +1,25 @@
+---
+/**
+ * src/pages/offerings.astro
+ * Offerings page — loads the `pages/offerings` Markdown entry and renders
+ * it inside BaseLayout. ServiceCard blocks specified in design-doc §9.2
+ * will be slotted in once the components batch (items 22-28) lands;
+ * for now the page faithfully renders the Markdown body so the route is
+ * live and SEO-indexable.
+ */
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const entry = await getEntry('pages', 'offerings');
+if (!entry) {
+  throw new Error('pages/offerings entry not found in src/content/pages/offerings.md');
+}
+const { Content } = await render(entry);
+const { title, description, noindex = true } = entry.data;
+---
+
+<BaseLayout title={title} description={description} noindex={noindex}>
+  <article class="prose">
+    <Content />
+  </article>
+</BaseLayout>
