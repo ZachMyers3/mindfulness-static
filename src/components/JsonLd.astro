@@ -1,0 +1,44 @@
+---
+/**
+ * JsonLd.astro
+ * Renders a JSON-LD <script> tag for structured data. Per design-doc §9.2:
+ *   SeoHead emits meta description / canonical / OG / Twitter / theme-color;
+ *   LocalBusiness JSON-LD is wired into /contact via JsonLd.astro.
+ *
+ * Props:
+ *   data — the structured-data object (will be JSON-serialized in-place)
+ *
+ * Usage:
+ *   <JsonLd data={{
+ *     "@context": "https://schema.org",
+ *     "@type": "LocalBusiness",
+ *     name: site.name,
+ *     address: { ... },
+ *     ...
+ *   }} />
+ *
+ * Notes:
+ *   - JSON.stringify output is passed through a single replace() to escape
+ *     the angle brackets that would otherwise close the <script> tag
+ *     prematurely (the standard XSS-safe JSON-in-script pattern).
+ *   - A small set of dangerously-needed characters (`<`, `>`, `&`, `\u2028`,
+ *     `\u2029`) is escaped; everything else passes through unchanged.
+ */
+interface Props {
+  data: Record<string, unknown>;
+}
+
+const { data } = Astro.props;
+
+// Serialize + escape angle brackets so JSON content can't break out of the
+// <script> tag. JSON.stringify never emits raw "</script>" by default, but
+// a caller-supplied string field (e.g. a description) could.
+const json = JSON.stringify(data)
+  .replace(/</g, '\\u003c')
+  .replace(/>/g, '\\u003e')
+  .replace(/&/g, '\\u0026')
+  .replace(/\u2028/g, '\\u2028')
+  .replace(/\u2029/g, '\\u2029');
+---
+
+<script type="application/ld+json" set:html={json} is:inline></script>

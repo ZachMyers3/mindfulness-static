@@ -119,9 +119,11 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:05:00-04:00 -- commit ad1b744 (pre-existing) -->
 <!-- batch: page-stubs -->
 <!-- reviewed-by: inspector @ 2026-07-27T02:56:00-04:00 — see claims/item-10.review-claim/review.md (prior commit ad1b744) -->
-- [x] item-11. [frontend] Create `src/content/journal/welcome.md` (sample journal post — assumed yes per Q1 closure). — review: approved by inspector @ 2026-07-27T08:04:11-04:00 — see claims/item-11.review-claim/review.md
+- [v] item-11. [frontend] Create `src/content/journal/welcome.md` (sample journal post — assumed yes per Q1 closure).
+<!-- state: approved-by: inspector @ 2026-07-27T15:38:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:05:00-04:00 -- commit ad1b744 (pre-existing) -->
 <!-- batch: page-stubs -->
+<!-- reviewed-by: inspector @ 2026-07-27T15:38:00-04:00 — see claims/item-11.review-claim/review.md (file actually introduced in commit 3fd827e per git --follow) -->
 
 ## §15.3 Pages and routing
 
@@ -202,23 +204,22 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
 <!-- reviewed-by: inspector @ 2026-07-27T12:05:00-04:00 -->
-- [c] item-24. [frontend] `src/components/Button.astro` (props: `href`, `variant: primary|secondary`; renders `<a>`; adds `rel="noopener"` for http URLs).
+- [v] item-24. [frontend] `src/components/Button.astro` (props: `href`, `variant: primary|secondary`; renders `<a>`; adds `rel="noopener"` for http URLs).
+<!-- state: approved-by: inspector @ 2026-07-27T15:48:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
+<!-- reviewed-by: inspector @ 2026-07-27T15:48:00-04:00 — see claims/item-24.review-claim/review.md (actual Button.astro commit is 7811940 per git show; ledger entry carries the stale placeholder hash, same as item-22 — no code impact) -->
 - [c] item-25. [frontend] `src/components/Callout.astro` (props: `tone: info|success|warn|error` + slot content; for empty-page / 404 state messages).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
 - [~] item-26. [frontend] `src/components/ServiceCard.astro` (props: `title`, `description`, `image?`, `href?`, `meta?`).
-<!-- state: open -->
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T10:24:00-04:00 -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
 - [~] item-27. [frontend] `src/components/PricingCard.astro` (props: `title`, `price`, `tagline?`, `features[]`, `ctaLabel`, `ctaHref`, `featured?`).
-<!-- state: open -->
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T10:24:00-04:00 -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
 - [~] item-28. [frontend] `src/components/FaqAccordion.astro` (props: `items: { q, a }[]`; renders native `<details>`/`<summary>`).
-<!-- state: open -->
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T10:24:00-04:00 -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
 - [v] item-29. [frontend] `src/components/ScheduleTable.astro` (props: `rows: { day, time, class, teacher?, level? }[]`; responsive table / stacked cards).
 <!-- state: approved-by: inspector @ 2026-07-27T07:15:00-04:00 -->
@@ -226,8 +227,7 @@
 <!-- batch: chrome -->
 <!-- reviewed-by: inspector @ 2026-07-27T07:15:00-04:00 — see claims/item-29.review-claim/review.md (prior commit 6cc6907) -->
 - [~] item-30. [frontend] `src/components/JsonLd.astro` (props: `data` object; renders `<script type="application/ld+json">`).
-<!-- state: open -->
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T10:24:00-04:00 -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
 - [v] item-31. [frontend] `src/components/ContactLink.astro` (renders `<a href="mailto:${site.contact.email}">` with copy from `site.json`; **replaces** the old Formspree ContactForm per Q3=mailto).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
