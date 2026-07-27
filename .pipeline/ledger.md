@@ -237,8 +237,8 @@
 
 ## §15.5 Visual design system
 
-- [ ] item-32. [frontend] `src/styles/main.css` with Tailwind v4 `@theme static { ... }` block — **import the stillpoint-studio palette verbatim**: sage-50..950, mauve-50..950, cream-50..950 (sage-600 `#3a7268` primary, mauve-600 `#72576f` secondary, cream-50/cream-950 neutrals); Inter sans + Plus Jakarta Sans display fonts.
-<!-- state: open -->
+- [~] item-32. [frontend] `src/styles/main.css` with Tailwind v4 `@theme static { ... }` block — **import the stillpoint-studio palette verbatim**: sage-50..950, mauve-50..950, cream-50..950 (sage-600 `#3a7268` primary, mauve-600 `#72576f` secondary, cream-50/cream-950 neutrals); Inter sans + Plus Jakarta Sans display fonts.
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T21:12:13Z -->
 <!-- batch: design-sys -->
 - [ ] item-33. [frontend] Add `modern CSS reset` to `src/styles/main.css` (box-sizing, text-size-adjust, base typography classes for `.prose`).
 <!-- state: open -->
