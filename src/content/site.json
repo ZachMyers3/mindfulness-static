@@ -1,0 +1,56 @@
+{
+  "business": {
+    "name": "Mindfulness and Movement",
+    "tagline": "Movement, breath, rest.",
+    "description": "Mindfulness and Movement is a small practice space in {{TODO_ZACH: city}} offering accessible yoga, breathwork, and quiet gathering. The work is steady, embodied, and unhurried."
+  },
+  "nav": [
+    { "label": "About", "href": "/about" },
+    { "label": "Classes", "href": "/offerings" },
+    { "label": "Schedule", "href": "/schedule" },
+    { "label": "Pricing", "href": "/pricing" },
+    { "label": "Journal", "href": "/journal" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "contact": {
+    "address": {
+      "street": "{{TODO_ZACH: street address}}",
+      "city": "{{TODO_ZACH: city}}",
+      "region": "{{TODO_ZACH: state or region}}",
+      "postalCode": "{{TODO_ZACH: postal code}}",
+      "country": "{{TODO_ZACH: country code, e.g. US}}"
+    },
+    "phone": "{{TODO_ZACH: phone number, e.g. +1-555-555-5555}}",
+    "email": "{{TODO_ZACH: contact email, e.g. hello@example.com}}",
+    "mapUrl": "{{TODO_ZACH: OpenStreetMap link with mlat= and mlon= params}}"
+  },
+  "hours": [
+    { "day": "Monday", "open": "{{TODO_ZACH: HH:MM}}", "close": "{{TODO_ZACH: HH:MM}}" },
+    { "day": "Tuesday", "open": "{{TODO_ZACH: HH:MM}}", "close": "{{TODO_ZACH: HH:MM}}" },
+    { "day": "Wednesday", "open": "{{TODO_ZACH: HH:MM}}", "close": "{{TODO_ZACH: HH:MM}}" },
+    { "day": "Thursday", "open": "{{TODO_ZACH: HH:MM}}", "close": "{{TODO_ZACH: HH:MM}}" },
+    { "day": "Friday", "open": "{{TODO_ZACH: HH:MM}}", "close": "{{TODO_ZACH: HH:MM}}" },
+    { "day": "Saturday", "open": "{{TODO_ZACH: HH:MM}}", "close": "{{TODO_ZACH: HH:MM}}" },
+    { "day": "Sunday", "open": null, "close": null, "closed": true }
+  ],
+  "social": [
+    { "label": "Instagram", "href": "{{TODO_ZACH: https://instagram.com/yourhandle}}" },
+    { "label": "Substack", "href": "{{TODO_ZACH: https://yourhandle.substack.com}}" }
+  ],
+  "announcement": {
+    "text": "{{TODO_ZACH: optional banner text, e.g. Closed for retreat June 10–14}}",
+    "href": null,
+    "enabled": false
+  },
+  "footer": {
+    "tagline": "A quiet practice of movement, breath, and rest.",
+    "legalLinks": [
+      { "label": "Privacy", "href": "/privacy" },
+      { "label": "Terms", "href": "/terms" }
+    ]
+  },
+  "hosting": {
+    "provider": null,
+    "privacyContact": "{{TODO_ZACH: email for privacy questions, often same as contact.email}}"
+  }
+}
