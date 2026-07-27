@@ -15,7 +15,7 @@ if (!entry) {
   throw new Error('pages/home entry not found in src/content/pages/home.md');
 }
 const { Content } = await render(entry);
-const { title, description, noindex = true } = entry.data;
+const { title, description, noindex } = entry.data;
 ---
 
 <BaseLayout title={title} description={description} noindex={noindex}>

@@ -10,7 +10,7 @@ const pages = defineCollection({
     heroImage: z.string().optional(),          // path under /src/assets or /public
     heroAlt:   z.string().optional(),
     lastUpdated: z.coerce.date().optional(),
-    noindex:    z.boolean().default(false),
+    noindex:    z.boolean().default(true),
   }),
 });
 

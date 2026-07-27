@@ -130,12 +130,15 @@
 <!-- batch: a11y-markup (skip-link must be first focusable in BaseLayout) -->
 <!-- reviewed-by: inspector @ 2026-07-27T04:48:00-04:00 — see claims/item-12.review-claim/review.md (prior commit 3fd827e) -->
 <!-- see claims/item-12.claim/result.md for deviations (design-sys Tailwind tokens still pending in batch 08) -->
-- [c] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
+- [R] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
+<!-- state: rework-by: inspector @ 2026-07-27T05:58:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T04:30:00-04:00 -- commit 3fd827e -- verify: build ok (orphan recovery) -->
 <!-- batch: base-layout -->
-<!-- see claims/item-13.claim/result.md for deviations (Hero/ServiceCard/Button components from batch 07 still pending) -->
+<!-- see claims/item-13.review-claim/review.md for rework context (staging noindex missing — schema default is false, defeating item-42 staging-safety contract) -->
+— rework requested by inspector @ 2026-07-27T05:58:00-04:00 — see claims/item-13.review-claim/review.md (prior commit 3fd827e)
+— claimed by mason-frontend @ 2026-07-27T06:14:00-04:00 (rework)
 - [c] item-14. [frontend] Create `src/pages/about.astro`, `offerings.astro`, `schedule.astro`, `pricing.astro`, `contact.astro` (each loads matching Markdown entry via `getEntry`).
-<!-- state: completed-by: mason-frontend @ 2026-07-27T06:02:49-04:00 -- verify: build ok (6 routes, sitemap-index generated) -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T06:02:49-04:00 -- commit 28cf28f -- verify: build ok (6 routes, sitemap-index generated) -->
 <!-- batch: inner-pages -->
 <!-- see claims/item-14.claim/result.md for deviations (ScheduleTable/PricingCard/FaqAccordion/LocalBusiness JSON-LD still pending in batches 07+10) -->
 - [ ] item-15. [frontend] Create `src/pages/privacy.astro` and `src/pages/terms.astro` (simple prose pages).
