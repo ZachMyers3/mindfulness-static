@@ -88,10 +88,11 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
 <!-- reviewed-by: inspector @ 2026-07-27T02:41:00-04:00 — see claims/item-05.review-claim/review.md (prior commit b67d88e) -->
-- [x] item-06. [frontend] Add `.nvmrc` pinning Node 20 (LTS)
+- [v] item-06. [frontend] Add `.nvmrc` pinning Node 20 (LTS)
+<!-- state: approved-by: inspector @ 2026-07-27T07:32:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
-— review: approved by inspector @ 2026-07-27T02:49:00-04:00 — see claims/item-06.review-claim/review.md
+<!-- reviewed-by: inspector @ 2026-07-27T07:32:00-04:00 — see claims/item-06.review-claim/review.md (prior commit b67d88e; file content unchanged since bootstrap a18c823) -->
 ## §15.2 Content layer
 
 - [v] item-07. [frontend] Create `src/content.config.ts` with `pages` and `journal` Zod schemas from doc §7.2.
@@ -149,12 +150,16 @@
 <!-- batch: inner-pages -->
 <!-- batch: content-copy (real privacy/terms text populated in tandem with item-67) -->
 <!-- see claims/item-15.claim/result.md -->
-- [ ] item-16. [frontend] Create `src/pages/404.astro` (friendly 404 copy from doc §9.3).
-<!-- state: open -->
+- [c] item-16. [frontend] Create `src/pages/404.astro` (friendly 404 copy from doc §9.3).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -- commit 76ca04d0400e574a3c8c79dad85dbb4059839fe8 -- verify: build ok (batch 404+journal: 11 routes incl. /404.html + sitemap-index)
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -->
 <!-- batch: inner-pages -->
-- [ ] item-17. [frontend] Create `src/pages/journal/index.astro` (list) and `src/pages/journal/[...slug].astro` (dynamic route).
-<!-- state: open -->
+— see claims/item-16.claim/result.md
+- [c] item-17. [frontend] Create `src/pages/journal/index.astro` (list) and `src/pages/journal/[...slug].astro` (dynamic route).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -- commit 76ca04d0400e574a3c8c79dad85dbb4059839fe8 -- verify: build ok (batch 404+journal: 11 routes incl. /404.html + sitemap-index)
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -->
 <!-- batch: inner-pages -->
+— see claims/item-17.claim/result.md
 
 ## §15.4 Components
 
@@ -198,14 +203,18 @@
 - [ ] item-28. [frontend] `src/components/FaqAccordion.astro` (props: `items: { q, a }[]`; renders native `<details>`/`<summary>`).
 <!-- state: open -->
 <!-- batch: components -->
-- [c] item-29. [frontend] `src/components/ScheduleTable.astro` (props: `rows: { day, time, class, teacher?, level? }[]`; responsive table / stacked cards).
+- [v] item-29. [frontend] `src/components/ScheduleTable.astro` (props: `rows: { day, time, class, teacher?, level? }[]`; responsive table / stacked cards).
+<!-- state: approved-by: inspector @ 2026-07-27T07:15:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
 <!-- batch: chrome -->
+<!-- reviewed-by: inspector @ 2026-07-27T07:15:00-04:00 — see claims/item-29.review-claim/review.md (prior commit 6cc6907) -->
 - [ ] item-30. [frontend] `src/components/JsonLd.astro` (props: `data` object; renders `<script type="application/ld+json">`).
 <!-- state: open -->
 <!-- batch: components -->
-- [c] item-31. [frontend] `src/components/ContactLink.astro` (renders `<a href="mailto:${site.contact.email}">` with copy from `site.json`; **replaces** the old Formspree ContactForm per Q3=mailto).
+- [v] item-31. [frontend] `src/components/ContactLink.astro` (renders `<a href="mailto:${site.contact.email}">` with copy from `site.json`; **replaces** the old Formspree ContactForm per Q3=mailto).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
+<!-- state: approved-by: inspector @ 2026-07-27T07:25:00-04:00 -->
+<!-- reviewed-by: inspector @ 2026-07-27T07:25:00-04:00 -->
 <!-- batch: chrome -->
 
 ## §15.5 Visual design system
