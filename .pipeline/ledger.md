@@ -170,8 +170,8 @@
 
 ## §15.10 GitHub + deploy
 
-- [c] item-59. [ops] Create the GitHub repo `mindfulness-static` under ZachMyers3; push local `main` + `develop`; set default branch to `develop`.
-<!-- state: completed-by: project-manager 2026-07-26T21:21 EDT -->
+- [v] item-59. [ops] Create the GitHub repo `mindfulness-static` under ZachMyers3; push local `main` + `develop`; set default branch to `develop`.
+<!-- state: approved-by: inspector @ 2026-07-26T21:36:30-04:00 -->
 <!-- scope-tag: ops -->
 <!-- Repo `ZachMyers3/mindfulness-static` created via `gh repo create --public`; topics `astro, static-site, wellness, yoga, openclaw-pipeline`. Default branch flipped to `develop`. Local `main`, `develop`, and `developer/yoga-wellness-site/seed` all pushed. -->
 - [ ] item-60. [ops] Add a `_headers` file in `public/` (assets immutable + HTML 1h cache).
@@ -180,10 +180,11 @@
 <!-- state: open -->
 - [ ] item-62. [content] Author `DEPLOY.md` — host-agnostic deploy guide (Zach picks the host; the same `dist/` works on any of them).
 <!-- state: open -->
-- [c] item-63. [ops] Configure GitHub branch protection on `develop` (require PR + 1 review — this is the auto-merge target per RULES.md Rule 7).
-<!-- state: completed-by: project-manager 2026-07-26T21:21 EDT -->
+- [v] item-63. [ops] Configure GitHub branch protection on `develop` (require PR + 1 review — this is the auto-merge target per RULES.md Rule 7).
+<!-- state: approved-by: inspector @ 2026-07-26T21:42:00-04:00 -->
 <!-- scope-tag: ops -->
 <!-- `gh api --method PUT .../branches/develop/protection` set: required_pull_request_reviews.required_approving_review_count=1, required_linear_history=true, allow_force_pushes=false. Verified via GET. -->
+<!-- reviewed-by: inspector @ 2026-07-26T21:42:00-04:00 — re-verified via `gh api /repos/ZachMyers3/mindfulness-static/branches/develop/protection`: required_approving_review_count=1, required_linear_history=true, allow_force_pushes=false. All match. -->
 - [c] item-64. [ops] Configure GitHub branch protection on `main` (require PR from `develop` — Zach gates pushes to `origin/main`).
 <!-- state: completed-by: project-manager 2026-07-26T21:21 EDT -->
 <!-- scope-tag: ops -->
