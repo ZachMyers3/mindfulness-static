@@ -64,49 +64,48 @@
 
 ## §15.1 Project bootstrap
 
-- [~] item-01. [frontend] Initialize Astro project (`npm create astro@latest`, Empty template, TypeScript strict mode).
-<!-- state: claimed-by: mason-frontend @ 2026-07-26T22:20:00-04:00 -->
-- [~] item-02. [frontend] Add MDX integration (`npx astro add mdx`)
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T00:35:00-04:00 -->
-<!-- state: open -->
+- [x] item-01. [frontend] Initialize Astro project (`npm create astro@latest`, Empty template, TypeScript strict mode).
+<!-- state: completed-by: mason-frontend @ 2026-07-26T22:30:00-04:00 -- commit ebafa97 -->
+- [x] item-02. [frontend] Add MDX integration (`npx astro add mdx`)
+<!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
-- [~] item-03. [frontend] Add sitemap integration (`npx astro add sitemap`)
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T00:35:00-04:00 -->
-<!-- state: open -->
+- [x] item-03. [frontend] Add sitemap integration (`npx astro add sitemap`)
+<!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
-- [~] item-04. [frontend] Configure `astro.config.mjs` (`site`, `trailingSlash: 'always'`, `build.format: 'directory'`, `compressHTML: true`)
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T00:35:00-04:00 -->
-<!-- state: open -->
+- [x] item-04. [frontend] Configure `astro.config.mjs` (`site`, `trailingSlash: 'always'`, `build.format: 'directory'`, `compressHTML: true`)
+<!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
-- [~] item-05. [frontend] Add `.gitignore` (excludes `node_modules/`, `dist/`, `.astro/`, `.env`, `.env.local`)
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T00:35:00-04:00 -->
-<!-- state: open -->
+- [x] item-05. [frontend] Add `.gitignore` (excludes `node_modules/`, `dist/`, `.astro/`, `.env`, `.env.local`)
+<!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
-- [~] item-06. [frontend] Add `.nvmrc` pinning Node 20 (LTS)
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T00:35:00-04:00 -->
-<!-- state: open -->
+- [x] item-06. [frontend] Add `.nvmrc` pinning Node 20 (LTS)
+<!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
 <!-- batch: bootstrap -->
-<!-- doc-pinned: 20.x; package.json engines >=22.12 was Mason WIP default — keep nvmrc at 20 per doc §5 -->
-
 ## §15.2 Content layer
 
-- [ ] item-07. [frontend] Create `src/content.config.ts` with `pages` and `journal` Zod schemas from doc §7.2.
-<!-- state: open -->
+- [v] item-07. [frontend] Create `src/content.config.ts` with `pages` and `journal` Zod schemas from doc §7.2.
+<!-- state: approved-by: inspector @ 2026-07-27T01:14:30-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T01:08:09-04:00 -->
+<!-- reviewed-by: inspector @ 2026-07-27T01:14:30-04:00 -->
 <!-- batch: content-cfg -->
-- [ ] item-08. [frontend] Create `src/content/site.json` with the full shape from doc §7.1 — populate with **Mindfulness and Movement** brand info: name, tagline, nav items, footer copy, hours, address (single-location), phone, email, social URLs (mailto only — no contact-form endpoint).
-<!-- state: open -->
+- [v] item-08. [frontend] Create `src/content/site.json` with the full shape from doc §7.1 — populate with **Mindfulness and Movement** brand info: name, tagline, nav items, footer copy, hours, address (single-location), phone, email, social URLs (mailto only — no contact-form endpoint).
+<!-- state: approved-by: inspector @ 2026-07-27T01:20:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T01:08:09-04:00 -->
+<!-- reviewed-by: inspector @ 2026-07-27T01:20:00-04:00 -->
 <!-- batch: content-cfg -->
 <!-- batch: content-copy (real values populated in tandem with item-65) -->
-<!-- brand-locked: name=“Mindfulness and Movement”, primary=sage-600 #3a7268, secondary=mauve-600 #72576f, fonts=Inter + Plus Jakarta Sans (per Foreman 2026-07-26 doc-walk Q1+Q5+Q6) -->
-<!-- placeholder fields until batch content-cfg: name=“Mindfulness and Movement” (locked); address/phone/email/hours/social URL = real values per item-65 from Mindfulness and Movement business owner -->
-- [ ] item-09. [frontend] Create `src/lib/site.ts` exporting `site` (parsed via Zod) and the `Site` type, per doc §8.2.
-<!-- state: open -->
+<!-- brand-locked: name="Mindfulness and Movement", primary=sage-600 #3a7268, secondary=mauve-600 #72576f, fonts=Inter + Plus Jakarta Sans (per Foreman 2026-07-26 doc-walk Q1+Q5+Q6) -->
+<!-- placeholder fields until batch content-cfg: name="Mindfulness and Movement" (locked); address/phone/email/hours/social URL = real values per item-65 from Mindfulness and Movement business owner -->
+- [x] item-09. [frontend] Create `src/lib/site.ts` exporting `site` (parsed via Zod) and the `Site` type, per doc §8.2.
+<!-- state: rework-by: inspector @ 2026-07-27T01:29:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T01:55:00-04:00 (rework) -->
 <!-- batch: content-cfg -->
-- [ ] item-10. [frontend] Create one empty Markdown file per page: `home.md`, `about.md`, `offerings.md`, `schedule.md`, `pricing.md`, `contact.md`, `privacy.md`, `terms.md` (stub frontmatter: title + description).
-<!-- state: open -->
+— rework complete: commit 7faa9f8 (site.ts tracked + announcement.href null fix)
+- [x] item-10. [frontend] Create one empty Markdown file per page: `home.md`, `about.md`, `offerings.md`, `schedule.md`, `pricing.md`, `contact.md`, `privacy.md`, `terms.md` (stub frontmatter: title + description).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T02:05:00-04:00 -- commit ad1b744 (pre-existing) -->
 <!-- batch: page-stubs -->
-- [ ] item-11. [frontend] Create `src/content/journal/welcome.md` (sample journal post — assumed yes per Q1 closure).
-<!-- state: open -->
+- [x] item-11. [frontend] Create `src/content/journal/welcome.md` (sample journal post — assumed yes per Q1 closure).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T02:05:00-04:00 -- commit ad1b744 (pre-existing) -->
 <!-- batch: page-stubs -->
 
 ## §15.3 Pages and routing
@@ -264,15 +263,19 @@
 - [ ] item-55. [frontend] Cyclops visual-QA pass on `/offerings`, `/pricing`, `/schedule` (cards + tables + accordion).
 <!-- state: open -->
 <!-- scope: cyclops -->
+<!-- batch: cyclops -->
 - [ ] item-56. [frontend] Cyclops visual-QA pass on `/contact` (mailto link, address, hours, footer layout).
 <!-- state: open -->
 <!-- scope: cyclops -->
+<!-- batch: cyclops -->
 - [ ] item-57. [frontend] Cyclops visual-QA pass on `/journal` + journal detail page (typography hierarchy, prose spacing).
 <!-- state: open -->
 <!-- scope: cyclops -->
+<!-- batch: cyclops -->
 - [ ] item-58. [frontend] Cyclops visual-QA pass on `/404` and Lighthouse baseline.
 <!-- state: open -->
 <!-- scope: cyclops -->
+<!-- batch: cyclops -->
 
 ## §15.10 GitHub + deploy
 
@@ -295,12 +298,12 @@
 <!-- state: approved-by: inspector @ 2026-07-26T21:42:00-04:00 -->
 <!-- scope-tag: ops -->
 <!-- `gh api --method PUT .../branches/develop/protection` set: required_pull_request_reviews.required_approving_review_count=1, required_linear_history=true, allow_force_pushes=false. Verified via GET. -->
-<!-- reviewed-by: inspector @ 2026-07-26T21:42:00-04:00 — re-verified via `gh api /repos/ZachMyers3/mindfulness-static/branches/develop/protection`: required_approving_review_count=1, required_linear_history=true, allow_force_pushes=false. All match. -->
+<!-- reviewed-by: inspector @ 2026-07-26T21:42:00-04:00 — re-verified via `gh api /repos/ZachMyers3/mindfulness-static/branches/develop/protection`: required_approving_review_count=1, required_linear_history=true, allow_force_pushes=false, allow_deletions=false. All match. -->
 - [v] item-64. [ops] Configure GitHub branch protection on `main` (require PR from `develop` — Zach gates pushes to `origin/main`).
-<!-- state: approved-by: inspector @ 2026-07-26T21:51:00-04:00 -->
-<!-- scope-tag: ops -->
+<!-- state: approved-by: inspector @ 2026-07-26T22:23:00-04:00 -->
+<!-- scope-tag: frontend -->
 <!-- `gh api --method PUT .../branches/main/protection` set: required_linear_history=true, allow_force_pushes=false. Required PR reviews required_approving_review_count=0 (any review). Verified via GET. -->
-<!-- reviewed-by: inspector @ 2026-07-26T21:51:00-04:00 — independently re-verified via `gh api /repos/ZachMyers3/mindfulness-static/branches/main/protection`: required_pull_request_reviews object present (PR required, required_approving_review_count=0), required_linear_history=true, allow_force_pushes=false, allow_deletions=false. Matches spec. -->
+<!-- reviewed-by: inspector @ 2026-07-27T00:30:00-04:00 — independently re-verified via `gh api /repos/ZachMyers3/mindfulness-static/branches/main/protection`: required_pull_request_reviews object present (PR required, required_approving_review_count=0), required_linear_history=true, allow_force_pushes=false, allow_deletions=false. Matches spec. -->
 
 ## §15.11 Launch (post-`[v]` approval)
 
@@ -312,9 +315,9 @@
 - [ ] item-66. [content] Author body copy in every `src/content/pages/*.md` (Home, About, Offerings, Schedule, Pricing, Contact, Privacy, Terms).
 <!-- state: open -->
 <!-- batch: content-copy -->
-- [ ] item-67. [content] Author `privacy.md` and `terms.md` with real text (not placeholders).
+- [ ] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
 <!-- state: open -->
-<!-- batch: content-copy -->
+<!-- batch: base-layout -->
 - [ ] item-68. [frontend] Flip frontmatter `noindex` default to `false` on every page; cut a release commit; verify the new build goes live.
 <!-- state: open -->
 <!-- batch: launch -->
