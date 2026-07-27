@@ -108,11 +108,12 @@
 <!-- batch: content-copy (real values populated in tandem with item-65) -->
 <!-- brand-locked: name="Mindfulness and Movement", primary=sage-600 #3a7268, secondary=mauve-600 #72576f, fonts=Inter + Plus Jakarta Sans (per Foreman 2026-07-26 doc-walk Q1+Q5+Q6) -->
 <!-- placeholder fields until batch content-cfg: name="Mindfulness and Movement" (locked); address/phone/email/hours/social URL = real values per item-65 from Mindfulness and Movement business owner -->
-- [x] item-09. [frontend] Create `src/lib/site.ts` exporting `site` (parsed via Zod) and the `Site` type, per doc §8.2.
-<!-- state: rework-by: inspector @ 2026-07-27T01:29:00-04:00 -->
+- [v] item-09. [frontend] Create `src/lib/site.ts` exporting `site` (parsed via Zod) and the `Site` type, per doc §8.2.
+<!-- state: approved-by: inspector @ 2026-07-27T08:12:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T01:55:00-04:00 (rework) -->
 <!-- batch: content-cfg -->
 — rework complete: commit 7faa9f8 (site.ts tracked + announcement.href null fix)
+<!-- reviewed-by: inspector @ 2026-07-27T08:12:00-04:00 — see claims/item-09.review-claim/review.md (prior commit 7faa9f8) -->
 - [v] item-10. [frontend] Create one empty Markdown file per page: `home.md`, `about.md`, `offerings.md`, `schedule.md`, `pricing.md`, `contact.md`, `privacy.md`, `terms.md` (stub frontmatter: title + description).
 <!-- state: approved-by: inspector @ 2026-07-27T02:56:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:05:00-04:00 -- commit ad1b744 (pre-existing) -->
@@ -150,13 +151,15 @@
 <!-- batch: inner-pages -->
 <!-- batch: content-copy (real privacy/terms text populated in tandem with item-67) -->
 <!-- see claims/item-15.claim/result.md -->
-- [c] item-16. [frontend] Create `src/pages/404.astro` (friendly 404 copy from doc §9.3).
-<!-- state: completed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -- commit 76ca04d0400e574a3c8c79dad85dbb4059839fe8 -- verify: build ok (batch 404+journal: 11 routes incl. /404.html + sitemap-index)
+- [v] item-16. [frontend] Create `src/pages/404.astro` (friendly 404 copy from doc §9.3).
+<!-- state: approved-by: inspector @ 2026-07-27T08:05:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -- commit 8e1e5e7be35febef4e185963e881da911a0a194f -- verify: build ok (batch 404+journal: 11 routes incl. /404.html + sitemap-index)
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -->
 <!-- batch: inner-pages -->
 — see claims/item-16.claim/result.md
+<!-- reviewed-by: inspector @ 2026-07-27T08:05:00-04:00 — see claims/item-16.review-claim/review.md (prior commit 8e1e5e7; item-17 in same commit, reviewed separately) -->
 - [c] item-17. [frontend] Create `src/pages/journal/index.astro` (list) and `src/pages/journal/[...slug].astro` (dynamic route).
-<!-- state: completed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -- commit 76ca04d0400e574a3c8c79dad85dbb4059839fe8 -- verify: build ok (batch 404+journal: 11 routes incl. /404.html + sitemap-index)
+<!-- state: completed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -- commit 8e1e5e7be35febef4e185963e881da911a0a194f -- verify: build ok (batch 404+journal: 11 routes incl. /404.html + sitemap-index)
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -->
 <!-- batch: inner-pages -->
 — see claims/item-17.claim/result.md
@@ -182,17 +185,17 @@
 - [c] item-21. [frontend] `src/components/AnnouncementBar.astro` (reads `site.announcement`; renders nothing if `enabled=false`).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
 <!-- batch: chrome -->
-- [ ] item-22. [frontend] `src/components/Hero.astro` (props: `title`, `tagline`, `image`, `alt`, `ctaLabel?`, `ctaHref?`; full-bleed hero).
-<!-- state: open -->
+- [c] item-22. [frontend] `src/components/Hero.astro` (props: `title`, `tagline`, `image`, `alt`, `ctaLabel?`, `ctaHref?`; full-bleed hero).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
-- [ ] item-23. [frontend] `src/components/PageHeader.astro` (props: `title`, `description?`, `image?`, `alt?`; smaller hero band).
-<!-- state: open -->
+- [c] item-23. [frontend] `src/components/PageHeader.astro` (props: `title`, `description?`, `image?`, `alt?`; smaller hero band).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
-- [ ] item-24. [frontend] `src/components/Button.astro` (props: `href`, `variant: primary|secondary`; renders `<a>`; adds `rel="noopener"` for http URLs).
-<!-- state: open -->
+- [c] item-24. [frontend] `src/components/Button.astro` (props: `href`, `variant: primary|secondary`; renders `<a>`; adds `rel="noopener"` for http URLs).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
-- [ ] item-25. [frontend] `src/components/Callout.astro` (props: `tone: info|success|warn|error` + slot content; for empty-page / 404 state messages).
-<!-- state: open -->
+- [c] item-25. [frontend] `src/components/Callout.astro` (props: `tone: info|success|warn|error` + slot content; for empty-page / 404 state messages).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
 - [ ] item-26. [frontend] `src/components/ServiceCard.astro` (props: `title`, `description`, `image?`, `href?`, `meta?`).
 <!-- state: open -->

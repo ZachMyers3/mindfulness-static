@@ -1,0 +1,89 @@
+---
+/**
+ * Button.astro
+ * Renders a styled <a> tag. Use this for any in-app or external action
+ * button — primary calls-to-action, secondary actions, etc.
+ *
+ * Props:
+ *   href    — destination URL (required)
+ *   variant — 'primary' (default) | 'secondary'
+ *   class   — optional additional class for styling
+ *
+ * Behaviour:
+ *   - If `href` starts with `http` (external), adds `rel="noopener"` and
+ *     `target="_blank"` so external links open safely in a new tab without
+ *     leaking the opener.
+ */
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary';
+  class?: string;
+}
+
+const { href, variant = 'primary', class: className } = Astro.props;
+const isExternal = href.startsWith('http');
+---
+
+<a
+  href={href}
+  class:list={['button', `button--${variant}`, className]}
+  {...(isExternal ? { rel: 'noopener', target: '_blank' } : {})}
+>
+  <slot />
+</a>
+
+<style>
+  .button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    line-height: 1.2;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition:
+      background-color 0.15s ease,
+      color 0.15s ease,
+      border-color 0.15s ease;
+  }
+
+  /* Primary — sage filled */
+  .button--primary {
+    background: #3a7268;
+    color: #fff;
+  }
+
+  .button--primary:hover {
+    background: #2d5d54;
+  }
+
+  .button--primary:focus-visible {
+    outline: 2px solid #3a7268;
+    outline-offset: 2px;
+  }
+
+  /* Secondary — outlined */
+  .button--secondary {
+    background: transparent;
+    color: #3a7268;
+    border-color: #3a7268;
+  }
+
+  .button--secondary:hover {
+    background: #3a7268;
+    color: #fff;
+  }
+
+  .button--secondary:focus-visible {
+    outline: 2px solid #3a7268;
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .button {
+      transition: none;
+    }
+  }
+</style>

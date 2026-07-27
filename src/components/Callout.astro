@@ -1,0 +1,109 @@
+---
+/**
+ * Callout.astro
+ * Inline notice / status message with a tone. Used for empty-page placeholders,
+ * form success / error, 404 helper text, and any "this is a notice, not the
+ * main content" UI per design-doc §9.3.
+ *
+ * Props:
+ *   tone  — 'info' (default) | 'success' | 'warn' | 'error'
+ *   title — optional bolded title shown above the body
+ *   class — optional additional class for styling
+ *
+ * Body is supplied via the default <slot />.
+ *
+ * Accessibility:
+ *   - role="status" + aria-live="polite" for tone=success / info (informational,
+ *     doesn't interrupt screen readers).
+ *   - role="alert" for tone=warn / error (interrupts — the user needs to know).
+ */
+interface Props {
+  tone?: 'info' | 'success' | 'warn' | 'error';
+  title?: string;
+  class?: string;
+}
+
+const { tone = 'info', title, class: className } = Astro.props;
+
+// 'warn' and 'error' use role=alert so they're announced; 'info' / 'success'
+// use role=status so they're polite.
+const a11yProps =
+  tone === 'warn' || tone === 'error'
+    ? { role: 'alert' }
+    : { role: 'status' };
+---
+
+<aside
+  class:list={['callout', `callout--${tone}`, className]}
+  {...a11yProps}
+>
+  {title && <p class="callout__title">{title}</p>}
+  <div class="callout__body">
+    <slot />
+  </div>
+</aside>
+
+<style>
+  .callout {
+    border-left: 4px solid;
+    border-radius: 4px;
+    padding: 1rem 1.25rem;
+    margin: 1.5rem 0;
+    background: #f8f5f0;
+    color: #1a1a1a;
+  }
+
+  .callout__title {
+    margin: 0 0 0.5rem;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.3;
+  }
+
+  .callout__body {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .callout__body :global(p) {
+    margin: 0 0 0.5rem;
+  }
+
+  .callout__body :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .callout__body :global(a) {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  /* info — sage */
+  .callout--info {
+    border-color: #3a7268;
+    background: #eaf1ee;
+    color: #1f3a35;
+  }
+
+  /* success — deeper sage */
+  .callout--success {
+    border-color: #2d5d54;
+    background: #d8e7e2;
+    color: #14302a;
+  }
+
+  /* warn — warm clay (still on-brand; using mauve secondary) */
+  .callout--warn {
+    border-color: #72576f;
+    background: #ece4eb;
+    color: #3a2a38;
+  }
+
+  /* error — strong mauve */
+  .callout--error {
+    border-color: #5a3d57;
+    background: #e5d4e0;
+    color: #311f2e;
+  }
+</style>

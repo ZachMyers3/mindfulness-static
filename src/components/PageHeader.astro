@@ -1,0 +1,205 @@
+---
+/**
+ * PageHeader.astro
+ * Smaller hero band for inner pages, per design-doc §9.2:
+ *   "Smaller hero band — image left or right at 40% width, title +
+ *    description stacked. H1 = page title. Optional breadcrumb."
+ *
+ * Props:
+ *   title       — H1 / page title (required)
+ *   description — short subtitle below the title (optional)
+ *   image       — hero image source URL/path (optional)
+ *   alt         — alt text for the hero image (required when image given)
+ *   breadcrumb  — optional breadcrumb trail (array of { label, href } —
+ *                 the last item is rendered as currentPage, no link).
+ *   class       — optional additional class for the section
+ *
+ * Notes:
+ *   - When no image is supplied, the header renders as a simple
+ *     text-only band (still uses PageHeader semantics).
+ *   - The breadcrumb is rendered as a <nav aria-label="Breadcrumb"> with
+ *     an ordered list, per accessibility guidance.
+ */
+interface Crumb {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  alt?: string;
+  breadcrumb?: Crumb[];
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  alt,
+  breadcrumb,
+  class: className,
+} = Astro.props;
+
+const hasImage = Boolean(image);
+const crumbs = breadcrumb ?? [];
+---
+
+<section class:list={['page-header', hasImage && 'page-header--with-image', className]} aria-labelledby="page-header-title">
+  {crumbs.length > 0 && (
+    <nav class="page-header__breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        {crumbs.map((crumb, i) => {
+          const isLast = i === crumbs.length - 1;
+          return (
+            <li class="page-header__crumb">
+              {isLast || !crumb.href ? (
+                <span aria-current="page">{crumb.label}</span>
+              ) : (
+                <a href={crumb.href}>{crumb.label}</a>
+              )}
+              {!isLast && <span class="page-header__crumb-sep" aria-hidden="true">/</span>}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
+  )}
+
+  <div class="page-header__inner">
+    <div class="page-header__text">
+      <h1 id="page-header-title" class="page-header__title">{title}</h1>
+      {description && <p class="page-header__description">{description}</p>}
+    </div>
+
+    {hasImage && (
+      <div class="page-header__image-wrap">
+        <img
+          src={image}
+          alt={alt ?? ''}
+          class="page-header__image"
+          loading="eager"
+          decoding="async"
+        />
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .page-header {
+    background: #f8f5f0;
+    border-bottom: 1px solid #e5e0db;
+    padding: 3rem 1.5rem 3.5rem;
+  }
+
+  .page-header__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  /* Image left on desktop — text right */
+  .page-header--with-image .page-header__inner {
+    flex-direction: row;
+  }
+
+  .page-header__text {
+    flex: 1 1 60%;
+    min-width: 0;
+  }
+
+  .page-header__title {
+    font-size: clamp(1.875rem, 3vw + 1rem, 3rem);
+    line-height: 1.15;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.02em;
+    color: #1a1a1a;
+  }
+
+  .page-header__description {
+    font-size: clamp(1rem, 0.5vw + 0.9rem, 1.25rem);
+    line-height: 1.5;
+    margin: 0;
+    color: #444;
+    max-width: 60ch;
+  }
+
+  .page-header__image-wrap {
+    flex: 0 1 40%;
+    min-width: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    background: #e5e0db;
+  }
+
+  .page-header__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Breadcrumb */
+  .page-header__breadcrumb {
+    max-width: 1280px;
+    margin: 0 auto 1rem;
+    font-size: 0.875rem;
+  }
+
+  .page-header__breadcrumb ol {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    color: #666;
+  }
+
+  .page-header__crumb {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .page-header__crumb a {
+    color: #3a7268;
+    text-decoration: none;
+  }
+
+  .page-header__crumb a:hover {
+    text-decoration: underline;
+  }
+
+  .page-header__crumb [aria-current="page"] {
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+
+  .page-header__crumb-sep {
+    color: #b8b0a8;
+  }
+
+  /* Stack vertically on mobile */
+  @media (max-width: 767px) {
+    .page-header {
+      padding: 2rem 1.25rem 2.5rem;
+    }
+
+    .page-header--with-image .page-header__inner {
+      flex-direction: column;
+    }
+
+    .page-header__image-wrap {
+      width: 100%;
+      flex: 0 0 auto;
+      order: -1; /* image first on mobile */
+    }
+  }
+</style>

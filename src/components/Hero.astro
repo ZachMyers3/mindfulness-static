@@ -1,0 +1,146 @@
+---
+/**
+ * Hero.astro
+ * Full-bleed hero band per design-doc §9.2:
+ *   "Full-bleed image, brand name + tagline overlaid or set beside the
+ *    image, single primary CTA. No carousel, no auto-rotating slides."
+ *
+ * Props:
+ *   title     — H1 / brand heading (required)
+ *   tagline   — short subtitle below the title (required)
+ *   image     — hero image source URL/path (required)
+ *   alt       — alt text for the hero image (required — decorative use `alt=""`)
+ *   ctaLabel? — optional CTA button label
+ *   ctaHref?  — optional CTA button destination
+ *   class?    — optional additional class for the section
+ *
+ * Notes:
+ *   - Uses native <picture>-friendly <img loading="eager"> + fetchpriority
+ *     high so the hero image preloads with the initial HTML.
+ *   - On small viewports the text panel sits beneath the image (stacked);
+ *     on >= 768px the text overlays the image in a content card so the
+ *     image can fill the full viewport width.
+ */
+import Button from './Button.astro';
+
+interface Props {
+  title: string;
+  tagline: string;
+  image: string;
+  alt: string;
+  ctaLabel?: string;
+  ctaHref?: string;
+  class?: string;
+}
+
+const { title, tagline, image, alt, ctaLabel, ctaHref, class: className } = Astro.props;
+const hasCta = Boolean(ctaLabel && ctaHref);
+---
+
+<section class:list={['hero', className]} aria-labelledby="hero-title">
+  <div class="hero__image-wrap">
+    <img
+      src={image}
+      alt={alt}
+      class="hero__image"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+  </div>
+
+  <div class="hero__content">
+    <h1 id="hero-title" class="hero__title">{title}</h1>
+    <p class="hero__tagline">{tagline}</p>
+    {hasCta && (
+      <div class="hero__cta">
+        <Button href={ctaHref!} variant="primary">{ctaLabel!}</Button>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    width: 100%;
+    min-height: 320px;
+    overflow: hidden;
+    background: #1a1a1a;
+    color: #fff;
+  }
+
+  .hero__image-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hero__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* A gentle scrim keeps the headline legible over any photo. */
+  .hero__image-wrap::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.45) 100%
+    );
+    pointer-events: none;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .hero__title {
+    font-size: clamp(2.25rem, 5vw + 1rem, 4rem);
+    line-height: 1.05;
+    margin: 0 0 0.75rem;
+    letter-spacing: -0.02em;
+    max-width: 22ch;
+    color: #fff;
+  }
+
+  .hero__tagline {
+    font-size: clamp(1.05rem, 1vw + 0.9rem, 1.5rem);
+    line-height: 1.4;
+    margin: 0 0 1.5rem;
+    max-width: 32ch;
+    color: #fffdf8;
+    opacity: 0.95;
+  }
+
+  .hero__cta {
+    margin-top: 1rem;
+  }
+
+  /* On narrow viewports give the content panel a solid backdrop so it
+     stays legible when the scrim has less room. */
+  @media (max-width: 767px) {
+    .hero__content {
+      background: rgba(26, 26, 26, 0.55);
+      padding: 2rem 1.25rem 2.5rem;
+      margin: 1rem;
+      border-radius: 8px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero {
+      transition: none;
+    }
+  }
+</style>
