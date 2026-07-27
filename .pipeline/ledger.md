@@ -64,10 +64,14 @@
 
 ## §15.1 Project bootstrap
 
-- [x] item-01. [frontend] Initialize Astro project (`npm create astro@latest`, Empty template, TypeScript strict mode).
+- [v] item-01. [frontend] Initialize Astro project (`npm create astro@latest`, Empty template, TypeScript strict mode).
+<!-- state: approved-by: inspector @ 2026-07-27T02:07:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-26T22:30:00-04:00 -- commit ebafa97 -->
-- [x] item-02. [frontend] Add MDX integration (`npx astro add mdx`)
+<!-- reviewed-by: inspector @ 2026-07-27T02:07:00-04:00 -->
+- [v] item-02. [frontend] Add MDX integration (`npx astro add mdx`)
+<!-- state: approved-by: inspector @ 2026-07-27T02:13:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
+<!-- reviewed-by: inspector @ 2026-07-27T02:13:00-04:00 -->
 <!-- batch: bootstrap -->
 - [x] item-03. [frontend] Add sitemap integration (`npx astro add sitemap`)
 <!-- state: completed-by: mason-frontend @ 2026-07-27T00:40:00-04:00 -- commit b67d88e -->
@@ -136,15 +140,15 @@
 - [ ] item-18. [frontend] `src/components/SeoHead.astro` (title, description, image?, noindex?; emits meta description, canonical, OG/Twitter, theme-color; respects noindex).
 <!-- state: open -->
 <!-- batch: base-layout -->
-- [ ] item-19. [frontend] `src/components/SiteHeader.astro` (reads `site.nav`, renders logo + nav items, marks active route with `aria-current="page"`, includes skip-link).
-<!-- state: open -->
+- [~] item-19. [frontend] `src/components/SiteHeader.astro` (reads `site.nav`, renders logo + nav items, marks active route with `aria-current="page"`, includes skip-link).
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T02:15:00-04:00 -->
 <!-- batch: chrome -->
 <!-- batch: a11y-markup (mobile menu uses <details>/<summary> per item-44) -->
-- [ ] item-20. [frontend] `src/components/SiteFooter.astro` (reads `site.contact`/`site.hours`/`site.social`/`site.footer`; 3-column layout from doc §9.2).
-<!-- state: open -->
+- [~] item-20. [frontend] `src/components/SiteFooter.astro` (reads `site.contact`/`site.hours`/`site.social`/`site.footer`; 3-column layout from doc §9.2).
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T02:15:00-04:00 -->
 <!-- batch: chrome -->
-- [ ] item-21. [frontend] `src/components/AnnouncementBar.astro` (reads `site.announcement`; renders nothing if `enabled=false`).
-<!-- state: open -->
+- [~] item-21. [frontend] `src/components/AnnouncementBar.astro` (reads `site.announcement`; renders nothing if `enabled=false`).
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T02:15:00-04:00 -->
 <!-- batch: chrome -->
 - [ ] item-22. [frontend] `src/components/Hero.astro` (props: `title`, `tagline`, `image`, `alt`, `ctaLabel?`, `ctaHref?`; full-bleed hero).
 <!-- state: open -->
@@ -167,14 +171,14 @@
 - [ ] item-28. [frontend] `src/components/FaqAccordion.astro` (props: `items: { q, a }[]`; renders native `<details>`/`<summary>`).
 <!-- state: open -->
 <!-- batch: components -->
-- [ ] item-29. [frontend] `src/components/ScheduleTable.astro` (props: `rows: { day, time, class, teacher?, level? }[]`; responsive table / stacked cards).
-<!-- state: open -->
+- [~] item-29. [frontend] `src/components/ScheduleTable.astro` (props: `rows: { day, time, class, teacher?, level? }[]`; responsive table / stacked cards).
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T02:15:00-04:00 -->
 <!-- batch: chrome -->
 - [ ] item-30. [frontend] `src/components/JsonLd.astro` (props: `data` object; renders `<script type="application/ld+json">`).
 <!-- state: open -->
 <!-- batch: components -->
-- [ ] item-31. [frontend] `src/components/ContactLink.astro` (renders `<a href="mailto:${site.contact.email}">` with copy from `site.json`; **replaces** the old Formspree ContactForm per Q3=mailto).
-<!-- state: open -->
+- [~] item-31. [frontend] `src/components/ContactLink.astro` (renders `<a href="mailto:${site.contact.email}">` with copy from `site.json`; **replaces** the old Formspree ContactForm per Q3=mailto).
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T02:15:00-04:00 -->
 <!-- batch: chrome -->
 
 ## §15.5 Visual design system

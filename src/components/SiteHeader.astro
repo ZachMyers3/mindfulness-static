@@ -1,0 +1,253 @@
+---
+/**
+ * SiteHeader.astro
+ * Reads `site.nav` from the parsed site config and renders a logo + nav items.
+ * Marks the active route with `aria-current="page"`.
+ * Includes a skip-link as the first focusable element.
+ * Mobile menu uses <details>/<summary> for zero-JS per item-44.
+ */
+import { site } from '../lib/site';
+
+const { business, nav } = site;
+const currentPath = Astro.url.pathname;
+---
+
+<a href="#main" class="skip-link">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="site-header__inner">
+    <a href="/" class="site-header__logo" aria-label={`${business.name} — home`}>
+      {business.name}
+    </a>
+
+    {/* Desktop navigation */}
+    <nav class="site-header__nav-desktop" aria-label="Primary">
+      <ul>
+        {nav.map((item) => {
+          const isActive = currentPath === item.href ||
+            (item.href !== '/' && currentPath.startsWith(item.href));
+          return (
+            <li>
+              <a
+                href={item.href}
+                class:list={['site-header__nav-link', { 'is-active': isActive }]}
+                aria-current={isActive ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+
+    {/* Mobile menu — zero-JS via <details>/<summary> */}
+    <details class="site-header__mobile-menu" aria-label="Mobile menu">
+      <summary class="site-header__hamburger" aria-label="Open menu">
+        <span class="site-header__hamburger-icon" aria-hidden="true"></span>
+      </summary>
+      <nav class="site-header__nav-mobile" aria-label="Mobile primary">
+        <ul>
+          {nav.map((item) => {
+            const isActive = currentPath === item.href ||
+              (item.href !== '/' && currentPath.startsWith(item.href));
+            return (
+              <li>
+                <a
+                  href={item.href}
+                  class:list={['site-header__mobile-link', { 'is-active': isActive }]}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {item.label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    padding: 0.5rem 1rem;
+    background: #3a7268;
+    color: #fff;
+    text-decoration: none;
+    z-index: 1000;
+    border-radius: 0 0 4px 0;
+  }
+
+  .skip-link:focus {
+    top: 0;
+    left: 0;
+  }
+
+  .site-header {
+    border-bottom: 1px solid #e5e0db;
+    background: #fffdf8;
+  }
+
+  .site-header__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .site-header__logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #1a1a1a;
+    letter-spacing: -0.02em;
+  }
+
+  /* Desktop nav */
+  .site-header__nav-desktop ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1.5rem;
+  }
+
+  .site-header__nav-link {
+    text-decoration: none;
+    color: #444;
+    font-size: 0.95rem;
+    padding: 0.25rem 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.15s ease;
+  }
+
+  .site-header__nav-link:hover {
+    color: #1a1a1a;
+    border-bottom-color: #d5cfc8;
+  }
+
+  .site-header__nav-link.is-active {
+    color: #3a7268;
+    border-bottom-color: #3a7268;
+    font-weight: 600;
+  }
+
+  /* Mobile menu — hidden on desktop, shown below 768px */
+  .site-header__mobile-menu {
+    display: none;
+  }
+
+  .site-header__hamburger {
+    cursor: pointer;
+    list-style: none;
+    padding: 0.5rem;
+  }
+
+  .site-header__hamburger::-webkit-details-marker {
+    display: none;
+  }
+
+  .site-header__hamburger-icon,
+  .site-header__hamburger-icon::before,
+  .site-header__hamburger-icon::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #1a1a1a;
+    border-radius: 1px;
+    transition: transform 0.2s ease;
+  }
+
+  .site-header__hamburger-icon {
+    position: relative;
+  }
+
+  .site-header__hamburger-icon::before,
+  .site-header__hamburger-icon::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .site-header__hamburger-icon::before {
+    top: -7px;
+  }
+
+  .site-header__hamburger-icon::after {
+    top: 7px;
+  }
+
+  .site-header__mobile-menu[open] .site-header__hamburger-icon {
+    background: transparent;
+  }
+
+  .site-header__mobile-menu[open] .site-header__hamburger-icon::before {
+    top: 0;
+    transform: rotate(45deg);
+  }
+
+  .site-header__mobile-menu[open] .site-header__hamburger-icon::after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  .site-header__nav-mobile ul {
+    list-style: none;
+    margin: 0;
+    padding: 0.5rem 0 1rem;
+  }
+
+  .site-header__nav-mobile li {
+    padding: 0;
+  }
+
+  .site-header__mobile-link {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    color: #444;
+    font-size: 1rem;
+    border-bottom: 1px solid #f0ebe5;
+  }
+
+  .site-header__mobile-link.is-active {
+    color: #3a7268;
+    font-weight: 600;
+    background: #f8f5f0;
+  }
+
+  /* Responsive */
+  @media (max-width: 767px) {
+    .site-header__nav-desktop {
+      display: none;
+    }
+    .site-header__mobile-menu {
+      display: block;
+    }
+    .site-header__mobile-menu[open] .site-header__nav-mobile {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fffdf8;
+      border-bottom: 1px solid #e5e0db;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .site-header__nav-link,
+    .site-header__hamburger-icon,
+    .site-header__hamburger-icon::before,
+    .site-header__hamburger-icon::after {
+      transition: none;
+    }
+  }
+</style>

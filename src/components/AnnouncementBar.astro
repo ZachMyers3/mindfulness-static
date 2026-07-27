@@ -1,0 +1,54 @@
+---
+/**
+ * AnnouncementBar.astro
+ * Reads `site.announcement` and renders a banner if `enabled=true`.
+ * Renders nothing at all if `enabled=false` or if announcement is absent.
+ * Optional `href` makes the text clickable.
+ */
+import { site } from '../lib/site';
+
+const { announcement } = site;
+const show = announcement?.enabled === true && announcement.text;
+---
+
+{show && (
+  <div class="announcement-bar" role="status">
+    <div class="announcement-bar__inner">
+      {announcement?.href ? (
+        <a href={announcement.href} class="announcement-bar__link">
+          {announcement.text}
+        </a>
+      ) : (
+        <p class="announcement-bar__text">{announcement.text}</p>
+      )}
+    </div>
+  </div>
+)}
+
+<style>
+  .announcement-bar {
+    background: #72576f;
+    color: #fffdf8;
+    text-align: center;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .announcement-bar__inner {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  .announcement-bar__text {
+    margin: 0;
+  }
+
+  .announcement-bar__link {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  .announcement-bar__link:hover {
+    color: #e8e0e4;
+  }
+</style>

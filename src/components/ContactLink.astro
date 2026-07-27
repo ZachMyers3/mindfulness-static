@@ -1,0 +1,50 @@
+---
+/**
+ * ContactLink.astro
+ * Renders a <a href="mailto:${site.contact.email}"> element with the
+ * business email from site.json. Replaces the old Formspree ContactForm
+ * per Q3 = mailto:.
+ *
+ * Props:
+ *   label — optional override for the link text (defaults to the email address)
+ *   class — optional additional class for styling
+ */
+import { site } from '../lib/site';
+
+interface Props {
+  label?: string;
+  class?: string;
+}
+
+const { label, class: className } = Astro.props;
+const email = site.contact.email;
+const text = label ?? email;
+---
+
+<a href={`mailto:${email}`} class:list={['contact-link', className]}>
+  {text}
+</a>
+
+<style>
+  .contact-link {
+    display: inline-block;
+    background: #3a7268;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.15s ease;
+  }
+
+  .contact-link:hover {
+    background: #2d5d54;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .contact-link {
+      transition: none;
+    }
+  }
+</style>
