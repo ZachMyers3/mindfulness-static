@@ -65,7 +65,7 @@
 ## §15.1 Project bootstrap
 
 - [~] item-01. [frontend] Initialize Astro project (`npm create astro@latest`, Empty template, TypeScript strict mode).
-<!-- state: claimed-by: mason-frontend @ 2026-07-26T21:15:00-04:00 -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-26T22:20:00-04:00 -->
 - [ ] item-02. [frontend] Add MDX integration (`npx astro add mdx`).
 <!-- state: open -->
 <!-- batch: bootstrap -->
