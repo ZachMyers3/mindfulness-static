@@ -146,11 +146,13 @@
 <!-- batch: inner-pages -->
 <!-- see claims/item-14.claim/result.md for deviations (ScheduleTable/PricingCard/FaqAccordion/LocalBusiness JSON-LD still pending in batches 07+10) -->
 <!-- reviewed-by: inspector @ 2026-07-27T06:14:00-04:00 — see claims/item-14.review-claim/review.md (prior commit 28cf28f) -->
-- [x] item-15. [frontend] Create `src/pages/privacy.astro` and `src/pages/terms.astro` (simple prose pages).
+- [v] item-15. [frontend] Create `src/pages/privacy.astro` and `src/pages/terms.astro` (simple prose pages).
+<!-- state: approved-by: inspector @ 2026-07-27T10:27:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T06:46:42-04:00 -- commit 762d21d -- verify: build ok (8 routes incl. /privacy/ + /terms/, sitemap-index updated) -->
 <!-- batch: inner-pages -->
 <!-- batch: content-copy (real privacy/terms text populated in tandem with item-67) -->
 <!-- see claims/item-15.claim/result.md -->
+<!-- reviewed-by: inspector @ 2026-07-27T10:27:00-04:00 — see claims/item-15.review-claim/review.md (prior commit 762d21d) -->
 - [v] item-16. [frontend] Create `src/pages/404.astro` (friendly 404 copy from doc §9.3).
 <!-- state: approved-by: inspector @ 2026-07-27T08:05:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -- commit 8e1e5e7be35febef4e185963e881da911a0a194f -- verify: build ok (batch 404+journal: 11 routes incl. /404.html + sitemap-index)
@@ -158,11 +160,13 @@
 <!-- batch: inner-pages -->
 — see claims/item-16.claim/result.md
 <!-- reviewed-by: inspector @ 2026-07-27T08:05:00-04:00 — see claims/item-16.review-claim/review.md (prior commit 8e1e5e7; item-17 in same commit, reviewed separately) -->
-- [c] item-17. [frontend] Create `src/pages/journal/index.astro` (list) and `src/pages/journal/[...slug].astro` (dynamic route).
+- [v] item-17. [frontend] Create `src/pages/journal/index.astro` (list) and `src/pages/journal/[...slug].astro` (dynamic route).
+<!-- state: approved-by: inspector @ 2026-07-27T11:25:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -- commit 8e1e5e7be35febef4e185963e881da911a0a194f -- verify: build ok (batch 404+journal: 11 routes incl. /404.html + sitemap-index)
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T07:41:00-04:00 -->
 <!-- batch: inner-pages -->
 — see claims/item-17.claim/result.md
+<!-- reviewed-by: inspector @ 2026-07-27T11:25:00-04:00 — see claims/item-17.review-claim/review.md (prior commit 8e1e5e7) -->
 
 ## §15.4 Components
 
@@ -182,37 +186,48 @@
 <!-- state: approved-by: inspector @ 2026-07-27T04:31:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
 <!-- batch: chrome -->
-- [c] item-21. [frontend] `src/components/AnnouncementBar.astro` (reads `site.announcement`; renders nothing if `enabled=false`).
+- [v] item-21. [frontend] `src/components/AnnouncementBar.astro` (reads `site.announcement`; renders nothing if `enabled=false`).
+<!-- state: approved-by: inspector @ 2026-07-27T11:05:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
 <!-- batch: chrome -->
-- [c] item-22. [frontend] `src/components/Hero.astro` (props: `title`, `tagline`, `image`, `alt`, `ctaLabel?`, `ctaHref?`; full-bleed hero).
+<!-- reviewed-by: inspector @ 2026-07-27T11:05:00-04:00 — see claims/item-21.review-claim/review.md (prior commit 6cc6907) -->
+- [v] item-22. [frontend] `src/components/Hero.astro` (props: `title`, `tagline`, `image`, `alt`, `ctaLabel?`, `ctaHref?`; full-bleed hero).
+<!-- state: approved-by: inspector @ 2026-07-27T11:50:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 7811940 -- verify: build ok (11 routes; smoke page removed before commit per result.md)
+<!-- batch: components -->
+<!-- reviewed-by: inspector @ 2026-07-27T11:50:00-04:00 — see claims/item-22.review-claim/review.md (prior commit 7811940) -->
+<!-- note: ledger had stale placeholder commit 64672d6...; actual implementation commit is 7811940 (corrected in this approval line). No code impact. -->
+- [v] item-23. [frontend] `src/components/PageHeader.astro` (props: `title`, `description?`, `image?`, `alt?`; smaller hero band).
+<!-- state: approved-by: inspector @ 2026-07-27T12:05:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
-- [c] item-23. [frontend] `src/components/PageHeader.astro` (props: `title`, `description?`, `image?`, `alt?`; smaller hero band).
-<!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
-<!-- batch: components -->
+<!-- reviewed-by: inspector @ 2026-07-27T12:05:00-04:00 -->
 - [c] item-24. [frontend] `src/components/Button.astro` (props: `href`, `variant: primary|secondary`; renders `<a>`; adds `rel="noopener"` for http URLs).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
 - [c] item-25. [frontend] `src/components/Callout.astro` (props: `tone: info|success|warn|error` + slot content; for empty-page / 404 state messages).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
-- [ ] item-26. [frontend] `src/components/ServiceCard.astro` (props: `title`, `description`, `image?`, `href?`, `meta?`).
+- [~] item-26. [frontend] `src/components/ServiceCard.astro` (props: `title`, `description`, `image?`, `href?`, `meta?`).
 <!-- state: open -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T10:24:00-04:00 -->
 <!-- batch: components -->
-- [ ] item-27. [frontend] `src/components/PricingCard.astro` (props: `title`, `price`, `tagline?`, `features[]`, `ctaLabel`, `ctaHref`, `featured?`).
+- [~] item-27. [frontend] `src/components/PricingCard.astro` (props: `title`, `price`, `tagline?`, `features[]`, `ctaLabel`, `ctaHref`, `featured?`).
 <!-- state: open -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T10:24:00-04:00 -->
 <!-- batch: components -->
-- [ ] item-28. [frontend] `src/components/FaqAccordion.astro` (props: `items: { q, a }[]`; renders native `<details>`/`<summary>`).
+- [~] item-28. [frontend] `src/components/FaqAccordion.astro` (props: `items: { q, a }[]`; renders native `<details>`/`<summary>`).
 <!-- state: open -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T10:24:00-04:00 -->
 <!-- batch: components -->
 - [v] item-29. [frontend] `src/components/ScheduleTable.astro` (props: `rows: { day, time, class, teacher?, level? }[]`; responsive table / stacked cards).
 <!-- state: approved-by: inspector @ 2026-07-27T07:15:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
 <!-- batch: chrome -->
 <!-- reviewed-by: inspector @ 2026-07-27T07:15:00-04:00 — see claims/item-29.review-claim/review.md (prior commit 6cc6907) -->
-- [ ] item-30. [frontend] `src/components/JsonLd.astro` (props: `data` object; renders `<script type="application/ld+json">`).
+- [~] item-30. [frontend] `src/components/JsonLd.astro` (props: `data` object; renders `<script type="application/ld+json">`).
 <!-- state: open -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T10:24:00-04:00 -->
 <!-- batch: components -->
 - [v] item-31. [frontend] `src/components/ContactLink.astro` (renders `<a href="mailto:${site.contact.email}">` with copy from `site.json`; **replaces** the old Formspree ContactForm per Q3=mailto).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
