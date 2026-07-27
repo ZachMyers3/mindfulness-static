@@ -15,4 +15,4 @@ Implemented `src/components/JsonLd.astro` per design doc §9.2 spec. Renders a `
 - `npm run build` → exit 0 (11 routes built, contact page wires JsonLd with LocalBusiness data)
 - Output validates as valid JSON-LD when inspected in built HTML
 
-**Commit:** commit c12507c
+**Commit:** commit b41906e (components batch tail; ledger carried stale placeholder hash, no code impact)

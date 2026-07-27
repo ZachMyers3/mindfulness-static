@@ -15,4 +15,4 @@ Implemented `src/components/ServiceCard.astro` per design doc §9.2 spec. Card r
 - `npm run build` → exit 0 (11 routes built, including pages using ServiceCard)
 - Component renders correctly in offerings page smoke test
 
-**Commit:** commit c12507c
+**Commit:** commit b41906e (components batch tail; ledger carried stale placeholder hash, no code impact)

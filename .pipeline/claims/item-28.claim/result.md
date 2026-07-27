@@ -15,4 +15,4 @@ Implemented `src/components/FaqAccordion.astro` per design doc §9.2 spec. Rende
 - `npm run build` → exit 0 (11 routes built, including FAQ usage on pages)
 - Native disclosure pattern verified via keyboard + screen reader quick check
 
-**Commit:** commit c12507c
+**Commit:** commit b41906e (components batch tail; ledger carried stale placeholder hash, no code impact)

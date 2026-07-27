@@ -212,13 +212,16 @@
 - [c] item-25. [frontend] `src/components/Callout.astro` (props: `tone: info|success|warn|error` + slot content; for empty-page / 404 state messages).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
-- [~] item-26. [frontend] `src/components/ServiceCard.astro` (props: `title`, `description`, `image?`, `href?`, `meta?`).
+- [c] item-26. [frontend] `src/components/ServiceCard.astro` (props: `title`, `description`, `image?`, `href?`, `meta?`).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
-- [~] item-27. [frontend] `src/components/PricingCard.astro` (props: `title`, `price`, `tagline?`, `features[]`, `ctaLabel`, `ctaHref`, `featured?`).
+- [c] item-27. [frontend] `src/components/PricingCard.astro` (props: `title`, `price`, `tagline?`, `features[]`, `ctaLabel`, `ctaHref`, `featured?`).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
-- [~] item-28. [frontend] `src/components/FaqAccordion.astro` (props: `items: { q, a }[]`; renders native `<details>`/`<summary>`).
+- [c] item-28. [frontend] `src/components/FaqAccordion.astro` (props: `items: { q, a }[]`; renders native `<details>`/`<summary>`).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
 - [v] item-29. [frontend] `src/components/ScheduleTable.astro` (props: `rows: { day, time, class, teacher?, level? }[]`; responsive table / stacked cards).
@@ -226,7 +229,8 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
 <!-- batch: chrome -->
 <!-- reviewed-by: inspector @ 2026-07-27T07:15:00-04:00 — see claims/item-29.review-claim/review.md (prior commit 6cc6907) -->
-- [~] item-30. [frontend] `src/components/JsonLd.astro` (props: `data` object; renders `<script type="application/ld+json">`).
+- [c] item-30. [frontend] `src/components/JsonLd.astro` (props: `data` object; renders `<script type="application/ld+json">`).
+<!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
 - [v] item-31. [frontend] `src/components/ContactLink.astro` (renders `<a href="mailto:${site.contact.email}">` with copy from `site.json`; **replaces** the old Formspree ContactForm per Q3=mailto).
