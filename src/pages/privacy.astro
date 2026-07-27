@@ -1,0 +1,22 @@
+---
+/**
+ * src/pages/privacy.astro
+ * Privacy page — loads the `pages/privacy` Markdown entry and renders it
+ * inside BaseLayout.
+ */
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const entry = await getEntry('pages', 'privacy');
+if (!entry) {
+  throw new Error('pages/privacy entry not found in src/content/pages/privacy.md');
+}
+const { Content } = await render(entry);
+const { title, description, noindex = true } = entry.data;
+---
+
+<BaseLayout title={title} description={description} noindex={noindex}>
+  <article class="prose">
+    <Content />
+  </article>
+</BaseLayout>
