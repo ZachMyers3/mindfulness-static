@@ -388,8 +388,8 @@
 - [x] item-61. [frontend] Author `README.md` with: project description, edit-and-push workflow, location + shape of `site.json`, safe-vs-developer-fields guide, local-dev quickstart (`npm install && npm run dev`), host-agnostic deploy notes (one-line each for GitHub Pages / Netlify / Vercel / Cloudflare Pages). — done by mason-frontend @ 2026-07-28T18:56:00-04:00 — commit caa6353
 <!-- state: completed-by: mason-frontend @ 2026-07-28T18:56:00-04:00 -- commit caa6353 -->
 <!-- batch: deploy-docs -->
-- [~] item-62. [content] Author `DEPLOY.md` — host-agnostic deploy guide (Zach picks the host; the same `dist/` works on any of them).
-<!-- state: claimed-by: mason-frontend @ 2026-07-28T19:10:00-04:00 -->
+- [c] item-62. [content] Author `DEPLOY.md` — host-agnostic deploy guide (Zach picks the host; the same `dist/` works on any of them).
+<!-- state: completed-by: mason-frontend @ 2026-07-28T19:12:00-04:00 -- commit d766851 -- verify: build ok (11 routes) -->
 <!-- batch: deploy-docs -->
 <!-- Foreman: skeleton draft exists in repo (see commit a18c823). Mason should polish against doc §13.1. -->
 - [v] item-63. [ops] Configure GitHub branch protection on `develop` (require PR + 1 review — this is the auto-merge target per RULES.md Rule 7).
