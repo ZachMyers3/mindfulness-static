@@ -293,8 +293,9 @@
 
 ## §15.7 Accessibility
 
-- [ ] item-43. [frontend] Add skip-link as first focusable element on every page (rendered by `BaseLayout.astro`).
-<!-- state: open -->
+- [c] item-43. [frontend] Add skip-link as first focusable element on every page (rendered by `BaseLayout.astro`).
+<!-- state: completed-by: mason-frontend @ 2026-07-28T00:55:30-04:00 -- commit <pending> -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-28T00:55:00-04:00 -->
 <!-- batch: a11y-markup -->
 - [ ] item-44. [frontend] Mobile menu works without JavaScript via `<details>`/`<summary>` (or 30-line inline script respecting `prefers-reduced-motion`).
 <!-- state: open -->
