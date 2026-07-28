@@ -209,13 +209,17 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
 <!-- reviewed-by: inspector @ 2026-07-27T15:48:00-04:00 — see claims/item-24.review-claim/review.md (actual Button.astro commit is 7811940 per git show; ledger entry carries the stale placeholder hash, same as item-22 — no code impact) -->
-- [c] item-25. [frontend] `src/components/Callout.astro` (props: `tone: info|success|warn|error` + slot content; for empty-page / 404 state messages).
+- [v] item-25. [frontend] `src/components/Callout.astro` (props: `tone: info|success|warn|error` + slot content; for empty-page / 404 state messages).
+<!-- state: approved-by: inspector @ 2026-07-27T21:30:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T08:18:00-04:00 -- commit 64672d67ce229589bc09a66805f3e2bad8752a3b -- verify: build ok (12 routes incl. components smoke page)
 <!-- batch: components -->
-- [c] item-26. [frontend] `src/components/ServiceCard.astro` (props: `title`, `description`, `image?`, `href?`, `meta?`).
+<!-- reviewed-by: inspector @ 2026-07-27T21:30:00-04:00 — see claims/item-25.review-claim/review.md (commit 64672d67) -->
+- [v] item-26. [frontend] `src/components/ServiceCard.astro` (props: `title`, `description`, `image?`, `href?`, `meta?`).
+<!-- state: approved-by: inspector @ 2026-07-27T21:47:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
+<!-- reviewed-by: inspector @ 2026-07-27T21:47:00-04:00 — see claims/item-26.review-claim/review.md (prior commit b41906e) -->
 - [c] item-27. [frontend] `src/components/PricingCard.astro` (props: `title`, `price`, `tagline?`, `features[]`, `ctaLabel`, `ctaHref`, `featured?`).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
@@ -229,10 +233,12 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
 <!-- batch: chrome -->
 <!-- reviewed-by: inspector @ 2026-07-27T07:15:00-04:00 — see claims/item-29.review-claim/review.md (prior commit 6cc6907) -->
-- [c] item-30. [frontend] `src/components/JsonLd.astro` (props: `data` object; renders `<script type="application/ld+json">`).
+- [v] item-30. [frontend] `src/components/JsonLd.astro` (props: `data` object; renders `<script type="application/ld+json">`).
+<!-- state: approved-by: inspector @ 2026-07-27T20:50:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
+<!-- reviewed-by: inspector @ 2026-07-27T20:50:00-04:00 — see claims/item-30.review-claim/review.md (prior commit b41906e) -->
 - [v] item-31. [frontend] `src/components/ContactLink.astro` (renders `<a href="mailto:${site.contact.email}">` with copy from `site.json`; **replaces** the old Formspree ContactForm per Q3=mailto).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
 <!-- state: approved-by: inspector @ 2026-07-27T07:25:00-04:00 -->
@@ -252,7 +258,7 @@
 - [~] item-34. [frontend] Configure Astro's font loading to self-host Inter + Plus Jakarta Sans with `font-display: swap` and metric-adjusted fallbacks.
 <!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f5f5868245c3c4e152573b12031d71476c -->
 <!-- batch: design-sys -->
-- [ ] item-35. [frontend] Verify WCAG AA contrast for every text/background combination; adjust tokens if any fail.
+- [~] item-35. [frontend] Verify WCAG AA contrast for every text/background combination; adjust tokens if any fail.
 <!-- state: open -->
 <!-- batch: a11y-audit -->
 - [~] item-36. [content] Source stock photography from Unsplash (wellness / yoga / nature); save under `src/assets/`.
@@ -267,15 +273,15 @@
 - [c] item-38. [frontend] Create `public/robots.txt` (allow all + sitemap reference).
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:23:00-04:00 -->
 <!-- batch: seo-assets -->
-- [ ] item-39. [frontend] Generate `public/og-default.jpg` (1200×630, brand name + tagline + background); wire as default OG image in `SeoHead.astro`.
-<!-- state: open -->
+- [~] item-39. [frontend] Generate `public/og-default.jpg` (1200×630, brand name + tagline + background); wire as default OG image in `SeoHead.astro`.
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T21:23:00-04:00 -->
 <!-- batch: seo-assets -->
 - [c] item-40. [frontend] Wire `@astrojs/sitemap` to produce `/sitemap-index.xml` from configured `site` URL; verify every public route is listed in `dist/`.
 <!-- state: completed-by: mason-frontend @ 2026-07-27T20:46:00-04:00 -- commit 10793c8a3ce2a57c99ca5cdfdfeb8ad026972bee -- verify: build ok (11 routes built; dist/sitemap-index.xml + dist/sitemap-0.xml emitted listing all 10 public routes; robots.txt cross-linked) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:34:00-04:00 -->
 <!-- batch: seo-assets -->
 <!-- verification-only close-out: sitemap integration was already wired in bootstrap batch (commit b67d88e, item-04) and is now verified against the §15 spec; see claims/item-40.claim/result.md for full verification log + draft-exclusion gap noted as follow-up -->
-- [ ] item-41. [frontend] Wire `JsonLd.astro` into `src/pages/contact.astro` with `LocalBusiness` built from `site.contact` + `site.hours`.
+- [c] item-41. [frontend] Wire `JsonLd.astro` into `src/pages/contact.astro` with `LocalBusiness` built from `site.contact` + `site.hours` -- completed-by: mason-frontend @ 2026-07-27T23:14:55-04:00 -- commit cdbfd05
 <!-- state: open -->
 <!-- batch: seo-assets -->
 - [ ] item-42. [frontend] Frontmatter `noindex` defaults to `true` for every page during first build (staging-safe); flip to `false` in the cutover commit.

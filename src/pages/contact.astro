@@ -2,13 +2,12 @@
 /**
  * src/pages/contact.astro
  * Contact page — loads the `pages/contact` Markdown entry and renders it
- * inside BaseLayout. The address block, hours table, and LocalBusiness
- * JSON-LD (items 41) will be slotted in once they land in the
- * seo-assets batch; for now the page faithfully renders the Markdown
- * body so the route is live and SEO-indexable.
+ * inside BaseLayout. Includes LocalBusiness JSON-LD (item-41).
  */
 import { getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import JsonLd from '../components/JsonLd.astro';
+import { site } from '../lib/site';
 
 const entry = await getEntry('pages', 'contact');
 if (!entry) {
@@ -16,9 +15,38 @@ if (!entry) {
 }
 const { Content } = await render(entry);
 const { title, description, noindex = true } = entry.data;
+
+// Build LocalBusiness structured data from site.json
+const localBusiness = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": site.business.name,
+  "description": site.business.description,
+  "url": site.business.name, // will be overridden by absolute URL in SeoHead
+  "telephone": site.contact.phone,
+  "email": site.contact.email,
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": site.contact.address.street,
+    "addressLocality": site.contact.address.city,
+    "addressRegion": site.contact.address.region,
+    "postalCode": site.contact.address.postalCode,
+    "addressCountry": site.contact.address.country,
+  },
+  "openingHoursSpecification": site.hours
+    .filter((h) => !h.closed && h.open && h.close)
+    .map((h) => ({
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": h.day,
+      "opens": h.open,
+      "closes": h.close,
+    })),
+  "sameAs": site.social.map((s) => s.href),
+};
 ---
 
 <BaseLayout title={title} description={description} noindex={noindex}>
+  <JsonLd data={localBusiness} />
   <article class="prose">
     <Content />
   </article>
