@@ -247,15 +247,17 @@
 
 ## §15.5 Visual design system
 
-- [c] item-32. [frontend] `src/styles/main.css` with Tailwind v4 `@theme static { ... }` block — **import the stillpoint-studio palette verbatim**: sage-50..950, mauve-50..950, cream-50..950 (sage-600 `#3a7268` primary, mauve-600 `#72576f` secondary, cream-50/cream-950 neutrals); Inter sans + Plus Jakarta Sans display fonts.
+- [v] item-32. [frontend] `src/styles/main.css` with Tailwind v4 `@theme static { ... }` block — **import the stillpoint-studio palette verbatim**: sage-50..950, mauve-50..950, cream-50..950 (sage-600 `#3a7268` primary, mauve-600 `#72576f` secondary, cream-50/cream-950 neutrals); Inter sans + Plus Jakarta Sans display fonts.
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T22:08:00-04:00 (re-claim; prior session abandoned) -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T22:08:00-04:00 -- commit 557362a -->
 <!-- batch: design-sys -->
 — see claims/item-32.claim/result.md (deviation: project ships plain CSS custom properties in tokens.css; main.css is a one-line @import aggregator, not a Tailwind v4 @theme block — per design doc §15.5 the canonical source is tokens.css)
-- [c] item-33. [frontend] Add `modern CSS reset` to `src/styles/main.css` (box-sizing, text-size-adjust, base typography classes for `.prose`).
+- [v] item-33. [frontend] Add `modern CSS reset` to `src/styles/main.css` (box-sizing, text-size-adjust, base typography classes for `.prose`).
+<!-- state: approved-by: inspector @ 2026-07-28T04:52:00-04:00 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T01:01:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->
 <!-- batch: design-sys -->
+<!-- reviewed-by: inspector @ 2026-07-28T04:52:00-04:00 — see claims/item-33.review-claim/review.md (prior commit 3fd827e) -->
 - [~] item-34. [frontend] Configure Astro's font loading to self-host Inter + Plus Jakarta Sans with `font-display: swap` and metric-adjusted fallbacks.
 <!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->
 <!-- batch: design-sys -->
@@ -317,8 +319,8 @@
 
 ## §15.8 Tests
 
-- [ ] item-49. [frontend] Set up Vitest (or `node --test`) for data-layer unit tests.
-<!-- state: open -->
+- [c] item-49. [frontend] Set up Vitest (or `node --test`) for data-layer unit tests. — completed by mason-frontend @ 2026-07-28T05:43:00-04:00 — commit 032d136
+<!-- state: completed-by: mason-frontend @ 2026-07-28T05:43:00-04:00 -- commit 032d136 -->
 <!-- batch: tests-setup -->
 - [ ] item-50. [frontend] Add Playwright E2E test file (the 15 cases from doc §13.2).
 <!-- state: open -->
