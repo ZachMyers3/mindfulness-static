@@ -252,17 +252,18 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T22:08:00-04:00 -- commit 557362a -->
 <!-- batch: design-sys -->
 — see claims/item-32.claim/result.md (deviation: project ships plain CSS custom properties in tokens.css; main.css is a one-line @import aggregator, not a Tailwind v4 @theme block — per design doc §15.5 the canonical source is tokens.css)
-- [~] item-33. [frontend] Add `modern CSS reset` to `src/styles/main.css` (box-sizing, text-size-adjust, base typography classes for `.prose`).
-<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f5f5868245c3c4e152573b12031d71476c -->
+- [c] item-33. [frontend] Add `modern CSS reset` to `src/styles/main.css` (box-sizing, text-size-adjust, base typography classes for `.prose`).
+<!-- state: claimed-by: mason-frontend @ 2026-07-28T01:01:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->
 <!-- batch: design-sys -->
 - [~] item-34. [frontend] Configure Astro's font loading to self-host Inter + Plus Jakarta Sans with `font-display: swap` and metric-adjusted fallbacks.
-<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f5f5868245c3c4e152573b12031d71476c -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->
 <!-- batch: design-sys -->
 - [~] item-35. [frontend] Verify WCAG AA contrast for every text/background combination; adjust tokens if any fail.
 <!-- state: open -->
 <!-- batch: a11y-audit -->
 - [~] item-36. [content] Source stock photography from Unsplash (wellness / yoga / nature); save under `src/assets/`.
-<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f5f5868245c3c4e152573b12031d71476c -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->
 <!-- batch: design-sys -->
 - [ ] item-37. [frontend] Build + visually verify homepage hero at mobile (375px), tablet (768px), desktop (1280px) widths.
 <!-- state: open -->
