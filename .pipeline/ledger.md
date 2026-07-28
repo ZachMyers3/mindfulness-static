@@ -297,8 +297,9 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-28T00:55:30-04:00 -- commit fc2492107d7a6e8281cdc94527613591d15805b7 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T00:55:00-04:00 -->
 <!-- batch: a11y-markup -->
-- [ ] item-44. [frontend] Mobile menu works without JavaScript via `<details>`/`<summary>` (or 30-line inline script respecting `prefers-reduced-motion`).
-<!-- state: open -->
+- [c] item-44. [frontend] Mobile menu works without JavaScript via `<details>`/`<summary>` (or 30-line inline script respecting `prefers-reduced-motion`).
+<!-- state: completed-by: mason-frontend @ 2026-07-28T01:00:30-04:00 -- commit <pending> -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-28T01:00:00-04:00 -->
 <!-- batch: a11y-markup -->
 - [ ] item-45. [frontend] Every `<img>` has a meaningful `alt`; decorative images use `alt=""`.
 <!-- state: open -->
