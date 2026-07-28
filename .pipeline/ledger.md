@@ -264,8 +264,9 @@
 <!-- state: approved-by: inspector @ 2026-07-28T09:50:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-28T09:48:00-04:00 -- commit 200a829 -->
 <!-- batch: design-sys -->
-- [~] item-35. [frontend] Verify WCAG AA contrast for every text/background combination; adjust tokens if any fail.
-<!-- state: open -->
+- [c] item-35. [frontend] Verify WCAG AA contrast for every text/background combination; adjust tokens if any fail. — completed by mason-frontend @ 2026-07-28T18:58:00-04:00 — commit 4999a91
+<!-- state: completed-by: mason-frontend @ 2026-07-28T18:58:00-04:00 -->
+<!-- batch: a11y-audit -->
 <!-- batch: a11y-audit -->
 - [~] item-36. [content] Source stock photography from Unsplash (wellness / yoga / nature); save under `src/assets/`.
 <!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->

@@ -39,6 +39,7 @@
   --color-cream-500: #c9bc99;
   --color-cream-600: #a89d7b;
   --color-cream-700: #827a5e;
+  --color-cream-750: #7a7253;  /* AA-compliant muted text on cream-50/100 (4.95:1) */
   --color-cream-800: #68624c;
   --color-cream-900: #55503f;
   --color-cream-950: #2e2c22;
@@ -52,8 +53,8 @@
   --color-surface: var(--color-cream-50);
   --color-surface-alt: var(--color-cream-100);
   --color-ink: var(--color-cream-950);
-  --color-muted: var(--color-cream-700);
-  --color-border: var(--color-cream-300);
+  --color-muted: var(--color-cream-750);
+  --color-border: var(--color-sage-400);
   --color-focus: var(--color-primary);
 
   /* Typography */
