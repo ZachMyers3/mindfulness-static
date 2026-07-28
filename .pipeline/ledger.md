@@ -341,11 +341,11 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-28T18:28:00-04:00 -- commit e774681 -->
 <!-- batch: tests-setup -->
 <!-- reviewed-by: inspector @ 2026-07-28T18:30:00-04:00 — see claims/item-50.review-claim/review.md (prior commit e774681) -->
-- [x] item-51. [frontend] Add `lighthouse-ci` to CI with doc §5 thresholds as assertions. — done by mason-frontend @ 2026-07-28T18:49:00-04:00 — commit ee1eb5d
-<!-- state: completed-by: mason-frontend @ 2026-07-28T18:49:00-04:00 -- commit ee1eb5d -->
+- [x] item-51. [frontend] Add `lighthouse-ci` to CI with doc §5 thresholds as assertions. — done by mason-frontend @ 2026-07-28T18:49:00-04:00 — commit b9810c0
+<!-- state: completed-by: mason-frontend @ 2026-07-28T18:49:00-04:00 -- commit b9810c0 -->
 <!-- batch: ci -->
-- [ ] item-52. [frontend] Add `.github/workflows/ci.yml` running `npm ci`, `npm run build`, Vitest, Playwright, lighthouse-ci.
-<!-- state: open -->
+- [x] item-52. [frontend] Add `.github/workflows/ci.yml` running `npm ci`, `npm run build`, Vitest, Playwright, lighthouse-ci. — done by mason-frontend @ 2026-07-28T18:52:00-04:00 — commit 8aa47c3
+<!-- state: completed-by: mason-frontend @ 2026-07-28T18:52:00-04:00 -- commit 8aa47c3 -->
 <!-- batch: ci -->
 - [c] item-53. [frontend] Add ESLint + `eslint-plugin-astro` + Prettier; wire `npm run lint`.
 <!-- state: completed-by: mason-frontend @ 2026-07-28T18:33:00-04:00 -- commit 59cd58d -->
