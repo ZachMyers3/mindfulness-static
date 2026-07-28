@@ -1,0 +1,19 @@
+# robots.txt — Mindfulness and Movement
+#
+# Allow well-behaved crawlers to index every public route, and point them
+# at our sitemap so they can discover pages without crawling the world.
+#
+# During the staging period the site sets <meta name="robots" content="noindex">
+# on every page via SeoHead's `noindex` prop (default = true per item-42),
+# so even though this robots.txt allows crawling, the meta robots tag wins
+# per Google's spec (https://developers.google.com/search/docs/crawling-indexing/robots-meta-tag).
+# After the launch cutover the noindex flips to false and this robots.txt
+# becomes the active gate.
+
+User-agent: *
+Allow: /
+
+# Sitemap — the absolute URL derived from the Astro `site` config
+# (astro.config.mjs: `site: 'https://mindfulnessandmovement.example.com'`).
+# The @astrojs/sitemap integration produces /sitemap-index.xml at build time.
+Sitemap: https://mindfulnessandmovement.example.com/sitemap-index.xml
