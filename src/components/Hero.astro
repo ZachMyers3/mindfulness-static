@@ -41,7 +41,7 @@ const hasCta = Boolean(ctaLabel && ctaHref);
   <div class="hero__image-wrap">
     <img
       src={image}
-      alt={alt}
+      alt={alt ?? ''}
       class="hero__image"
       loading="eager"
       decoding="async"
