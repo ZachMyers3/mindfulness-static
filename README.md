@@ -63,12 +63,13 @@ npm install
 npm run dev          # http://localhost:4321
 npm run build        # builds to ./dist (host-agnostic output)
 npm run preview      # serves ./dist locally
-npm test             # Vitest unit suite (when added)
-npm run test:e2e     # Playwright E2E (when added)
+npm test             # Vitest unit suite
+npm run test:e2e     # Playwright E2E
+npm run test:lighthouse # Lighthouse CI (perf/access/seo ≥95)
 npm run lint         # ESLint + Prettier check
 ```
 
-Requires **Node 20 LTS** (see `.nvmrc`).
+Requires **Node 22+** (see `.nvmrc`).
 
 ## Deploy
 
@@ -80,7 +81,7 @@ The build output (`./dist`) is host-agnostic. Pick any of:
 - **Cloudflare Pages** (free tier generous, edge cache — recommended).
 
 For each: connect the repo, set the production branch to `main`, build
-command to `npm run build`, build directory to `dist`, Node version to 20.
+command to `npm run build`, build directory to `dist`, Node version to 22.
 
 See **`DEPLOY.md`** for one-line notes per host.
 

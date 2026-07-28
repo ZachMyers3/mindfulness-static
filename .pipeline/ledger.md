@@ -382,10 +382,9 @@
 - [ ] item-60. [ops] Add a `_headers` file in `public/` (assets immutable + HTML 1h cache).
 <!-- state: open -->
 <!-- batch: deploy-docs -->
-- [ ] item-61. [frontend] Author `README.md` with: project description, edit-and-push workflow, location + shape of `site.json`, safe-vs-developer-fields guide, local-dev quickstart (`npm install && npm run dev`), host-agnostic deploy notes (one-line each for GitHub Pages / Netlify / Vercel / Cloudflare Pages).
-<!-- state: open -->
+- [x] item-61. [frontend] Author `README.md` with: project description, edit-and-push workflow, location + shape of `site.json`, safe-vs-developer-fields guide, local-dev quickstart (`npm install && npm run dev`), host-agnostic deploy notes (one-line each for GitHub Pages / Netlify / Vercel / Cloudflare Pages). — done by mason-frontend @ 2026-07-28T18:56:00-04:00 — commit caa6353
+<!-- state: completed-by: mason-frontend @ 2026-07-28T18:56:00-04:00 -- commit caa6353 -->
 <!-- batch: deploy-docs -->
-<!-- Foreman: skeleton draft exists in repo (see commit a18c823). Mason should polish against doc §13.1. -->
 - [ ] item-62. [content] Author `DEPLOY.md` — host-agnostic deploy guide (Zach picks the host; the same `dist/` works on any of them).
 <!-- state: open -->
 <!-- batch: deploy-docs -->
