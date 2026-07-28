@@ -224,10 +224,12 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
-- [c] item-28. [frontend] `src/components/FaqAccordion.astro` (props: `items: { q, a }[]`; renders native `<details>`/`<summary>`).
+- [v] item-28. [frontend] `src/components/FaqAccordion.astro` (props: `items: { q, a }[]`; renders native `<details>`/`<summary>`).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
+<!-- state: approved-by: inspector @ 2026-07-28T12:30:54-04:00 -->
+<!-- reviewed-by: inspector @ 2026-07-28T12:30:54-04:00 — see claims/item-28.review-claim/review.md (prior commit b41906e) -->
 - [v] item-29. [frontend] `src/components/ScheduleTable.astro` (props: `rows: { day, time, class, teacher?, level? }[]`; responsive table / stacked cards).
 <!-- state: approved-by: inspector @ 2026-07-27T07:15:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T02:25:00-04:00 -- commit 6cc6907 -- verify: build ok -->
@@ -258,8 +260,8 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->
 <!-- batch: design-sys -->
 <!-- reviewed-by: inspector @ 2026-07-28T04:52:00-04:00 — see claims/item-33.review-claim/review.md (prior commit 3fd827e) -->
-- [~] item-34. [frontend] Configure Astro's font loading to self-host Inter + Plus Jakarta Sans with `font-display: swap` and metric-adjusted fallbacks.
-<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->
+- [c] item-34. [frontend] Configure Astro's font loading to self-host Inter + Plus Jakarta Sans with `font-display: swap` and metric-adjusted fallbacks. — claimed by mason-frontend @ 2026-07-28T09:07:47-04:00
+<!-- state: completed-by: mason-frontend @ 2026-07-28T09:50:00-04:00 -- commit <pending> -->
 <!-- batch: design-sys -->
 - [~] item-35. [frontend] Verify WCAG AA contrast for every text/background combination; adjust tokens if any fail.
 <!-- state: open -->
@@ -287,7 +289,9 @@
 - [v] item-41. [frontend] Wire `JsonLd.astro` into `src/pages/contact.astro` with `LocalBusiness` built from `site.contact` + `site.hours` — rework complete: removed invalid `url` field (was `site.business.name`, not a URL). Build verified. 
 <!-- state: completed-by: mason-frontend @ 2026-07-28T00:41:00-04:00 -- commit 5a2f9ee6d34e6917033a55300035a24b2a4c7b42 -->
 <!-- rework: inspector @ 2026-07-27T23:45:00-04:00 — fixed by removing invalid url field per review feedback -->
-<!-- state: open -->
+<!-- state: approved-by: inspector @ 2026-07-28T07:25:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-28T00:41:00-04:00 -- commit 58f67aa6fa9362e4d626a6ecdceb12a33b9868ba (rework) -->
+<!-- reviewed-by: inspector @ 2026-07-28T07:25:00-04:00 — see claims/item-41.review-claim/review.md (rework commit 58f67aa) -->
 <!-- batch: seo-assets -->
 - [c] item-42. [frontend] Frontmatter `noindex` defaults to `true` for every page during first build (staging-safe); flip to `false` in the cutover commit.
 <!-- state: completed-by: mason-frontend @ 2026-07-28T00:50:00-04:00 -- commit de14fbfe0173198d719dee5ed31cd6446bea2e86 -->
@@ -304,10 +308,11 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-28T01:00:30-04:00 -- commit 0d478df7d1961db7cf02f92e443c0f71713a9966 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T01:00:00-04:00 -->
 <!-- batch: a11y-markup -->
-- [ ] item-45. [frontend] Every `<img>` has a meaningful `alt`; decorative images use `alt=""`.
-<!-- state: open -->
+- [c] item-45. [frontend] Every `<img>` has a meaningful `alt`; decorative images use `alt=""`. — completed by mason-frontend @ 2026-07-28T08:39:10-04:00 — commit <pending>
+<!-- state: completed-by: mason-frontend @ 2026-07-28T08:39:10-04:00 -- commit <pending> -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-28T07:20:00-04:00 -->
 <!-- batch: a11y-markup -->
-- [ ] item-46. [frontend] Every form input has a programmatically associated `<label>`.
+- [~] item-46. [frontend] Every form input has a programmatically associated `<label>`. — claimed by mason-frontend @ 2026-07-28T09:22:00-04:00
 <!-- state: open -->
 <!-- batch: a11y-markup -->
 - [ ] item-47. [frontend] Run `@axe-core/playwright` against every route; fix `serious` or `critical` violations.

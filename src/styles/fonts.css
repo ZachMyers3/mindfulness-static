@@ -1,0 +1,49 @@
+/**
+ * fonts.css
+ * Self-hosted font loading with metric-adjusted fallbacks.
+ * Imports @fontsource-variable packages (they provide @font-face with font-display: swap).
+ * Adds fallback @font-face blocks using system fonts with size-adjust/ascent-override
+ * to match the web font metrics and minimize CLS.
+ */
+
+@import '@fontsource-variable/inter/index.css';
+@import '@fontsource-variable/plus-jakarta-sans/index.css';
+
+/* Metric-adjusted fallbacks for Inter Variable (sans body text) */
+@font-face {
+  font-family: 'Inter Variable Fallback';
+  src: local('Inter'), local('system-ui');
+  size-adjust: 100.06%;
+  ascent-override: 90.49%;
+  descent-override: 22.56%;
+  line-gap-override: 0%;
+}
+
+/* Metric-adjusted fallbacks for Plus Jakarta Sans Variable (display headings) */
+@font-face {
+  font-family: 'Plus Jakarta Sans Variable Fallback';
+  src: local('Plus Jakarta Sans'), local('system-ui');
+  size-adjust: 94.11%;
+  ascent-override: 89.35%;
+  descent-override: 21.83%;
+  line-gap-override: 0%;
+}
+
+/* Alternative fallback using generic sans-serif when local fonts aren't available */
+@font-face {
+  font-family: 'Inter Variable Fallback Generic';
+  src: local('system-ui'), local('sans-serif');
+  size-adjust: 100.06%;
+  ascent-override: 90.49%;
+  descent-override: 22.56%;
+  line-gap-override: 0%;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans Variable Fallback Generic';
+  src: local('system-ui'), local('sans-serif');
+  size-adjust: 94.11%;
+  ascent-override: 89.35%;
+  descent-override: 21.83%;
+  line-gap-override: 0%;
+}
