@@ -260,8 +260,9 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->
 <!-- batch: design-sys -->
 <!-- reviewed-by: inspector @ 2026-07-28T04:52:00-04:00 — see claims/item-33.review-claim/review.md (prior commit 3fd827e) -->
-- [c] item-34. [frontend] Configure Astro's font loading to self-host Inter + Plus Jakarta Sans with `font-display: swap` and metric-adjusted fallbacks. — claimed by mason-frontend @ 2026-07-28T09:07:47-04:00
-<!-- state: completed-by: mason-frontend @ 2026-07-28T09:50:00-04:00 -- commit <pending> -->
+- [v] item-34. [frontend] Configure Astro's font loading to self-host Inter + Plus Jakarta Sans with `font-display: swap` and metric-adjusted fallbacks.
+<!-- state: approved-by: inspector @ 2026-07-28T09:50:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-28T09:48:00-04:00 -- commit 200a829 -->
 <!-- batch: design-sys -->
 - [~] item-35. [frontend] Verify WCAG AA contrast for every text/background combination; adjust tokens if any fail.
 <!-- state: open -->
