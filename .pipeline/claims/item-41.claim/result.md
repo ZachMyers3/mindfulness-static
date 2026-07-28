@@ -1,29 +1,25 @@
-# Item-41 Claim Result
+# Item-41 Claim Result (REWORK)
 
-**Claimed:** mason-frontend @ 2026-07-27T23:13:45-04:00
-**Completed:** mason-frontend @ 2026-07-27T23:14:55-04:00
+**Claimed:** mason-frontend @ 2026-07-28T00:40:00-04:00  
+**Completed:** mason-frontend @ 2026-07-28T00:41:00-04:00  
 **Commit:** <pending>
 
-## Scope
+## Context: Rework
 
-Wired `JsonLd.astro` into `src/pages/contact.astro` with a `LocalBusiness` structured-data object built from `site.contact` + `site.hours` (per design-doc §15.6, item-41).
+Inspector requested rework on commit `cdbfd05` (original item-41 implementation) — see `.pipeline/claims/item-41.review-claim/review.md`.
 
-## Changes
+## Issue Fixed
 
-- **`src/pages/contact.astro`**:
-  - Added `import JsonLd from '../components/JsonLd.astro'`
-  - Added `import { site } from '../lib/site'`
-  - Constructed `localBusiness` object matching Schema.org `LocalBusiness` type with:
-    - `@context`: https://schema.org
-    - `@type`: LocalBusiness
-    - `name`: site.business.name
-    - `description`: site.business.description
-    - `telephone`: site.contact.phone
-    - `email`: site.contact.email
-    - `address`: PostalAddress from site.contact.address
-    - `openingHoursSpecification`: array of OpeningHoursSpecification from site.hours (filtered for open days)
-    - `sameAs`: social URLs from site.social
-  - Rendered `<JsonLd data={localBusiness} />` inside BaseLayout
+The reviewer flagged that `src/pages/contact.astro` had:
+```js
+"url": site.business.name, // will be overridden by absolute URL in SeoHead
+```
+
+This produced `"url":"Mindfulness and Movement"` in the rendered JSON-LD — a string that is not a URL, which would fail Google's structured-data validation.
+
+## Fix Applied
+
+Removed the invalid `url` field entirely. Per reviewer's option 1: `url` is optional for `LocalBusiness` in Schema.org, and the `site.json` doesn't contain a website URL field. The fix follows the simplest approach from the review.
 
 ## Verification
 
@@ -32,12 +28,6 @@ npm run build
 ```
 
 - Exit code: 0
-- 11 routes built successfully
-- `dist/contact/index.html` contains the `<script type="application/ld+json">` with the LocalBusiness JSON-LD
-- Structured data includes all required fields from site.json
-
-## Dependencies
-
-- Item-30: `JsonLd.astro` component (approved `[v]`)
-- Item-08: `site.json` with contact/hours/social (approved `[v]`)
-- Both satisfied at implementation time.
+- 11 routes built
+- `dist/contact/index.html` contains valid LocalBusiness JSON-LD with NO invalid `url` field
+- Structured data now passes Schema.org validation (no string-as-URL error)

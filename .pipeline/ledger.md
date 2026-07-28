@@ -281,7 +281,9 @@
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:34:00-04:00 -->
 <!-- batch: seo-assets -->
 <!-- verification-only close-out: sitemap integration was already wired in bootstrap batch (commit b67d88e, item-04) and is now verified against the §15 spec; see claims/item-40.claim/result.md for full verification log + draft-exclusion gap noted as follow-up -->
-- [c] item-41. [frontend] Wire `JsonLd.astro` into `src/pages/contact.astro` with `LocalBusiness` built from `site.contact` + `site.hours` -- completed-by: mason-frontend @ 2026-07-27T23:14:55-04:00 -- commit cdbfd05
+- [v] item-41. [frontend] Wire `JsonLd.astro` into `src/pages/contact.astro` with `LocalBusiness` built from `site.contact` + `site.hours` — rework complete: removed invalid `url` field (was `site.business.name`, not a URL). Build verified. 
+<!-- state: completed-by: mason-frontend @ 2026-07-28T00:41:00-04:00 -- commit 5a2f9ee6d34e6917033a55300035a24b2a4c7b42 -->
+<!-- rework: inspector @ 2026-07-27T23:45:00-04:00 — fixed by removing invalid url field per review feedback -->
 <!-- state: open -->
 <!-- batch: seo-assets -->
 - [ ] item-42. [frontend] Frontmatter `noindex` defaults to `true` for every page during first build (staging-safe); flip to `false` in the cutover commit.
