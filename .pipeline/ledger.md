@@ -345,8 +345,8 @@
 - [ ] item-52. [frontend] Add `.github/workflows/ci.yml` running `npm ci`, `npm run build`, Vitest, Playwright, lighthouse-ci.
 <!-- state: open -->
 <!-- batch: ci -->
-- [ ] item-53. [frontend] Add ESLint + `eslint-plugin-astro` + Prettier; wire `npm run lint`.
-<!-- state: open -->
+- [c] item-53. [frontend] Add ESLint + `eslint-plugin-astro` + Prettier; wire `npm run lint`.
+<!-- state: completed-by: mason-frontend @ 2026-07-28T18:33:00-04:00 -- commit 59cd58d -->
 <!-- batch: tests-setup -->
 
 ## §15.9 Visual QA (Cyclops)
