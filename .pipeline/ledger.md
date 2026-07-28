@@ -247,16 +247,16 @@
 <!-- batch: design-sys -->
 — see claims/item-32.claim/result.md (deviation: project ships plain CSS custom properties in tokens.css; main.css is a one-line @import aggregator, not a Tailwind v4 @theme block — per design doc §15.5 the canonical source is tokens.css)
 - [~] item-33. [frontend] Add `modern CSS reset` to `src/styles/main.css` (box-sizing, text-size-adjust, base typography classes for `.prose`).
-<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 1d97ee0dc4bc4c3e1cb35eb9db3e4704beab0e55 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f5f5868245c3c4e152573b12031d71476c -->
 <!-- batch: design-sys -->
 - [~] item-34. [frontend] Configure Astro's font loading to self-host Inter + Plus Jakarta Sans with `font-display: swap` and metric-adjusted fallbacks.
-<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 1d97ee0dc4bc4c3e1cb35eb9db3e4704beab0e55 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f5f5868245c3c4e152573b12031d71476c -->
 <!-- batch: design-sys -->
 - [ ] item-35. [frontend] Verify WCAG AA contrast for every text/background combination; adjust tokens if any fail.
 <!-- state: open -->
 <!-- batch: a11y-audit -->
 - [~] item-36. [content] Source stock photography from Unsplash (wellness / yoga / nature); save under `src/assets/`.
-<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 1d97ee0dc4bc4c3e1cb35eb9db3e4704beab0e55 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f5f5868245c3c4e152573b12031d71476c -->
 <!-- batch: design-sys -->
 - [ ] item-37. [frontend] Build + visually verify homepage hero at mobile (375px), tablet (768px), desktop (1280px) widths.
 <!-- state: open -->
@@ -270,9 +270,11 @@
 - [ ] item-39. [frontend] Generate `public/og-default.jpg` (1200×630, brand name + tagline + background); wire as default OG image in `SeoHead.astro`.
 <!-- state: open -->
 <!-- batch: seo-assets -->
-- [ ] item-40. [frontend] Wire `@astrojs/sitemap` to produce `/sitemap-index.xml` from configured `site` URL; verify every public route is listed in `dist/`.
-<!-- state: open -->
+- [c] item-40. [frontend] Wire `@astrojs/sitemap` to produce `/sitemap-index.xml` from configured `site` URL; verify every public route is listed in `dist/`.
+<!-- state: completed-by: mason-frontend @ 2026-07-27T20:46:00-04:00 -- commit 10793c8a3ce2a57c99ca5cdfdfeb8ad026972bee -- verify: build ok (11 routes built; dist/sitemap-index.xml + dist/sitemap-0.xml emitted listing all 10 public routes; robots.txt cross-linked) -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-27T20:34:00-04:00 -->
 <!-- batch: seo-assets -->
+<!-- verification-only close-out: sitemap integration was already wired in bootstrap batch (commit b67d88e, item-04) and is now verified against the §15 spec; see claims/item-40.claim/result.md for full verification log + draft-exclusion gap noted as follow-up -->
 - [ ] item-41. [frontend] Wire `JsonLd.astro` into `src/pages/contact.astro` with `LocalBusiness` built from `site.contact` + `site.hours`.
 <!-- state: open -->
 <!-- batch: seo-assets -->
