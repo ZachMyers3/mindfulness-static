@@ -270,8 +270,8 @@
 - [~] item-36. [content] Source stock photography from Unsplash (wellness / yoga / nature); save under `src/assets/`.
 <!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->
 <!-- batch: design-sys -->
-- [ ] item-37. [frontend] Build + visually verify homepage hero at mobile (375px), tablet (768px), desktop (1280px) widths.
-<!-- state: open -->
+- [~] item-37. [frontend] Build + visually verify homepage hero at mobile (375px), tablet (768px), desktop (1280px) widths.
+<!-- state: claimed-by: mason-frontend @ 2026-07-28T10:41:00-04:00 -->
 <!-- batch: a11y-audit -->
 
 ## §15.6 SEO + 404
@@ -282,11 +282,13 @@
 - [~] item-39. [frontend] Generate `public/og-default.jpg` (1200×630, brand name + tagline + background); wire as default OG image in `SeoHead.astro`.
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T21:23:00-04:00 -->
 <!-- batch: seo-assets -->
-- [c] item-40. [frontend] Wire `@astrojs/sitemap` to produce `/sitemap-index.xml` from configured `site` URL; verify every public route is listed in `dist/`.
+- [v] item-40. [frontend] Wire `@astrojs/sitemap` to produce `/sitemap-index.xml` from configured `site` URL; verify every public route is listed in `dist/`.
 <!-- state: completed-by: mason-frontend @ 2026-07-27T20:46:00-04:00 -- commit 10793c8a3ce2a57c99ca5cdfdfeb8ad026972bee -- verify: build ok (11 routes built; dist/sitemap-index.xml + dist/sitemap-0.xml emitted listing all 10 public routes; robots.txt cross-linked) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:34:00-04:00 -->
+<!-- state: approved-by: inspector @ 2026-07-28T10:30:00-04:00 -->
 <!-- batch: seo-assets -->
 <!-- verification-only close-out: sitemap integration was already wired in bootstrap batch (commit b67d88e, item-04) and is now verified against the §15 spec; see claims/item-40.claim/result.md for full verification log + draft-exclusion gap noted as follow-up -->
+<!-- reviewed-by: inspector @ 2026-07-28T10:30:00-04:00 — see claims/item-40.review-claim/review.md (prior commit 10793c8) -->
 - [v] item-41. [frontend] Wire `JsonLd.astro` into `src/pages/contact.astro` with `LocalBusiness` built from `site.contact` + `site.hours` — rework complete: removed invalid `url` field (was `site.business.name`, not a URL). Build verified. 
 <!-- state: completed-by: mason-frontend @ 2026-07-28T00:41:00-04:00 -- commit 5a2f9ee6d34e6917033a55300035a24b2a4c7b42 -->
 <!-- rework: inspector @ 2026-07-27T23:45:00-04:00 — fixed by removing invalid url field per review feedback -->
@@ -294,10 +296,12 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-28T00:41:00-04:00 -- commit 58f67aa6fa9362e4d626a6ecdceb12a33b9868ba (rework) -->
 <!-- reviewed-by: inspector @ 2026-07-28T07:25:00-04:00 — see claims/item-41.review-claim/review.md (rework commit 58f67aa) -->
 <!-- batch: seo-assets -->
-- [c] item-42. [frontend] Frontmatter `noindex` defaults to `true` for every page during first build (staging-safe); flip to `false` in the cutover commit.
+- [v] item-42. [frontend] Frontmatter `noindex` defaults to `true` for every page during first build (staging-safe); flip to `false` in the cutover commit.
 <!-- state: completed-by: mason-frontend @ 2026-07-28T00:50:00-04:00 -- commit de14fbfe0173198d719dee5ed31cd6446bea2e86 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T00:45:00-04:00 -->
+<!-- state: approved-by: inspector @ 2026-07-28T10:38:00-04:00 -->
 <!-- batch: noindex -->
+<!-- reviewed-by: inspector @ 2026-07-28T10:38:00-04:00 — see claims/item-42.review-claim/review.md (prior commit de14fbfe; verification-only close-out) -->
 
 ## §15.7 Accessibility
 
@@ -305,31 +309,35 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-28T00:55:30-04:00 -- commit fc2492107d7a6e8281cdc94527613591d15805b7 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T00:55:00-04:00 -->
 <!-- batch: a11y-markup -->
-- [c] item-44. [frontend] Mobile menu works without JavaScript via `<details>`/`<summary>` (or 30-line inline script respecting `prefers-reduced-motion`).
+- [v] item-44. [frontend] Mobile menu works without JavaScript via `<details>`/`<summary>` (or 30-line inline script respecting `prefers-reduced-motion`).
 <!-- state: completed-by: mason-frontend @ 2026-07-28T01:00:30-04:00 -- commit 0d478df7d1961db7cf02f92e443c0f71713a9966 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T01:00:00-04:00 -->
 <!-- batch: a11y-markup -->
-- [c] item-45. [frontend] Every `<img>` has a meaningful `alt`; decorative images use `alt=""`. — completed by mason-frontend @ 2026-07-28T08:39:10-04:00 — commit <pending>
-<!-- state: completed-by: mason-frontend @ 2026-07-28T08:39:10-04:00 -- commit <pending> -->
+<!-- reviewed-by: inspector @ 2026-07-28T11:25:00-04:00 — see claims/item-44.review-claim/review.md (verification-only close-out; zero-JS <details>/<summary> with prefers-reduced-motion, approved) -->
+- [c] item-45. [frontend] Every `<img>` has a meaningful `alt`; decorative images use `alt=""`. — completed by mason-frontend @ 2026-07-28T08:39:10-04:00 — commit 9773b79
+<!-- state: completed-by: mason-frontend @ 2026-07-28T08:39:10-04:00 -- commit 9773b79 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T07:20:00-04:00 -->
 <!-- batch: a11y-markup -->
 - [~] item-46. [frontend] Every form input has a programmatically associated `<label>`. — claimed by mason-frontend @ 2026-07-28T09:22:00-04:00
 <!-- state: open -->
 <!-- batch: a11y-markup -->
-- [ ] item-47. [frontend] Run `@axe-core/playwright` against every route; fix `serious` or `critical` violations.
-<!-- state: open -->
+- [~] item-47. [frontend] Run `@axe-core/playwright` against every route; fix `serious` or `critical` violations.
+<!-- state: claimed-by: mason-frontend @ 2026-07-28T12:20:00-04:00 -->
 <!-- batch: a11y-audit -->
-- [ ] item-48. [frontend] Tab through every page with the keyboard; verify visible + logical focus.
+- [~] item-48. [frontend] Tab through every page with the keyboard; verify visible + logical focus.
+<!-- state: claimed-by: mason-frontend @ 2026-07-28T15:00:00-04:00 -->
 <!-- state: open -->
 <!-- batch: a11y-audit -->
 
 ## §15.8 Tests
 
-- [c] item-49. [frontend] Set up Vitest (or `node --test`) for data-layer unit tests. — completed by mason-frontend @ 2026-07-28T05:43:00-04:00 — commit 032d136
+- [v] item-49. [frontend] Set up Vitest (or `node --test`) for data-layer unit tests. — completed by mason-frontend @ 2026-07-28T05:43:00-04:00 — commit 032d136
 <!-- state: completed-by: mason-frontend @ 2026-07-28T05:43:00-04:00 -- commit 032d136 -->
 <!-- batch: tests-setup -->
-- [ ] item-50. [frontend] Add Playwright E2E test file (the 15 cases from doc §13.2).
-<!-- state: open -->
+<!-- state: approved-by: inspector @ 2026-07-28T11:39:00-04:00 -->
+<!-- reviewed-by: inspector @ 2026-07-28T11:39:00-04:00 — see claims/item-49.review-claim/review.md (prior commit 032d136) -->
+- [c] item-50. [frontend] Add Playwright E2E test file (the 15 cases from doc §13.2).
+<!-- state: completed-by: mason-frontend @ 2026-07-28T18:28:00-04:00 -- commit 9773b79 -->
 <!-- batch: tests-setup -->
 - [ ] item-51. [frontend] Add `lighthouse-ci` to CI with doc §5 thresholds as assertions.
 <!-- state: open -->
