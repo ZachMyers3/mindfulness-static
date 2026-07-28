@@ -286,8 +286,9 @@
 <!-- rework: inspector @ 2026-07-27T23:45:00-04:00 — fixed by removing invalid url field per review feedback -->
 <!-- state: open -->
 <!-- batch: seo-assets -->
-- [ ] item-42. [frontend] Frontmatter `noindex` defaults to `true` for every page during first build (staging-safe); flip to `false` in the cutover commit.
-<!-- state: open -->
+- [c] item-42. [frontend] Frontmatter `noindex` defaults to `true` for every page during first build (staging-safe); flip to `false` in the cutover commit.
+<!-- state: completed-by: mason-frontend @ 2026-07-28T00:50:00-04:00 -- commit de14fbfe0173198d719dee5ed31cd6446bea2e86 -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-28T00:45:00-04:00 -->
 <!-- batch: noindex -->
 
 ## §15.7 Accessibility
