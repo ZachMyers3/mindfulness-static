@@ -336,11 +336,13 @@
 <!-- batch: tests-setup -->
 <!-- state: approved-by: inspector @ 2026-07-28T11:39:00-04:00 -->
 <!-- reviewed-by: inspector @ 2026-07-28T11:39:00-04:00 — see claims/item-49.review-claim/review.md (prior commit 032d136) -->
-- [c] item-50. [frontend] Add Playwright E2E test file (the 15 cases from doc §13.2).
-<!-- state: completed-by: mason-frontend @ 2026-07-28T18:28:00-04:00 -- commit 9773b79 -->
+- [v] item-50. [frontend] Add Playwright E2E test file (the 15 cases from doc §13.2).
+<!-- state: approved-by: inspector @ 2026-07-28T18:30:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-28T18:28:00-04:00 -- commit e774681 -->
 <!-- batch: tests-setup -->
-- [ ] item-51. [frontend] Add `lighthouse-ci` to CI with doc §5 thresholds as assertions.
-<!-- state: open -->
+<!-- reviewed-by: inspector @ 2026-07-28T18:30:00-04:00 — see claims/item-50.review-claim/review.md (prior commit e774681) -->
+- [x] item-51. [frontend] Add `lighthouse-ci` to CI with doc §5 thresholds as assertions. — done by mason-frontend @ 2026-07-28T18:49:00-04:00 — commit ee1eb5d
+<!-- state: completed-by: mason-frontend @ 2026-07-28T18:49:00-04:00 -- commit ee1eb5d -->
 <!-- batch: ci -->
 - [ ] item-52. [frontend] Add `.github/workflows/ci.yml` running `npm ci`, `npm run build`, Vitest, Playwright, lighthouse-ci.
 <!-- state: open -->
