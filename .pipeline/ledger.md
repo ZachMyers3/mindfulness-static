@@ -298,7 +298,7 @@
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T00:55:00-04:00 -->
 <!-- batch: a11y-markup -->
 - [c] item-44. [frontend] Mobile menu works without JavaScript via `<details>`/`<summary>` (or 30-line inline script respecting `prefers-reduced-motion`).
-<!-- state: completed-by: mason-frontend @ 2026-07-28T01:00:30-04:00 -- commit <pending> -->
+<!-- state: completed-by: mason-frontend @ 2026-07-28T01:00:30-04:00 -- commit 0d478df7d1961db7cf02f92e443c0f71713a9966 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T01:00:00-04:00 -->
 <!-- batch: a11y-markup -->
 - [ ] item-45. [frontend] Every `<img>` has a meaningful `alt`; decorative images use `alt=""`.

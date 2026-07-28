@@ -2,7 +2,7 @@
 
 **Claimed:** mason-frontend @ 2026-07-28T01:00:00-04:00
 **Completed:** mason-frontend @ 2026-07-28T01:00:30-04:00
-**Commit:** <pending>
+**Commit:** 0d478df7d1961db7cf02f92e443c0f71713a9966
 
 ## Scope
 
@@ -10,34 +10,24 @@ Mobile menu works without JavaScript via `<details>`/`<summary>` (or 30-line inl
 
 ## Verification
 
-The implementation in `src/components/SiteHeader.astro` satisfies both approaches:
+The `SiteHeader.astro` component implements a zero-JS mobile menu using native HTML `<details>`/`<summary>` elements:
 
-1. **Zero-JS `<details>`/`<summary>`:** The mobile menu is a native `<details>` element with a `<summary>` hamburger button. No JavaScript required for open/close.
+- `<details class="site-header__mobile-menu" aria-label="Mobile menu">`
+- `<summary class="site-header__hamburger" aria-label="Open menu">` with animated hamburger icon
+- `<nav class="site-header__nav-mobile">` with navigation links
+- Opens/closes natively without JavaScript
+- CSS transitions respect `prefers-reduced-motion: reduce` (transitions disabled)
+- `::-webkit-details-marker` hidden for custom hamburger styling
 
-2. **Respects `prefers-reduced-motion`:** The CSS includes:
-   ```css
-   @media (prefers-reduced-motion: reduce) {
-     .site-header__nav-link,
-     .site-header__hamburger-icon,
-     .site-header__hamburger-icon::before,
-     .site-header__hamburger-icon::after {
-       transition: none;
-     }
-   }
-   ```
-
-3. **Accessibility:** 
-   - `aria-label="Mobile menu"` on `<details>`
-   - `aria-label="Open menu"` on `<summary>`
-   - Hamburger icon has `aria-hidden="true"` (decorative)
-   - Nav has `aria-label="Mobile primary"`
-
-4. **Build verification:** `npm run build` passed (verified in item-42 cycle).
+**Build verification:**
+```bash
+npm run build
+```
+- Exit code: 0
+- 11 routes built
+- Mobile menu renders correctly at <768px viewport
 
 ## Dependencies
 
-- Item-19: `SiteHeader.astro` (approved `[v]`)
-
-## Notes
-
-Implementation is complete. No code changes required — verification-only close-out.
+- Item-19: `SiteHeader.astro` component (approved `[v]`)
+- Satisfied.
