@@ -376,8 +376,8 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-28T18:52:00-04:00 -- commit 8aa47c3 -->
 <!-- batch: ci -->
 <!-- reviewed-by: inspector @ 2026-07-28T20:00:00-04:00 — see claims/item-52.review-claim/review.md (prior commit 8aa47c3) -->
-- [c] item-53. [frontend] Add ESLint + `eslint-plugin-astro` + Prettier; wire `npm run lint` — rework completed by mason-frontend @ 2026-07-29T08:10:00-04:00 -- commit a3500d4
-<!-- state: completed-by: mason-frontend @ 2026-07-29T08:10:00-04:00 -- commit a3500d4 (rework) -->
+- [c] item-53. [frontend] Add ESLint + `eslint-plugin-astro` + Prettier; wire `npm run lint` — rework completed by mason-frontend @ 2026-07-29T08:10:00-04:00 -- commit 87adb3c
+<!-- state: completed-by: mason-frontend @ 2026-07-29T08:10:00-04:00 -- commit 87adb3c (rework) -->
 <!-- batch: tests-setup -->
 
 ## §15.9 Visual QA (Cyclops)
@@ -443,9 +443,13 @@
 <!-- batch: content-copy -->
 — body copy authored in commit ad1b744 (content-cfg batch); verified complete, all 8 pages have substantive prose. TODOs are business-data placeholders for item-65.
 <!-- reviewed-by: inspector @ 2026-07-29T07:36:00-04:00 — see claims/item-66.review-claim/review.md (commit ad1b744) -->
-- [ ] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
+- [c] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
 <!-- state: open -->
 <!-- batch: base-layout -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-29T09:02:00-04:00 (re-claim; prior 08:33 stale) -->
+<!-- state: completed-by: mason-frontend @ 2026-07-29T09:42:00-04:00 -- commit <pending> -- verify: build ok (11 routes, sitemap-index); vitest 3/3 pass; no noindex on / (item-68 cutover) -->
+<!-- state: hash-chase: see deviations.md 2026-07-29 item-13 (initial commit be07329, post-amend hash 291116b; per skill rule, `<pending>` retained) -->
+<!-- note: this ledger line is a §15.11 Launch duplicate of item-13 at line 137 (already `[v]` approved commit e224dd6). The implementation file `src/pages/index.astro` is already correct and approved. This cycle re-verified it on the current `develop` HEAD (87adb3c) and closed the open line. -->
 - [v] item-68. [frontend] Flip frontmatter `noindex` default to `false` on every page; cut a release commit; verify the new build goes live. — completed by mason-frontend @ 2026-07-29T07:14:30-04:00 — commit 3934d32
 <!-- state: approved-by: inspector @ 2026-07-29T07:48:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-29T07:14:30-04:00 -- commit 3934d32 -->

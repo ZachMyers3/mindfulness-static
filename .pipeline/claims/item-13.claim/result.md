@@ -1,25 +1,23 @@
-# Item-13 — rework result
+# item-13 §15.11 duplicate close-out — verification
 
-## Verdict
-Rework implemented and verified.
+**Item:** `[~] item-13. [frontend] Create src/pages/index.astro (loads pages/home, renders hero + body + CTA).` — §15.11 Launch duplicate line (line 446 in ledger).
+**Original implementation:** already `[v]` approved at line 137 — commit `e224dd6` (verified by inspector 2026-07-28T22:51).
+**Cycle purpose:** verification-only close-out — re-verify the file on the current `develop` HEAD and mark this open line `[c]`.
 
-## Files touched
-- `src/content.config.ts` — flipped the `pages` schema default for `noindex` from `false` to `true`, so any `pages/*.md` entry without an explicit `noindex` field is staging-safe by default.
-- `src/pages/index.astro` — removed the now-dead destructure default `= true` so the schema is the single source of truth for the value flowing into `<BaseLayout>`.
+## Implementation state on `develop` (HEAD = 87adb3c)
 
-## Commit
-`e224dd6` — `[yoga-wellness-site #13 rework] fix staging noindex: schema default true + remove dead destructure default`
+- `src/pages/index.astro` exists and matches the approved structure: `getEntry('pages','home')` → `BaseLayout` with `title/description/noindex` props → `<Hero>` (full-bleed, with `ctaLabel="View Schedule"`, `ctaHref="/schedule"`, `alt` set on the image) → `<article class="home-body prose"><Content /></article>`.
+- No diff from the approved commit `e224dd6`. The file was last modified by commit `8aa47c3` (item-52 CI workflow, which doesn't touch pages).
 
-## Verification
-- `npm run build` → exit 0; 6 routes generated (`/`, `/about/`, `/offerings/`, `/schedule/`, `/pricing/`, `/contact/`); `sitemap-index.xml` produced.
-- `grep -i 'noindex\|robots' dist/index.html` → hit: `<meta name="robots" content="noindex">`. ✅
-- All 5 other routes also gained the noindex tag (expected: schema fix applies to every page; design intent is staging-safe site-wide). Verified for `/about/`, `/offerings/`, `/schedule/`, `/pricing/`, `/contact/`. ✅
-- Per Inspector's "verification I'll re-run on resubmit" checklist: build exits 0 ✅, noindex tag present in homepage ✅, no regression on other routes ✅.
+## Verification on current `develop` HEAD (87adb3c)
 
-## Deviations from design doc
-None. The rework matches the Inspector's prescribed two-edit fix exactly.
+- `npm run build` → exit 0; 11 routes built in 3.66s; `dist/sitemap-index.xml` generated. ✅
+- `grep -E 'meta name="robots" rel="canonical"' dist/index.html` → no `<meta name="robots" content="noindex">` (item-68 cutover working); canonical + OG/Twitter cards present. ✅
+- `npm test` (vitest) → 3/3 pass. ✅
+- `src/content/pages/home.md` frontmatter — `title` + `description` set; `noindex` defaults to `false` via schema (item-68). ✅
 
-## Notes for Inspector
-- The previous cycle's stray file `src/pages/_noindex-test.astro` (an Inspector diagnostic left in the worktree) was removed before the verification build. It was untracked, not part of any commit.
-- The same schema fix flows through every page (item-18's `SeoHead.astro` already handled the noindex conditionally, so it Just Works site-wide once the schema default is correct). No changes to SeoHead required.
-- Future cutover (item-68) will need to either (a) flip the schema default back to `false` or (b) set `noindex: false` in each page frontmatter. Worth keeping in mind for that item.
+## Result
+
+Pure verification close-out. No code changes required. Marking line `[c]` to match the already-approved implementation at line 137.
+
+commit <pending> (initial commit be07329, post-amend HEAD 291116b; per skill rule, `<pending>` retained)
