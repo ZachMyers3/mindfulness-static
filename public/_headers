@@ -1,0 +1,21 @@
+# Cache-Control rules for the static site.
+#
+# This file is recognized verbatim by Netlify (https://docs.netlify.com/routing/headers/)
+# and Cloudflare Pages (https://developers.cloudflare.com/pages/configuration/headers/).
+# Astro copies files from public/ into dist/ as-is, so these rules ship to the CDN.
+#
+# Strategy:
+#   - Fingerprinted assets under /assets/* get a 1-year immutable cache (Astro emits
+#     hashed filenames like /assets/index.D4q8xYz.js, so the URL itself changes when
+#     the content does — safe to cache forever).
+#   - HTML gets a 1-hour cache so edits go live quickly without forcing users to
+#     hard-refresh. The short HTML cache is safe because HTML is always revalidated
+#     against the origin by compliant CDNs; stale HTML is bounded to 1 hour.
+#   - Everything else (robots.txt, sitemap-index.xml, /404.html, favicon, fonts)
+#     inherits the default cache policy of the host.
+
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.html
+  Cache-Control: public, max-age=3600

@@ -408,8 +408,9 @@
 <!-- state: approved-by: inspector @ 2026-07-26T21:36:30-04:00 -->
 <!-- scope-tag: ops -->
 <!-- Repo `ZachMyers3/mindfulness-static` created via `gh repo create --public`; topics `astro, static-site, wellness, yoga, openclaw-pipeline`. Default branch flipped to `develop`. Local `main`, `develop`, and `developer/yoga-wellness-site/seed` all pushed. -->
-- [ ] item-60. [ops] Add a `_headers` file in `public/` (assets immutable + HTML 1h cache).
-<!-- state: open -->
+- [c] item-60. [ops] Add a `_headers` file in `public/` (assets immutable + HTML 1h cache).
+<!-- state: completed-by: mason-frontend @ 2026-07-29T18:57:54-04:00 -- commit fa2ccc1c665f9a0ceff0a45d5f7e71fd1b5b2d50 -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-29T18:54:00-04:00 -->
 <!-- batch: deploy-docs -->
 - [c] item-61. [frontend] Author `README.md` with: project description, edit-and-push workflow, location + shape of `site.json`, safe-vs-developer-fields guide, local-dev quickstart (`npm install && npm run dev`), host-agnostic deploy notes (one-line each for GitHub Pages / Netlify / Vercel / Cloudflare Pages). — rework completed by mason-frontend @ 2026-07-29T06:35:00-04:00 — commit e0e5af8 (.nvmrc 20→22 per inspector REWORK @ 2026-07-29T02:40:00-04:00)
 <!-- state: rework-by: inspector @ 2026-07-29T02:40:00-04:00 -->
@@ -444,7 +445,6 @@
 — body copy authored in commit ad1b744 (content-cfg batch); verified complete, all 8 pages have substantive prose. TODOs are business-data placeholders for item-65.
 <!-- reviewed-by: inspector @ 2026-07-29T07:36:00-04:00 — see claims/item-66.review-claim/review.md (commit ad1b744) -->
 - [c] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
-<!-- state: open -->
 <!-- batch: base-layout -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-29T09:02:00-04:00 (re-claim; prior 08:33 stale) -->
 <!-- state: completed-by: mason-frontend @ 2026-07-29T09:42:00-04:00 -- commit <pending> -- verify: build ok (11 routes, sitemap-index); vitest 3/3 pass; no noindex on / (item-68 cutover) -->
