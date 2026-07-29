@@ -347,8 +347,8 @@
 <!-- batch: a11y-audit -->
 <!-- reviewed-by: inspector @ 2026-07-29T01:32:00-04:00 -->
 - [~] item-48. [frontend] Tab through every page with the keyboard; verify visible + logical focus.
-<!-- state: claimed-by: mason-frontend @ 2026-07-28T15:00:00-04:00 -->
-<!-- state: open -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-29T04:41:00-04:00 -->
+<!-- state: re-claimed: prior session abandoned; previous [~] stamp was stale, no claim dir existed -->
 <!-- batch: a11y-audit -->
 
 ## §15.8 Tests
@@ -408,8 +408,10 @@
 - [ ] item-60. [ops] Add a `_headers` file in `public/` (assets immutable + HTML 1h cache).
 <!-- state: open -->
 <!-- batch: deploy-docs -->
-- [x] item-61. [frontend] Author `README.md` with: project description, edit-and-push workflow, location + shape of `site.json`, safe-vs-developer-fields guide, local-dev quickstart (`npm install && npm run dev`), host-agnostic deploy notes (one-line each for GitHub Pages / Netlify / Vercel / Cloudflare Pages). — done by mason-frontend @ 2026-07-28T18:56:00-04:00 — commit caa6353
-<!-- state: completed-by: mason-frontend @ 2026-07-28T18:56:00-04:00 -- commit caa6353 -->
+- [c] item-61. [frontend] Author `README.md` with: project description, edit-and-push workflow, location + shape of `site.json`, safe-vs-developer-fields guide, local-dev quickstart (`npm install && npm run dev`), host-agnostic deploy notes (one-line each for GitHub Pages / Netlify / Vercel / Cloudflare Pages). — rework completed by mason-frontend @ 2026-07-29T06:35:00-04:00 — commit e0e5af8 (.nvmrc 20→22 per inspector REWORK @ 2026-07-29T02:40:00-04:00)
+<!-- state: rework-by: inspector @ 2026-07-29T02:40:00-04:00 -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-29T06:28:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-29T06:35:00-04:00 -- commit e0e5af8 -- verify: build ok (11 routes); vitest 3/3 pass -->
 <!-- batch: deploy-docs -->
 - [c] item-62. [content] Author `DEPLOY.md` — host-agnostic deploy guide (Zach picks the host; the same `dist/` works on any of them).
 <!-- state: completed-by: mason-frontend @ 2026-07-28T19:12:00-04:00 -- commit d766851 -- verify: build ok (11 routes) -->
