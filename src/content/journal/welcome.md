@@ -2,8 +2,8 @@
 title: "Welcome to Mindfulness and Movement"
 description: "A journey of mindfulness and movement for body and mind."
 pubDate: 2026-07-27
-heroImage: "../../assets/journal/welcome-hero.jpg"
-heroAlt: "Sunrise over a tranquil body of water"
+heroImage: "/assets/journal-wellness.jpg"
+heroAlt: "Wellness journal and tea on wooden table"
 tags: ["mindfulness", "yoga", "wellness"]
 draft: false
 ---

@@ -2,13 +2,11 @@
 /**
  * src/pages/index.astro
  * Homepage — loads the `pages/home` Markdown entry and renders it inside
- * BaseLayout. The Hero / ServiceCard / CTA-strip blocks specified in
- * design-doc §9.1 will be slotted in once the components batch (items 22-28)
- * lands; for now the page faithfully renders the Markdown body so the
- * site is live.
+ * BaseLayout with a full-bleed Hero component.
  */
 import { getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
 
 const entry = await getEntry('pages', 'home');
 if (!entry) {
@@ -19,10 +17,14 @@ const { title, description, noindex } = entry.data;
 ---
 
 <BaseLayout title={title} description={description} noindex={noindex}>
-  <section class="home-intro">
-    <h1>{title}</h1>
-    <p class="home-tagline">{description}</p>
-  </section>
+  <Hero
+    title={title}
+    tagline={description}
+    image="/assets/hero-yoga.jpg"
+    alt="Sunlight streaming through studio windows onto yoga mats"
+    ctaLabel="View Schedule"
+    ctaHref="/schedule"
+  />
   <article class="home-body prose">
     <Content />
   </article>

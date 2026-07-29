@@ -266,12 +266,13 @@
 <!-- state: approved-by: inspector @ 2026-07-28T09:50:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-28T09:48:00-04:00 -- commit 200a829 -->
 <!-- batch: design-sys -->
-- [c] item-35. [frontend] Verify WCAG AA contrast for every text/background combination; adjust tokens if any fail. — completed by mason-frontend @ 2026-07-28T18:58:00-04:00 — commit 4999a91
+- [v] item-35. [frontend] Verify WCAG AA contrast for every text/background combination; adjust tokens if any fail. — completed by mason-frontend @ 2026-07-28T18:58:00-04:00 — commit 4999a91
 <!-- state: completed-by: mason-frontend @ 2026-07-28T18:58:00-04:00 -->
 <!-- batch: a11y-audit -->
 <!-- batch: a11y-audit -->
-- [~] item-36. [content] Source stock photography from Unsplash (wellness / yoga / nature); save under `src/assets/`.
-<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 7ed0d5f -->
+<!-- reviewed-by: inspector @ 2026-07-29T00:26:00-04:00 -->
+- [c] item-36. [content] Source stock photography from Unsplash (wellness / yoga / nature); save under `src/assets/`.
+<!-- state: completed-by: mason-frontend @ 2026-07-29T00:39:00-04:00 -- commit <pending> -->
 <!-- batch: design-sys -->
 - [~] item-37. [frontend] Build + visually verify homepage hero at mobile (375px), tablet (768px), desktop (1280px) widths.
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T10:41:00-04:00 -->
@@ -282,10 +283,10 @@
 - [c] item-38. [frontend] Create `public/robots.txt` (allow all + sitemap reference).
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:23:00-04:00 -->
 <!-- batch: seo-assets -->
-- [c] item-39. [frontend] Generate `public/og-default.jpg` (1200×630, brand name + tagline + background); wire as default OG image in `SeoHead.astro`. — completed by mason-frontend @ 2026-07-28T23:30:00-04:00 — commit 04a92b08aa1e1dcf78879aeccdadbcca259022db
+- [v] item-39. [frontend] Generate `public/og-default.jpg` (1200×630, brand name + tagline + background); wire as default OG image in `SeoHead.astro`. — completed by mason-frontend @ 2026-07-28T23:30:00-04:00 — commit 04a92b08aa1e1dcf78879aeccdadbcca259022db
+<!-- state: approved-by: inspector @ 2026-07-29T00:29:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-28T23:30:00-04:00 -->
-<!-- state: claimed-by: mason-frontend @ 2026-07-28T23:12:00-04:00 -->
-<!-- state: open -->
+<!-- reviewed-by: inspector @ 2026-07-29T00:29:00-04:00 — see claims/item-39.review-claim/review.md -->
 <!-- batch: seo-assets -->
 <!-- orphan-recovery: prior [~] from 2026-07-27T21:23 had no claim dir / no working-tree work; re-claimed. -->
 - [v] item-40. [frontend] Wire `@astrojs/sitemap` to produce `/sitemap-index.xml` from configured `site` URL; verify every public route is listed in `dist/`.
