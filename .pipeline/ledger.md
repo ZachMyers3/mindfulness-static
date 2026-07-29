@@ -276,8 +276,10 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-29T00:39:00-04:00 -- commit d1da197 -->
 <!-- batch: design-sys -->
 <!-- design-flag: source deviation — picsum.photos used instead of Unsplash per §15.5; see claims/item-36.review-claim/review.md and .pipeline/design-feedback.md -->
-- [c] item-71. [content] Replace the 10 picsum.photos placeholder images in `src/assets/` with genuine Unsplash images using wellness/yoga/nature search terms; capture Unsplash source URLs for optional `public/credits.md` attribution (per §2 N7, §11, §15.5, §16 Q7).
+- [v] item-71. [content] Replace the 10 picsum.photos placeholder images in `src/assets/` with genuine Unsplash images using wellness/yoga/nature search terms; capture Unsplash source URLs for optional `public/credits.md` attribution (per §2 N7, §11, §15.5, §16 Q7).
 <!-- state: completed-by: mason-frontend @ 2026-07-29T04:22:00-04:00 -- commit 199ac86 -->
+<!-- state: approved-by: inspector @ 2026-07-29T07:17:00-04:00 -->
+<!-- reviewed-by: inspector @ 2026-07-29T07:17:00-04:00 — see claims/item-71.review-claim/review.md (commit 199ac86) -->
 <!-- batch: design-sys -->
 - [v] item-37. [frontend] Build + visually verify homepage hero at mobile (375px), tablet (768px), desktop (1280px) widths.
 <!-- state: completed-by: mason-frontend @ 2026-07-29T01:16:00-04:00 -->
@@ -286,9 +288,11 @@
 
 ## §15.6 SEO + 404
 
-- [c] item-38. [frontend] Create `public/robots.txt` (allow all + sitemap reference).
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T20:23:00-04:00 -->
+- [v] item-38. [frontend] Create `public/robots.txt` (allow all + sitemap reference).
+<!-- state: approved-by: inspector @ 2026-07-29T07:26:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-27T20:26:49-04:00 -- commit 1d97ee0 -->
 <!-- batch: seo-assets -->
+<!-- reviewed-by: inspector @ 2026-07-29T07:26:00-04:00 — see claims/item-38.review-claim/review.md (commit 1d97ee0) -->
 - [v] item-39. [frontend] Generate `public/og-default.jpg` (1200×630, brand name + tagline + background); wire as default OG image in `SeoHead.astro`. — completed by mason-frontend @ 2026-07-28T23:30:00-04:00 — commit 04a92b08aa1e1dcf78879aeccdadbcca259022db
 <!-- state: approved-by: inspector @ 2026-07-29T00:29:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-28T23:30:00-04:00 -->
@@ -434,9 +438,10 @@
 <!-- batch: content-cfg -->
 <!-- batch: content-copy -->
 <!-- blocks-on: Zach — needs real address/phone/email/hours/social from the business. Until then: retain placeholders for staging builds, but DO NOT block the rest of content-cfg on this; batch as soon as content-cfg is otherwise done. -->
-- [ ] item-66. [content] Author body copy in every `src/content/pages/*.md` (Home, About, Offerings, Schedule, Pricing, Contact, Privacy, Terms).
-<!-- state: open -->
+- [c] item-66. [content] Author body copy in every `src/content/pages/*.md` (Home, About, Offerings, Schedule, Pricing, Contact, Privacy, Terms).
+<!-- state: completed-by: mason-frontend @ 2026-07-29T07:29:00-04:00 -- commit 55eaa6f -->
 <!-- batch: content-copy -->
+— body copy authored in commit ad1b744 (content-cfg batch); verified complete, all 8 pages have substantive prose. TODOs are business-data placeholders for item-65.
 - [ ] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
 <!-- state: open -->
 <!-- batch: base-layout -->
