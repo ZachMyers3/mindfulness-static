@@ -20,6 +20,22 @@ export default tseslint.config(
     },
   },
 
+  // Node.js globals for build-time scripts
+  {
+    files: ['scripts/**/*.{js,mjs}'],
+    languageOptions: {
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        Buffer: 'readonly',
+        fetch: 'readonly',
+        __dirname: 'readonly',
+        __filename: 'readonly',
+      },
+      sourceType: 'module',
+    },
+  },
+
   // TypeScript-ESLint recommended (no type-checked — fast, no tsconfig needed)
   ...tseslint.configs.recommended,
 

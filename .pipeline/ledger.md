@@ -376,8 +376,8 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-28T18:52:00-04:00 -- commit 8aa47c3 -->
 <!-- batch: ci -->
 <!-- reviewed-by: inspector @ 2026-07-28T20:00:00-04:00 — see claims/item-52.review-claim/review.md (prior commit 8aa47c3) -->
-- [c] item-53. [frontend] Add ESLint + `eslint-plugin-astro` + Prettier; wire `npm run lint`.
-<!-- state: completed-by: mason-frontend @ 2026-07-28T18:33:00-04:00 -- commit 59cd58d -->
+- [c] item-53. [frontend] Add ESLint + `eslint-plugin-astro` + Prettier; wire `npm run lint` — rework completed by mason-frontend @ 2026-07-29T08:10:00-04:00 -- commit a3500d4
+<!-- state: completed-by: mason-frontend @ 2026-07-29T08:10:00-04:00 -- commit a3500d4 (rework) -->
 <!-- batch: tests-setup -->
 
 ## §15.9 Visual QA (Cyclops)
@@ -454,10 +454,12 @@
 - [ ] item-69. [ops] Submit the sitemap URL to Google Search Console (after host is configured).
 <!-- state: open -->
 <!-- scope: human — Zach does this manually once the host is set; not a cycle target. -->
-- [x] item-70. [frontend] Final smoke test: `npm run build && npm test` (when tests exist) exit-code 0; Lighthouse ≥95 across all categories. — done by mason-frontend @ 2026-07-29T07:49:00-04:00 — commit affc4ff
+- [v] item-70. [frontend] Final smoke test: `npm run build && npm test` (when tests exist) exit-code 0; Lighthouse ≥95 across all categories. — done by mason-frontend @ 2026-07-29T07:49:00-04:00 — commit affc4ff
 <!-- state: completed-by: mason-frontend @ 2026-07-29T07:49:00-04:00 -- commit affc4ff -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-29T07:42:00-04:00 -->
+<!-- state: approved-by: inspector @ 2026-07-29T08:06:00-04:00 -->
 <!-- batch: launch -->
+<!-- reviewed-by: inspector @ 2026-07-29T08:06:00-04:00 — see claims/item-70.review-claim/review.md (commit c105066) -->
 
 ---
 
