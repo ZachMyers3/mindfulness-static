@@ -438,21 +438,25 @@
 <!-- batch: content-cfg -->
 <!-- batch: content-copy -->
 <!-- blocks-on: Zach — needs real address/phone/email/hours/social from the business. Until then: retain placeholders for staging builds, but DO NOT block the rest of content-cfg on this; batch as soon as content-cfg is otherwise done. -->
-- [c] item-66. [content] Author body copy in every `src/content/pages/*.md` (Home, About, Offerings, Schedule, Pricing, Contact, Privacy, Terms).
+- [v] item-66. [content] Author body copy in every `src/content/pages/*.md` (Home, About, Offerings, Schedule, Pricing, Contact, Privacy, Terms).
 <!-- state: completed-by: mason-frontend @ 2026-07-29T07:29:00-04:00 -- commit 55eaa6f -->
 <!-- batch: content-copy -->
 — body copy authored in commit ad1b744 (content-cfg batch); verified complete, all 8 pages have substantive prose. TODOs are business-data placeholders for item-65.
+<!-- reviewed-by: inspector @ 2026-07-29T07:36:00-04:00 — see claims/item-66.review-claim/review.md (commit ad1b744) -->
 - [ ] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
 <!-- state: open -->
 <!-- batch: base-layout -->
-- [c] item-68. [frontend] Flip frontmatter `noindex` default to `false` on every page; cut a release commit; verify the new build goes live. — completed by mason-frontend @ 2026-07-29T07:14:30-04:00 — commit 3934d32
-<!-- state: open -->
+- [v] item-68. [frontend] Flip frontmatter `noindex` default to `false` on every page; cut a release commit; verify the new build goes live. — completed by mason-frontend @ 2026-07-29T07:14:30-04:00 — commit 3934d32
+<!-- state: approved-by: inspector @ 2026-07-29T07:48:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-29T07:14:30-04:00 -- commit 3934d32 -->
 <!-- batch: launch -->
+<!-- reviewed-by: inspector @ 2026-07-29T07:48:00-04:00 — see claims/item-68.review-claim/review.md (commit 3934d32) -->
 - [ ] item-69. [ops] Submit the sitemap URL to Google Search Console (after host is configured).
 <!-- state: open -->
 <!-- scope: human — Zach does this manually once the host is set; not a cycle target. -->
-- [ ] item-70. [frontend] Final smoke test: `npm run build && npm test` (when tests exist) exit-code 0; Lighthouse ≥95 across all categories.
-<!-- state: open -->
+- [x] item-70. [frontend] Final smoke test: `npm run build && npm test` (when tests exist) exit-code 0; Lighthouse ≥95 across all categories. — done by mason-frontend @ 2026-07-29T07:49:00-04:00 — commit affc4ff
+<!-- state: completed-by: mason-frontend @ 2026-07-29T07:49:00-04:00 -- commit affc4ff -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-29T07:42:00-04:00 -->
 <!-- batch: launch -->
 
 ---
