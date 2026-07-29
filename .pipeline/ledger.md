@@ -271,11 +271,16 @@
 <!-- batch: a11y-audit -->
 <!-- batch: a11y-audit -->
 <!-- reviewed-by: inspector @ 2026-07-29T00:26:00-04:00 -->
-- [c] item-36. [content] Source stock photography from Unsplash (wellness / yoga / nature); save under `src/assets/`.
-<!-- state: completed-by: mason-frontend @ 2026-07-29T00:39:00-04:00 -- commit <pending> -->
+- [x] item-36. [content] Source stock photography from Unsplash (wellness / yoga / nature); save under `src/assets/` — design gap recorded; see new item-71.
+<!-- state: flagged-by: inspector @ 2026-07-29T00:52:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-29T00:39:00-04:00 -- commit d1da197 -->
 <!-- batch: design-sys -->
-- [~] item-37. [frontend] Build + visually verify homepage hero at mobile (375px), tablet (768px), desktop (1280px) widths.
-<!-- state: claimed-by: mason-frontend @ 2026-07-28T10:41:00-04:00 -->
+<!-- design-flag: source deviation — picsum.photos used instead of Unsplash per §15.5; see claims/item-36.review-claim/review.md and .pipeline/design-feedback.md -->
+- [ ] item-71. [content] Replace the 10 picsum.photos placeholder images in `src/assets/` with genuine Unsplash images using wellness/yoga/nature search terms; capture Unsplash source URLs for optional `public/credits.md` attribution (per §2 N7, §11, §15.5, §16 Q7).
+<!-- batch: design-sys -->
+- [v] item-37. [frontend] Build + visually verify homepage hero at mobile (375px), tablet (768px), desktop (1280px) widths.
+<!-- state: completed-by: mason-frontend @ 2026-07-29T01:16:00-04:00 -->
+<!-- reviewed-by: inspector @ 2026-07-29T01:16:00-04:00 -->
 <!-- batch: a11y-audit -->
 
 ## §15.6 SEO + 404
@@ -312,21 +317,26 @@
 
 ## §15.7 Accessibility
 
-- [c] item-43. [frontend] Add skip-link as first focusable element on every page (rendered by `BaseLayout.astro`).
+- [v] item-43. [frontend] Add skip-link as first focusable element on every page (rendered by `BaseLayout.astro`).
 <!-- state: completed-by: mason-frontend @ 2026-07-28T00:55:30-04:00 -- commit fc2492107d7a6e8281cdc94527613591d15805b7 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T00:55:00-04:00 -->
 <!-- batch: a11y-markup -->
+<!-- reviewed-by: inspector @ 2026-07-29T00:34:00-04:00 -->
 - [v] item-44. [frontend] Mobile menu works without JavaScript via `<details>`/`<summary>` (or 30-line inline script respecting `prefers-reduced-motion`).
 <!-- state: completed-by: mason-frontend @ 2026-07-28T01:00:30-04:00 -- commit 0d478df7d1961db7cf02f92e443c0f71713a9966 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T01:00:00-04:00 -->
 <!-- batch: a11y-markup -->
 <!-- reviewed-by: inspector @ 2026-07-28T11:25:00-04:00 — see claims/item-44.review-claim/review.md (verification-only close-out; zero-JS <details>/<summary> with prefers-reduced-motion, approved) -->
-- [c] item-45. [frontend] Every `<img>` has a meaningful `alt`; decorative images use `alt=""`. — completed by mason-frontend @ 2026-07-28T08:39:10-04:00 — commit 9773b79
+- [v] item-45. [frontend] Every `<img>` has a meaningful `alt`; decorative images use `alt=""`. — completed by mason-frontend @ 2026-07-28T08:39:10-04:00 — commit 9773b79
+<!-- state: approved-by: inspector @ 2026-07-29T01:08:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-28T08:39:10-04:00 -- commit 9773b79 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T07:20:00-04:00 -->
 <!-- batch: a11y-markup -->
-- [c] item-46. [frontend] Every form input has a programmatically associated `<label>`. — done by mason-frontend @ 2026-07-29T00:00:00-04:00 — commit f88fc47
-<!-- state: completed-by: mason-frontend @ 2026-07-29T00:00:00-04:00 -->
+<!-- reviewed-by: inspector @ 2026-07-29T01:08:00-04:00 — see claims/item-45.review-claim/review.md -->
+- [v] item-46. [frontend] Every form input has a programmatically associated `<label>`. — done by mason-frontend @ 2026-07-29T00:00:00-04:00 — commit f88fc47
+<!-- state: approved-by: inspector @ 2026-07-29T00:48:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-29T00:00:00-04:00 -- commit f88fc47 -->
+<!-- reviewed-by: inspector @ 2026-07-29T00:48:00-04:00 — see claims/item-46.review-claim/review.md -->
 <!-- batch: a11y-markup -->
 <!-- verification-only close-out: zero <form>/<input>/<label> in src/ (Q3=mailto replaced ContactForm with ContactLink per item-31). Build + vitest 3/3 + playwright 8/8 pass. -->
 - [~] item-47. [frontend] Run `@axe-core/playwright` against every route; fix `serious` or `critical` violations.
