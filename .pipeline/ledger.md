@@ -324,9 +324,10 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-28T08:39:10-04:00 -- commit 9773b79 -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T07:20:00-04:00 -->
 <!-- batch: a11y-markup -->
-- [~] item-46. [frontend] Every form input has a programmatically associated `<label>`. — claimed by mason-frontend @ 2026-07-28T09:22:00-04:00
-<!-- state: open -->
+- [c] item-46. [frontend] Every form input has a programmatically associated `<label>`. — done by mason-frontend @ 2026-07-29T00:00:00-04:00 — commit f88fc47
+<!-- state: completed-by: mason-frontend @ 2026-07-29T00:00:00-04:00 -->
 <!-- batch: a11y-markup -->
+<!-- verification-only close-out: zero <form>/<input>/<label> in src/ (Q3=mailto replaced ContactForm with ContactLink per item-31). Build + vitest 3/3 + playwright 8/8 pass. -->
 - [~] item-47. [frontend] Run `@axe-core/playwright` against every route; fix `serious` or `critical` violations.
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T12:20:00-04:00 -->
 <!-- batch: a11y-audit -->
