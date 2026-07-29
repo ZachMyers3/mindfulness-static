@@ -339,9 +339,11 @@
 <!-- reviewed-by: inspector @ 2026-07-29T00:48:00-04:00 — see claims/item-46.review-claim/review.md -->
 <!-- batch: a11y-markup -->
 <!-- verification-only close-out: zero <form>/<input>/<label> in src/ (Q3=mailto replaced ContactForm with ContactLink per item-31). Build + vitest 3/3 + playwright 8/8 pass. -->
-- [~] item-47. [frontend] Run `@axe-core/playwright` against every route; fix `serious` or `critical` violations.
+- [v] item-47. [frontend] Run `@axe-core/playwright` against every route; fix `serious` or `critical` violations.
+<!-- state: completed-by: mason-frontend @ 2026-07-29T01:32:00-04:00 -- commit TBD -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T12:20:00-04:00 -->
 <!-- batch: a11y-audit -->
+<!-- reviewed-by: inspector @ 2026-07-29T01:32:00-04:00 -->
 - [~] item-48. [frontend] Tab through every page with the keyboard; verify visible + logical focus.
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T15:00:00-04:00 -->
 <!-- state: open -->
@@ -359,9 +361,11 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-28T18:28:00-04:00 -- commit e774681 -->
 <!-- batch: tests-setup -->
 <!-- reviewed-by: inspector @ 2026-07-28T18:30:00-04:00 — see claims/item-50.review-claim/review.md (prior commit e774681) -->
-- [x] item-51. [frontend] Add `lighthouse-ci` to CI with doc §5 thresholds as assertions. — done by mason-frontend @ 2026-07-28T18:49:00-04:00 — commit b9810c0
+- [v] item-51. [frontend] Add `lighthouse-ci` to CI with doc §5 thresholds as assertions.
+<!-- state: approved-by: inspector @ 2026-07-29T01:17:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-28T18:49:00-04:00 -- commit b9810c0 -->
 <!-- batch: ci -->
+<!-- reviewed-by: inspector @ 2026-07-29T01:17:00-04:00 — see claims/item-51.review-claim/review.md -->
 - [v] item-52. [frontend] Add `.github/workflows/ci.yml` running `npm ci`, `npm run build`, Vitest, Playwright, lighthouse-ci. — done by mason-frontend @ 2026-07-28T18:52:00-04:00 — commit 8aa47c3
 <!-- state: approved-by: inspector @ 2026-07-28T20:00:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-28T18:52:00-04:00 -- commit 8aa47c3 -->
