@@ -346,9 +346,8 @@
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T12:20:00-04:00 -->
 <!-- batch: a11y-audit -->
 <!-- reviewed-by: inspector @ 2026-07-29T01:32:00-04:00 -->
-- [~] item-48. [frontend] Tab through every page with the keyboard; verify visible + logical focus.
-<!-- state: claimed-by: mason-frontend @ 2026-07-29T04:41:00-04:00 -->
-<!-- state: re-claimed: prior session abandoned; previous [~] stamp was stale, no claim dir existed -->
+- [c] item-48. [frontend] Tab through every page with the keyboard; verify visible + logical focus. — done by mason-frontend @ 2026-07-29T06:46:00-04:00 — commit d2d57cc
+<!-- state: completed-by: mason-frontend @ 2026-07-29T06:46:00-04:00 -->
 <!-- batch: a11y-audit -->
 
 ## §15.8 Tests
