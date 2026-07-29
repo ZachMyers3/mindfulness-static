@@ -276,7 +276,8 @@
 <!-- state: completed-by: mason-frontend @ 2026-07-29T00:39:00-04:00 -- commit d1da197 -->
 <!-- batch: design-sys -->
 <!-- design-flag: source deviation — picsum.photos used instead of Unsplash per §15.5; see claims/item-36.review-claim/review.md and .pipeline/design-feedback.md -->
-- [ ] item-71. [content] Replace the 10 picsum.photos placeholder images in `src/assets/` with genuine Unsplash images using wellness/yoga/nature search terms; capture Unsplash source URLs for optional `public/credits.md` attribution (per §2 N7, §11, §15.5, §16 Q7).
+- [c] item-71. [content] Replace the 10 picsum.photos placeholder images in `src/assets/` with genuine Unsplash images using wellness/yoga/nature search terms; capture Unsplash source URLs for optional `public/credits.md` attribution (per §2 N7, §11, §15.5, §16 Q7).
+<!-- state: completed-by: mason-frontend @ 2026-07-29T04:22:00-04:00 -- commit fc35ee7 -->
 <!-- batch: design-sys -->
 - [v] item-37. [frontend] Build + visually verify homepage hero at mobile (375px), tablet (768px), desktop (1280px) widths.
 <!-- state: completed-by: mason-frontend @ 2026-07-29T01:16:00-04:00 -->
