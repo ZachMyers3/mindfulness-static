@@ -15,7 +15,7 @@ if (!entry) {
   throw new Error('pages/pricing entry not found in src/content/pages/pricing.md');
 }
 const { Content } = await render(entry);
-const { title, description, noindex = true } = entry.data;
+const { title, description, noindex = false } = entry.data;
 ---
 
 <BaseLayout title={title} description={description} noindex={noindex}>

@@ -14,7 +14,7 @@ if (!entry) {
   throw new Error('pages/contact entry not found in src/content/pages/contact.md');
 }
 const { Content } = await render(entry);
-const { title, description, noindex = true } = entry.data;
+const { title, description, noindex = false } = entry.data;
 
 // Build LocalBusiness structured data from site.json
 const localBusiness = {

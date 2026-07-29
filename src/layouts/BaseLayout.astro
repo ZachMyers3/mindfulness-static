@@ -5,7 +5,7 @@
  * Props:
  *   title       - Page title
  *   description - Meta description
- *   noindex     - Whether to add noindex meta tag (default: true for staging safety)
+ *   noindex     - Whether to add noindex meta tag (default: false for production)
  */
 import SeoHead from '../components/SeoHead.astro';
 import AnnouncementBar from '../components/AnnouncementBar.astro';
@@ -19,7 +19,7 @@ interface Props {
   noindex?: boolean;
 }
 
-const { title, description, noindex = true } = Astro.props;
+const { title, description, noindex = false } = Astro.props;
 ---
 
 <!doctype html>

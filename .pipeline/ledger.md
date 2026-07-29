@@ -440,7 +440,7 @@
 - [ ] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
 <!-- state: open -->
 <!-- batch: base-layout -->
-- [ ] item-68. [frontend] Flip frontmatter `noindex` default to `false` on every page; cut a release commit; verify the new build goes live.
+- [c] item-68. [frontend] Flip frontmatter `noindex` default to `false` on every page; cut a release commit; verify the new build goes live. — completed by mason-frontend @ 2026-07-29T07:14:30-04:00 — commit 3934d32
 <!-- state: open -->
 <!-- batch: launch -->
 - [ ] item-69. [ops] Submit the sitemap URL to Google Search Console (after host is configured).
