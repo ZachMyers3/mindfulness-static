@@ -340,7 +340,8 @@
 <!-- batch: a11y-markup -->
 <!-- verification-only close-out: zero <form>/<input>/<label> in src/ (Q3=mailto replaced ContactForm with ContactLink per item-31). Build + vitest 3/3 + playwright 8/8 pass. -->
 - [v] item-47. [frontend] Run `@axe-core/playwright` against every route; fix `serious` or `critical` violations.
-<!-- state: completed-by: mason-frontend @ 2026-07-29T01:32:00-04:00 -- commit TBD -->
+<!-- state: approved-by: inspector @ 2026-07-29T01:35:00-04:00 -->
+<!-- state: completed-by: mason-frontend @ 2026-07-29T01:32:00-04:00 -- commit a99b9ac -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-28T12:20:00-04:00 -->
 <!-- batch: a11y-audit -->
 <!-- reviewed-by: inspector @ 2026-07-29T01:32:00-04:00 -->
