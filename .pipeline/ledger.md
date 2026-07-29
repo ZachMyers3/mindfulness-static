@@ -134,14 +134,14 @@
 <!-- batch: a11y-markup (skip-link must be first focusable in BaseLayout) -->
 <!-- reviewed-by: inspector @ 2026-07-27T04:48:00-04:00 — see claims/item-12.review-claim/review.md (prior commit 3fd827e) -->
 <!-- see claims/item-12.claim/result.md for deviations (design-sys Tailwind tokens still pending in batch 08) -->
-- [c] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
-<!-- state: rework-complete: mason-frontend @ 2026-07-27T06:27:30-04:00 -->
+- [v] item-13. [frontend] Create `src/pages/index.astro` (loads `pages/home`, renders hero + body + CTA).
+<!-- state: approved-by: inspector @ 2026-07-28T22:51:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T06:17:59-04:00 -- commit e224dd6 -- verify: build ok; all 6 routes emit <meta name="robots" content="noindex"> -->
 <!-- batch: base-layout -->
-<!-- see claims/item-13.review-claim/review.md for rework context (staging noindex missing — schema default was false, defeating item-42 staging-safety contract) -->
-<!-- see claims/item-13.claim/result.md for rework verification details -->
+<!-- reviewed-by: inspector @ 2026-07-28T22:51:00-04:00 — see claims/item-13.review-claim/review.md (prior commit e224dd6) -->
 — rework requested by inspector @ 2026-07-27T05:58:00-04:00 — see claims/item-13.review-claim/review.md (prior commit 3fd827e)
 — rework claimed + completed by mason-frontend @ 2026-07-27T06:14:00-04:00 → 2026-07-27T06:27:30-04:00
+— rework complete: commit e224dd6 (schema default true + remove dead destructure default) — verified by inspector @ 2026-07-28T22:51:00-04:00 — see claims/item-13.review-claim/review.md (prior commit e224dd6)
 - [v] item-14. [frontend] Create `src/pages/about.astro`, `offerings.astro`, `schedule.astro`, `pricing.astro`, `contact.astro` (each loads matching Markdown entry via `getEntry`).
 <!-- state: approved-by: inspector @ 2026-07-27T06:14:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T06:02:49-04:00 -- commit 28cf28f -- verify: build ok (6 routes, sitemap-index generated) -->
@@ -220,10 +220,12 @@
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
 <!-- reviewed-by: inspector @ 2026-07-27T21:47:00-04:00 — see claims/item-26.review-claim/review.md (prior commit b41906e) -->
-- [c] item-27. [frontend] `src/components/PricingCard.astro` (props: `title`, `price`, `tagline?`, `features[]`, `ctaLabel`, `ctaHref`, `featured?`).
+- [v] item-27. [frontend] `src/components/PricingCard.astro` (props: `title`, `price`, `tagline?`, `features[]`, `ctaLabel`, `ctaHref`, `featured?`).
+<!-- state: approved-by: inspector @ 2026-07-28T21:47:00-04:00 -->
 <!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
 <!-- batch: components -->
+<!-- reviewed-by: inspector @ 2026-07-28T21:47:00-04:00 — see claims/item-27.review-claim/review.md (prior commit b41906e) -->
 - [v] item-28. [frontend] `src/components/FaqAccordion.astro` (props: `items: { q, a }[]`; renders native `<details>`/`<summary>`).
 <!-- state: completed-by: mason-frontend @ 2026-07-27T18:25:00-04:00 -- commit b41906e -- verify: build ok (11 routes) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:08:34Z -->
@@ -280,9 +282,12 @@
 - [c] item-38. [frontend] Create `public/robots.txt` (allow all + sitemap reference).
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:23:00-04:00 -->
 <!-- batch: seo-assets -->
-- [~] item-39. [frontend] Generate `public/og-default.jpg` (1200×630, brand name + tagline + background); wire as default OG image in `SeoHead.astro`.
-<!-- state: claimed-by: mason-frontend @ 2026-07-27T21:23:00-04:00 -->
+- [c] item-39. [frontend] Generate `public/og-default.jpg` (1200×630, brand name + tagline + background); wire as default OG image in `SeoHead.astro`. — completed by mason-frontend @ 2026-07-28T23:30:00-04:00 — commit 04a92b08aa1e1dcf78879aeccdadbcca259022db
+<!-- state: completed-by: mason-frontend @ 2026-07-28T23:30:00-04:00 -->
+<!-- state: claimed-by: mason-frontend @ 2026-07-28T23:12:00-04:00 -->
+<!-- state: open -->
 <!-- batch: seo-assets -->
+<!-- orphan-recovery: prior [~] from 2026-07-27T21:23 had no claim dir / no working-tree work; re-claimed. -->
 - [v] item-40. [frontend] Wire `@astrojs/sitemap` to produce `/sitemap-index.xml` from configured `site` URL; verify every public route is listed in `dist/`.
 <!-- state: completed-by: mason-frontend @ 2026-07-27T20:46:00-04:00 -- commit 10793c8a3ce2a57c99ca5cdfdfeb8ad026972bee -- verify: build ok (11 routes built; dist/sitemap-index.xml + dist/sitemap-0.xml emitted listing all 10 public routes; robots.txt cross-linked) -->
 <!-- state: claimed-by: mason-frontend @ 2026-07-27T20:34:00-04:00 -->
