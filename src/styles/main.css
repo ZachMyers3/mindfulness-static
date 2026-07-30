@@ -19,10 +19,9 @@
  *     cream-50     #fffdf8  (page background)
  *     cream-950    #2e2c22  (body text)
  *
- * Typography (per doc §11):
- *   sans      Inter (UI / body)
- *   display   Plus Jakarta Sans (headings)
- *   serif     Cormorant Garamond (reserved for future §9.2 serif accents)
+ * Typography (per doc §11, updated):
+ *   sans      Raleway (UI / body)
+ *   display   Black Mango (headings)
  *
  * NOTE: The ledger item-32 spec asks for a Tailwind v4 `@theme static { ... }`
  * block. This project has chosen to ship plain CSS custom properties (see

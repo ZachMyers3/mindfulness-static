@@ -2,7 +2,7 @@
  * tokens.css
  * Design tokens for the Mindfulness and Movement brand.
  * Colors: sage-600 #3a7268 (primary), mauve-600 #72576f (secondary), cream-50/cream-950 neutrals
- * Fonts: Inter (sans) + Plus Jakarta Sans (display)
+ * Fonts: Raleway (sans) + Black Mango (display)
  */
 
 :root {
@@ -58,9 +58,9 @@
   --color-focus: var(--color-primary);
 
   /* Typography */
-  --font-sans: 'Inter Variable', 'Inter Variable Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-display: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans Variable Fallback', var(--font-sans);
-  --font-serif: 'Cormorant Garamond', Georgia, Cambria, 'Times New Roman', serif;
+  --font-sans: 'Raleway Variable', 'Raleway Variable Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Black Mango', 'Black Mango Fallback', var(--font-sans);
+  --font-serif: Georgia, Cambria, 'Times New Roman', serif;
 
   /* Spacing scale */
   --space-0: 0;

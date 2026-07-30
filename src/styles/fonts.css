@@ -1,49 +1,32 @@
 /**
  * fonts.css
  * Self-hosted font loading with metric-adjusted fallbacks.
- * Imports @fontsource-variable packages (they provide @font-face with font-display: swap).
- * Adds fallback @font-face blocks using system fonts with size-adjust/ascent-override
- * to match the web font metrics and minimize CLS.
+ *
+ * Body:    Raleway Variable (@fontsource-variable/raleway)
+ * Display: Black Mango — commercial; drop licensed .woff2 files into
+ *          public/fonts/black-mango/ then uncomment the import below.
  */
 
-@import '@fontsource-variable/inter/index.css';
-@import '@fontsource-variable/plus-jakarta-sans/index.css';
+@import '@fontsource-variable/raleway/index.css';
 
-/* Metric-adjusted fallbacks for Inter Variable (sans body text) */
-@font-face {
-  font-family: 'Inter Variable Fallback';
-  src: local('Inter'), local('system-ui');
-  size-adjust: 100.06%;
-  ascent-override: 90.49%;
-  descent-override: 22.56%;
-  line-gap-override: 0%;
-}
+/* Uncomment after adding Black Mango .woff2 files (see public/fonts/black-mango/README.md): */
+/* @import './black-mango-faces.css'; */
 
-/* Metric-adjusted fallbacks for Plus Jakarta Sans Variable (display headings) */
+/* Metric-adjusted fallbacks — reduce CLS while webfonts load. */
 @font-face {
-  font-family: 'Plus Jakarta Sans Variable Fallback';
-  src: local('Plus Jakarta Sans'), local('system-ui');
-  size-adjust: 94.11%;
-  ascent-override: 89.35%;
-  descent-override: 21.83%;
-  line-gap-override: 0%;
-}
-
-/* Alternative fallback using generic sans-serif when local fonts aren't available */
-@font-face {
-  font-family: 'Inter Variable Fallback Generic';
-  src: local('system-ui'), local('sans-serif');
-  size-adjust: 100.06%;
-  ascent-override: 90.49%;
-  descent-override: 22.56%;
+  font-family: 'Raleway Variable Fallback';
+  src: local('Raleway'), local('system-ui');
+  size-adjust: 97%;
+  ascent-override: 92%;
+  descent-override: 24%;
   line-gap-override: 0%;
 }
 
 @font-face {
-  font-family: 'Plus Jakarta Sans Variable Fallback Generic';
-  src: local('system-ui'), local('sans-serif');
-  size-adjust: 94.11%;
-  ascent-override: 89.35%;
-  descent-override: 21.83%;
+  font-family: 'Black Mango Fallback';
+  src: local('Black Mango'), local('BlackMango'), local('system-ui');
+  size-adjust: 98%;
+  ascent-override: 90%;
+  descent-override: 22%;
   line-gap-override: 0%;
 }
