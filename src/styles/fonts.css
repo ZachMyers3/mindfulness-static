@@ -1,10 +1,14 @@
 /**
  * fonts.css
- * Self-hosted font loading with metric-adjusted fallbacks.
+ * Self-hosted font loading.
  *
  * Body:    Raleway Variable — latin subset only (keeps critical path small)
  * Display: Black Mango — commercial; drop licensed .woff2 files into
  *          public/fonts/black-mango/ then uncomment the import below.
+ *
+ * Until Black Mango webfonts are present, headings fall through to Raleway.
+ * Do not apply ascent/descent overrides on fallback faces — those metrics
+ * were crushing glyphs when a local Black Mango (or system-ui) was used.
  */
 
 @font-face {
@@ -21,22 +25,3 @@
 
 /* Uncomment after adding Black Mango .woff2 files (see public/fonts/black-mango/README.md): */
 /* @import './black-mango-faces.css'; */
-
-/* Metric-adjusted fallbacks — reduce CLS while webfonts load. */
-@font-face {
-  font-family: 'Raleway Variable Fallback';
-  src: local('Raleway'), local('system-ui');
-  size-adjust: 97%;
-  ascent-override: 92%;
-  descent-override: 24%;
-  line-gap-override: 0%;
-}
-
-@font-face {
-  font-family: 'Black Mango Fallback';
-  src: local('Black Mango'), local('BlackMango'), local('system-ui');
-  size-adjust: 98%;
-  ascent-override: 90%;
-  descent-override: 22%;
-  line-gap-override: 0%;
-}

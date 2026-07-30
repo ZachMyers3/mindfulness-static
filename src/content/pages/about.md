@@ -1,5 +1,5 @@
 ---
-title: About the studio
+title: "About the studio"
 description: "Mindfulness and Movement is a small practice space in {{TODO_ZACH: city}} built around steady, embodied, accessible teaching."
 draft: false
 ---
@@ -35,7 +35,7 @@ not a limitation. It is the point.
 
 The studio is led by your teacher, a long-time practitioner who came to yoga through
 breathwork and stayed through the body. The teaching draws from a decade of practice
-across Hatha, Vinyasa, and Yin, and from earlier work in {{TODO\_ZACH: background, e.g.
+across Hatha, Vinyasa, and Yin, and from earlier work in {{TODO_ZACH: background, e.g.
 "somatic therapy and trauma-aware facilitation"}}.
 
 Your teacher is not a guru. There is no mythology here, no lineage chart on the wall, no
@@ -43,8 +43,8 @@ language of master and student. There is a practice, and a willingness to share 
 
 ## The room
 
-The studio is a {{TODO\_ZACH: short description of the physical space, e.g. "small,
-sun-filled room on a quiet street"}}. There is space for {{TODO\_ZACH: capacity}} students
+The studio is a {{TODO_ZACH: short description of the physical space, e.g. "small,
+sun-filled room on a quiet street"}}. There is space for {{TODO_ZACH: capacity}} students
 in a class. The windows open. The temperature is comfortable. The music, when there is
 any, is quiet.
 

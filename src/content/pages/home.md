@@ -1,5 +1,5 @@
 ---
-title: Mindfulness and Movement
+title: "Mindfulness and Movement"
 description: "A quiet practice of movement, breath, and rest in {{TODO_ZACH: city}}. Accessible yoga and breathwork for steady, embodied living."
 draft: false
 ---

@@ -1,10 +1,10 @@
 ---
-title: Terms
-description: The terms of service for Mindfulness and Movement — participation, cancellations, and liability.
+title: "Terms"
+description: "The terms of service for Mindfulness and Movement — participation, cancellations, and liability."
 draft: false
 ---
 
-{{TODO\_ZACH: lawyer review}}
+{{TODO_ZACH: lawyer review}}
 
 ## Service disclaimer
 
@@ -22,11 +22,11 @@ options; you are there to choose among them.
 
 ## Cancellation policy
 
-{{TODO\_ZACH: cancellation policy, e.g. "If you need to cancel a class, please let us
+{{TODO_ZACH: cancellation policy, e.g. "If you need to cancel a class, please let us
 know at least 12 hours in advance so we can offer the spot to someone on the waitlist.
 Cancellations within 12 hours are charged in full; later cancellations are not."}}
 
-{{TODO\_ZACH: package refund policy, e.g. "Class packages are non-refundable once
+{{TODO_ZACH: package refund policy, e.g. "Class packages are non-refundable once
 purchased but remain valid for six months. Monthly unlimited can be paused or
 cancelled at any time; paused plans resume on the date you choose."}}
 
@@ -42,9 +42,9 @@ the teacher before class so the practice can be offered safely for you.
 
 ## Governing law
 
-These terms are governed by the laws of **{{TODO\_ZACH: governing jurisdiction}}**. If
+These terms are governed by the laws of **{{TODO_ZACH: governing jurisdiction}}**. If
 any part of them is found unenforceable, the rest remain in effect.
 
 ## Contact
 
-For questions about these terms, please email **{{TODO\_ZACH: contact email}}**.
+For questions about these terms, please email **{{TODO_ZACH: contact email}}**.
