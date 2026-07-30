@@ -17,7 +17,8 @@ jobs:
           node-version: 22
           cache: npm
 
-      - run: npm ci
+      # @writenex/astro peers Astro 4/5; this project is on Astro 7 (.npmrc also sets this).
+      - run: npm ci --legacy-peer-deps
 
       - name: Build
         run: npm run build
