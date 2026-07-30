@@ -1,5 +1,5 @@
 ---
-title: "Mindfulness and Movement"
+title: Mindfulness and Movement
 description: "A quiet practice of movement, breath, and rest in {{TODO_ZACH: city}}. Accessible yoga and breathwork for steady, embodied living."
 draft: false
 ---
@@ -31,8 +31,8 @@ Bring a willingness to notice, and a willingness to leave the rest at the door.
 
 > The mat is not a place to become something. It is a place to remember what you already are.
 
-Learn [about the studio](/about), see the [classes we offer](/offerings), or
-[check the schedule](/schedule) for what is next on the calendar.
+Learn [about the studio](/about/), see the [classes we offer](/offerings/), or
+[check the schedule](/schedule/) for what is next on the calendar.
 
 ## How to begin
 
@@ -42,5 +42,5 @@ in, and a teacher who will offer options for every body. Nothing is required of 
 beyond showing up.
 
 If you are not quite ready to step onto the mat, you are welcome to read the [practice
-notes on the journal](/journal), or [send a note with any questions](/contact). There is
+notes on the journal](/journal/), or [send a note with any questions](/contact/). There is
 no urgency here. The practice has been waiting for you, and it will keep.

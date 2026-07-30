@@ -20,6 +20,8 @@
  *   - The breadcrumb is rendered as a <nav aria-label="Breadcrumb"> with
  *     an ordered list, per accessibility guidance.
  */
+import { withBase } from '../lib/url';
+
 interface Crumb {
   label: string;
   href?: string;
@@ -58,7 +60,7 @@ const crumbs = breadcrumb ?? [];
               {isLast || !crumb.href ? (
                 <span aria-current="page">{crumb.label}</span>
               ) : (
-                <a href={crumb.href}>{crumb.label}</a>
+                <a href={withBase(crumb.href)}>{crumb.label}</a>
               )}
               {!isLast && <span class="page-header__crumb-sep" aria-hidden="true">/</span>}
             </li>

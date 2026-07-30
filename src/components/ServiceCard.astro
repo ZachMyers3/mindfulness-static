@@ -27,6 +27,8 @@
  *   - When href is absent, only the explicit CTA link is clickable (the
  *     image/title/description are not focusable).
  */
+import { withBase } from '../lib/url';
+
 interface Props {
   title: string;
   description: string;
@@ -43,11 +45,12 @@ const {
   description,
   image,
   alt,
-  href,
+  href: rawHref,
   ctaLabel = 'Learn more',
   meta,
   class: className,
 } = Astro.props;
+const href = rawHref ? withBase(rawHref) : undefined;
 
 const hasImage = Boolean(image);
 const hasLink = Boolean(href);

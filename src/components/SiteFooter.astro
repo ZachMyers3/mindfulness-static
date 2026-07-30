@@ -9,6 +9,7 @@
  * Bottom row: legalLinks + © {year} {business.name}
  */
 import { site } from '../lib/site';
+import { withBase } from '../lib/url';
 
 const { business, contact, hours, social, footer } = site;
 const year = new Date().getFullYear();
@@ -73,7 +74,7 @@ function formatTime(t: string | null): string {
         {footer.legalLinks.map((link, i) => (
           <Fragment>
             {i > 0 && <span class="site-footer__legal-sep" aria-hidden="true">·</span>}
-            <a href={link.href}>{link.label}</a>
+            <a href={withBase(link.href)}>{link.label}</a>
           </Fragment>
         ))}
       </nav>

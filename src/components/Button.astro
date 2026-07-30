@@ -10,18 +10,22 @@
  *   class   — optional additional class for styling
  *
  * Behaviour:
+ *   - Internal paths are prefixed with Astro `base` (GitHub Pages project URLs).
  *   - If `href` starts with `http` (external), adds `rel="noopener"` and
  *     `target="_blank"` so external links open safely in a new tab without
  *     leaking the opener.
  */
+import { withBase } from '../lib/url';
+
 interface Props {
   href: string;
   variant?: 'primary' | 'secondary';
   class?: string;
 }
 
-const { href, variant = 'primary', class: className } = Astro.props;
-const isExternal = href.startsWith('http');
+const { href: rawHref, variant = 'primary', class: className } = Astro.props;
+const isExternal = rawHref.startsWith('http');
+const href = isExternal ? rawHref : withBase(rawHref);
 ---
 
 <a

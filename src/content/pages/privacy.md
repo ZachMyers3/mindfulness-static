@@ -1,10 +1,10 @@
 ---
-title: "Privacy"
-description: "The privacy practices of Mindfulness and Movement — what we collect, what we don't, and how to reach us."
+title: Privacy
+description: The privacy practices of Mindfulness and Movement — what we collect, what we don't, and how to reach us.
 draft: false
 ---
 
-{{TODO_ZACH: lawyer review}}
+{{TODO\_ZACH: lawyer review}}
 
 ## What we collect
 
@@ -26,12 +26,12 @@ shredded after the class series ends, unless you ask us to keep it longer.
 
 ## How to reach us about privacy
 
-Email **{{TODO_ZACH: privacy contact email}}** with any privacy question. We will
+Email **{{TODO\_ZACH: privacy contact email}}** with any privacy question. We will
 reply directly and act on your request.
 
 ## Hosting
 
-This site is hosted by **{{TODO_ZACH: hosting provider}}**. The host may keep routine
+This site is hosted by **{{TODO\_ZACH: hosting provider}}**. The host may keep routine
 access logs (your IP, the page you visited, a timestamp) for a short period for
 operational security. We do not read those logs.
 

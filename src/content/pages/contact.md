@@ -1,13 +1,13 @@
 ---
-title: "Contact"
-description: "How to reach Mindfulness and Movement — by email, in person, or by post."
+title: Contact
+description: How to reach Mindfulness and Movement — by email, in person, or by post.
 draft: false
 ---
 
 ## Come say hello
 
 If you have a question about a class, a body, a schedule, or anything else, the simplest
-way to reach us is by email. We read every message and reply within {{TODO_ZACH: reply
+way to reach us is by email. We read every message and reply within {{TODO\_ZACH: reply
 window, e.g. "two business days"}}. The door is also open in person during studio hours
 — please feel free to stop by.
 
@@ -16,48 +16,48 @@ small number of human beings reading it.
 
 ## By email
 
-The studio inbox is **{{TODO_ZACH: contact email, e.g. hello@example.com}}**. This is the
+The studio inbox is **{{TODO\_ZACH: contact email, e.g. hello@example.com}}**. This is the
 best address for almost everything — questions about classes, scheduling, pricing,
 accessibility, and what to expect on your first visit.
 
-For privacy-specific questions, please use **{{TODO_ZACH: privacy contact email}}**
+For privacy-specific questions, please use **{{TODO\_ZACH: privacy contact email}}**
 instead, so we can keep those messages separate from general correspondence.
 
 ## By phone
 
-If you prefer to talk, you can reach the studio at **{{TODO_ZACH: phone number, e.g.
+If you prefer to talk, you can reach the studio at **{{TODO\_ZACH: phone number, e.g.
 +1-555-555-5555}}**. Please leave a voicemail if no one picks up — calls are returned
 between classes.
 
-{{TODO_ZACH: phone hours, e.g. "Phone hours are 9am–5pm, Tuesday through Saturday."}}
+{{TODO\_ZACH: phone hours, e.g. "Phone hours are 9am–5pm, Tuesday through Saturday."}}
 
 ## In person
 
 The studio is at:
 
-> {{TODO_ZACH: street address}}
-> {{TODO_ZACH: city}}, {{TODO_ZACH: state or region}} {{TODO_ZACH: postal code}}
-> {{TODO_ZACH: country code, e.g. US}}
+> {{TODO\_ZACH: street address}}
+> {{TODO\_ZACH: city}}, {{TODO\_ZACH: state or region}} {{TODO\_ZACH: postal code}}
+> {{TODO\_ZACH: country code, e.g. US}}
 
-[Open in OpenStreetMap]({{TODO_ZACH: OpenStreetMap link}})
+\[Open in OpenStreetMap]\({{TODO\_ZACH: OpenStreetMap link}})
 
-The building is {{TODO_ZACH: access note, e.g. "step-free from the street, with a ramp
-at the side entrance"}}. The studio is on the {{TODO_ZACH: floor, e.g. "second floor"}}.
+The building is {{TODO\_ZACH: access note, e.g. "step-free from the street, with a ramp
+at the side entrance"}}. The studio is on the {{TODO\_ZACH: floor, e.g. "second floor"}}.
 
 ## Studio hours
 
 The studio is open during the following hours. Classes run within these windows — the
-full schedule is on the [schedule](/schedule) page.
+full schedule is on the [schedule](/schedule/) page.
 
-- **Monday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Tuesday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Wednesday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Thursday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Friday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Saturday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Sunday** — Closed
+* **Monday** — {{TODO\_ZACH: HH:MM}} to {{TODO\_ZACH: HH:MM}}
+* **Tuesday** — {{TODO\_ZACH: HH:MM}} to {{TODO\_ZACH: HH:MM}}
+* **Wednesday** — {{TODO\_ZACH: HH:MM}} to {{TODO\_ZACH: HH:MM}}
+* **Thursday** — {{TODO\_ZACH: HH:MM}} to {{TODO\_ZACH: HH:MM}}
+* **Friday** — {{TODO\_ZACH: HH:MM}} to {{TODO\_ZACH: HH:MM}}
+* **Saturday** — {{TODO\_ZACH: HH:MM}} to {{TODO\_ZACH: HH:MM}}
+* **Sunday** — Closed
 
-The studio is closed on {{TODO_ZACH: closed days, e.g. "Sundays and major holidays"}}.
+The studio is closed on {{TODO\_ZACH: closed days, e.g. "Sundays and major holidays"}}.
 
 ## A welcome
 

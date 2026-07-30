@@ -25,6 +25,7 @@ point it at `dist/`, and the site goes live.
 | Variable | Required? | Purpose |
 |---|---|---|
 | `SITE` | Recommended | Overrides the canonical site URL used by `<SeoHead>` and `@astrojs/sitemap`. Defaults to `https://mindfulnessandmovement.example.com` if unset. Set this to your real domain in the host's build settings (e.g. `https://mindfulnessandmovement.com`). |
+| `BASE_PATH` | Only for project-path hosts | Astro `base` path. Defaults to `/`. The GitHub Pages workflow sets this to `/<repo>` automatically; set to `/` when using a custom domain. |
 
 No other runtime or build-time env vars are needed. All content is in-repo.
 
@@ -34,46 +35,27 @@ No other runtime or build-time env vars are needed. All content is in-repo.
 
 ### GitHub Pages (simplest, free, GitHub-native)
 
-1. Push `main` to GitHub.
-2. In **Settings → Pages**, set source to "GitHub Actions".
-3. Use the workflow below, or set build command = `npm run build`,
-   output directory = `dist/`.
+Workflow: `.github/workflows/deploy.yml` — builds and publishes `dist/` on
+every push to `main` (and via **Actions → Deploy to GitHub Pages → Run workflow**).
 
-```yaml
-# .github/workflows/deploy.yml (add to repo)
-name: Deploy to GitHub Pages
-on:
-  push:
-    branches: [main]
-permissions:
-  pages: write
-  id-token: write
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with: { node-version-file: '.nvmrc' }
-      - run: npm ci && npm run build
-      - uses: actions/upload-pages-artifact@v3
-        with: { path: dist }
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
-```
+1. Push `main` to GitHub (or merge `develop` → `main`).
+2. In **Settings → Pages**, set source to **GitHub Actions**.
+3. After the first successful run, the site URL appears on the workflow
+   summary (typically `https://<user>.github.io/mindfulness-static/`).
 
-- **Custom domain:** add a `CNAME` file in `./public/` with your domain,
-  or configure it in Settings → Pages → Custom domain.
+Optional repo **Variables** (Settings → Secrets and variables → Actions):
+
+| Variable | When to set | Example |
+|---|---|---|
+| `SITE` | Custom domain, or to override the default Pages URL | `https://mindfulnessandmovement.com` |
+| `BASE_PATH` | Custom domain (must be `/`); leave unset for project Pages | `/` |
+
+- **Custom domain:** set `SITE` + `BASE_PATH=/`, then configure the domain in
+  Settings → Pages → Custom domain (or add a `CNAME` under `./public/`).
 - **Trailing slash:** GitHub Pages serves `about/index.html` as `/about/`
   by default — compatible with this repo's `trailingSlash: 'always'`.
-
+- **Visibility:** GitHub Pages is **public by default**, even from a private
+  repo. Restricting Pages to collaborators requires GitHub Enterprise Cloud.
 ### Netlify (free tier, GitHub-native)
 
 1. **Add new site → Import an existing project** → select this repo.

@@ -12,6 +12,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../lib/site';
+import { withBase } from '../../lib/url';
 
 const posts = (await getCollection('journal', ({ data }) =>
   import.meta.env.PROD ? !data.draft : true
@@ -50,7 +51,7 @@ const description = `Essays and notes from ${siteName} on mindfulness, movement,
                 </time>
               </p>
               <h2 class="journal-card__title">
-                <a href={`/journal/${post.id}/`} class="journal-card__link">{post.data.title}</a>
+                <a href={withBase(`/journal/${post.id}/`)} class="journal-card__link">{post.data.title}</a>
               </h2>
               <p class="journal-card__description">{post.data.description}</p>
               {post.data.tags && post.data.tags.length > 0 && (

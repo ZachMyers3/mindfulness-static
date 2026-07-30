@@ -18,6 +18,7 @@ export const prerender = true;
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../lib/site';
+import { withBase } from '../../lib/url';
 
 export async function getStaticPaths() {
   const posts = await getCollection('journal', ({ data }) =>
@@ -47,7 +48,7 @@ const isoDate = pubDate.toISOString();
     <header class="journal-post__header">
       <p class="journal-post__meta">
         <time datetime={isoDate}>{formattedDate}</time>
-        <a href="/journal/" class="journal-post__back">← All journal posts</a>
+        <a href={withBase('/journal/')} class="journal-post__back">← All journal posts</a>
       </p>
       <h1 class="journal-post__title">{title}</h1>
       <p class="journal-post__description">{description}</p>
@@ -65,7 +66,7 @@ const isoDate = pubDate.toISOString();
     </div>
 
     <footer class="journal-post__footer">
-      <a href="/journal/" class="journal-post__back">← Back to the journal</a>
+      <a href={withBase('/journal/')} class="journal-post__back">← Back to the journal</a>
       <p class="journal-post__site">— {siteName}</p>
     </footer>
   </article>

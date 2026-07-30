@@ -1,13 +1,18 @@
 import { z } from 'astro/zod';
 import raw from '../content/site.json';
 
+/** Internal paths must match Astro's trailingSlash: 'always' config. */
+const InternalHref = z
+  .string()
+  .regex(/^\/(?:$|.+\/)$/, 'Internal hrefs must start with / and end with /');
+
 const SiteSchema = z.object({
   business: z.object({
     name: z.string().min(1),
     tagline: z.string(),
     description: z.string(),
   }),
-  nav: z.array(z.object({ label: z.string(), href: z.string() })),
+  nav: z.array(z.object({ label: z.string(), href: InternalHref })),
   contact: z.object({
     address: z.object({
       street: z.string(), city: z.string(),
@@ -31,7 +36,7 @@ const SiteSchema = z.object({
   }).optional(),
   footer: z.object({
     tagline: z.string(),
-    legalLinks: z.array(z.object({ label: z.string(), href: z.string() })),
+    legalLinks: z.array(z.object({ label: z.string(), href: InternalHref })),
   }),
 });
 

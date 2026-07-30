@@ -5,12 +5,12 @@
     "description": "A short paragraph used in <meta> and on the homepage."
   },
   "nav": [
-    { "label": "About", "href": "/about" },
-    { "label": "Classes", "href": "/offerings" },
-    { "label": "Schedule", "href": "/schedule" },
-    { "label": "Pricing", "href": "/pricing" },
-    { "label": "Journal", "href": "/journal" },
-    { "label": "Contact", "href": "/contact" }
+    { "label": "About", "href": "/about/" },
+    { "label": "Classes", "href": "/offerings/" },
+    { "label": "Schedule", "href": "/schedule/" },
+    { "label": "Pricing", "href": "/pricing/" },
+    { "label": "Journal", "href": "/journal/" },
+    { "label": "Contact", "href": "/contact/" }
   ],
   "contact": {
     "address": {
@@ -44,8 +44,8 @@
   "footer": {
     "tagline": "A short line for the bottom of every page.",
     "legalLinks": [
-      { "label": "Privacy", "href": "/privacy" },
-      { "label": "Terms", "href": "/terms" }
+      { "label": "Privacy", "href": "/privacy/" },
+      { "label": "Terms", "href": "/terms/" }
     ]
   }
 }

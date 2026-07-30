@@ -14,6 +14,7 @@ export const prerender = true;
 
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { site } from '../lib/site';
+import { withBase } from '../lib/url';
 
 const siteName = site.business.name;
 const siteTagline = site.business.tagline;
@@ -31,8 +32,8 @@ const siteTagline = site.business.tagline;
       <p class="not-found__site-line">{siteTagline} — {siteName}</p>
     )}
     <div class="not-found__actions">
-      <a href="/" class="not-found__cta not-found__cta--primary">Go home</a>
-      <a href="/contact/" class="not-found__cta not-found__cta--secondary">Get in touch</a>
+      <a href={withBase('/')} class="not-found__cta not-found__cta--primary">Go home</a>
+      <a href={withBase('/contact/')} class="not-found__cta not-found__cta--secondary">Get in touch</a>
     </div>
   </section>
 </BaseLayout>

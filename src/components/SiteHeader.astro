@@ -7,6 +7,7 @@
  * Mobile menu uses <details>/<summary> for zero-JS per item-44.
  */
 import { site } from '../lib/site';
+import { withBase } from '../lib/url';
 
 const { business, nav } = site;
 const currentPath = Astro.url.pathname;
@@ -14,7 +15,7 @@ const currentPath = Astro.url.pathname;
 
 <header class="site-header" role="banner">
   <div class="site-header__inner">
-    <a href="/" class="site-header__logo" aria-label={`${business.name} — home`}>
+    <a href={withBase('/')} class="site-header__logo" aria-label={`${business.name} — home`}>
       {business.name}
     </a>
 
@@ -22,12 +23,13 @@ const currentPath = Astro.url.pathname;
     <nav class="site-header__nav-desktop" aria-label="Primary">
       <ul>
         {nav.map((item) => {
-          const isActive = currentPath === item.href ||
-            (item.href !== '/' && currentPath.startsWith(item.href));
+          const href = withBase(item.href);
+          const isActive = currentPath === href ||
+            (item.href !== '/' && currentPath.startsWith(href));
           return (
             <li>
               <a
-                href={item.href}
+                href={href}
                 class:list={['site-header__nav-link', { 'is-active': isActive }]}
                 aria-current={isActive ? 'page' : undefined}
               >
@@ -47,12 +49,13 @@ const currentPath = Astro.url.pathname;
       <nav class="site-header__nav-mobile" aria-label="Mobile primary">
         <ul>
           {nav.map((item) => {
-            const isActive = currentPath === item.href ||
-              (item.href !== '/' && currentPath.startsWith(item.href));
+            const href = withBase(item.href);
+            const isActive = currentPath === href ||
+              (item.href !== '/' && currentPath.startsWith(href));
             return (
               <li>
                 <a
-                  href={item.href}
+                  href={href}
                   class:list={['site-header__mobile-link', { 'is-active': isActive }]}
                   aria-current={isActive ? 'page' : undefined}
                 >

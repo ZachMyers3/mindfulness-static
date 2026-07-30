@@ -10,6 +10,15 @@ describe('site.json validates against schema', () => {
     expect(site).toBeDefined();
     expect(site.business.name).toBe('Mindfulness and Movement');
   });
+
+  it('requires trailing slashes on nav and legal hrefs', () => {
+    for (const item of site.nav) {
+      expect(item.href).toMatch(/^\/(?:$|.+\/)$/);
+    }
+    for (const item of site.footer.legalLinks) {
+      expect(item.href).toMatch(/^\/(?:$|.+\/)$/);
+    }
+  });
 });
 
 describe('site.json rejects missing hours', () => {
