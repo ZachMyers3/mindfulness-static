@@ -1,12 +1,12 @@
 ---
 title: "About the studio"
-description: "Mindfulness and Movement is a small practice space in {{TODO_ZACH: city}} built around steady, embodied, accessible teaching."
+description: "Mindfulness & Movement is a small practice space in {{TODO_ZACH: city}} built around steady, embodied, accessible teaching."
 draft: false
 ---
 
 ## A practice, not a product
 
-Mindfulness and Movement was founded with a single room and a single rule: teach what you
+Mindfulness & Movement was founded with a single room and a single rule: teach what you
 have lived, not what you have read. The room is a little bigger now, and the rule is the
 same.
 

@@ -1,6 +1,6 @@
 ---
 title: "Schedule"
-description: "Weekly class schedule for Mindfulness and Movement. Slow yoga, breathwork, and quiet gathering in {{TODO_ZACH: city}}."
+description: "Weekly class schedule for Mindfulness & Movement. Slow yoga, breathwork, and quiet gathering in {{TODO_ZACH: city}}."
 draft: false
 ---
 

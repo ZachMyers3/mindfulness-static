@@ -1,6 +1,6 @@
 ---
 title: "Pricing"
-description: "Pricing for classes and packages at Mindfulness and Movement. Steady, accessible practice at a fair rate."
+description: "Pricing for classes and packages at Mindfulness & Movement. Steady, accessible practice at a fair rate."
 draft: false
 ---
 

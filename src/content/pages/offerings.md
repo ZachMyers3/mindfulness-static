@@ -1,6 +1,6 @@
 ---
 title: "Offerings"
-description: "What we offer at Mindfulness and Movement — slow yoga, breathwork, and quiet gathering in {{TODO_ZACH: city}}."
+description: "What we offer at Mindfulness & Movement — slow yoga, breathwork, and quiet gathering in {{TODO_ZACH: city}}."
 draft: false
 ---
 

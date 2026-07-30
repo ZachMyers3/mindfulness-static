@@ -1,0 +1,28 @@
+---
+/**
+ * BrandName.astro
+ * Renders a brand string like "Mindfulness & Movement", with the ampersand
+ * in Quicksand while the rest uses the surrounding display face.
+ */
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+const parts = name.split(/\s*&\s*/);
+---
+
+{
+  parts.map((part, i) => (
+    <>
+      {i > 0 && (
+        <>
+          {' '}
+          <span class="brand-amp">&</span>
+          {' '}
+        </>
+      )}
+      {part}
+    </>
+  ))
+}

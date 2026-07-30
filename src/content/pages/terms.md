@@ -1,6 +1,6 @@
 ---
 title: "Terms"
-description: "The terms of service for Mindfulness and Movement — participation, cancellations, and liability."
+description: "The terms of service for Mindfulness & Movement — participation, cancellations, and liability."
 draft: false
 ---
 

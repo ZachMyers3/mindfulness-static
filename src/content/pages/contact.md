@@ -1,6 +1,6 @@
 ---
 title: "Contact"
-description: "How to reach Mindfulness and Movement — by email, in person, or by post."
+description: "How to reach Mindfulness & Movement — by email, in person, or by post."
 draft: false
 ---
 

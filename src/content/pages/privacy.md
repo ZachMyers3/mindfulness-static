@@ -1,6 +1,6 @@
 ---
 title: "Privacy"
-description: "The privacy practices of Mindfulness and Movement — what we collect, what we don't, and how to reach us."
+description: "The privacy practices of Mindfulness & Movement — what we collect, what we don't, and how to reach us."
 draft: false
 ---
 

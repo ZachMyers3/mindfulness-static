@@ -1,4 +1,4 @@
-# Mindfulness and Movement
+# Mindfulness & Movement
 
 > A yoga-derived wellness practice. This repo is the website — a small,
 > fast, fully static Astro + MDX site whose content lives in plain
@@ -145,5 +145,5 @@ when ready.
 
 ## License
 
-Site content (copy, photos, fonts) is owned by Mindfulness and Movement.
+Site content (copy, photos, fonts) is owned by Mindfulness & Movement.
 Source code ISC-licensed; fork freely.

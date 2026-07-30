@@ -44,7 +44,7 @@ export const site = SiteSchema.parse(raw);  // throws at build if invalid
 export type Site = typeof site;
 
 /**
- * Formats the page title as "Page Title | Mindfulness and Movement"
+ * Formats the page title as "Page Title | Mindfulness & Movement"
  */
 export function formatTitle(pageTitle: string): string {
   return `${pageTitle} | ${site.business.name}`;
