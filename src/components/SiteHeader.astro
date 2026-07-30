@@ -131,9 +131,12 @@ const currentPath = Astro.url.pathname;
   }
 
   .site-header__hamburger {
+    display: block;
     cursor: pointer;
     list-style: none;
     padding: 0.5rem;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
   }
 
   .site-header__hamburger::-webkit-details-marker {
