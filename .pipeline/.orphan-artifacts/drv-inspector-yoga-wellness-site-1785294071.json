@@ -1,0 +1,43 @@
+{
+  "recovered_at": "2026-07-29T03:10:02.363657+00:00",
+  "project": "yoga-wellness-site",
+  "lane": "inspector",
+  "agent_id": "inspector",
+  "session_id": "drv-inspector-yoga-wellness-site-1785294071",
+  "session_file": "/home/openclaw/.openclaw/agents/inspector/sessions/drv-inspector-yoga-wellness-site-1785294071.jsonl",
+  "trajectory_file": "/home/openclaw/.openclaw/agents/inspector/sessions/drv-inspector-yoga-wellness-site-1785294071.trajectory.jsonl",
+  "runtime": {
+    "started_at": "2026-07-29T03:01:23.301000+00:00",
+    "ended_at": "2026-07-29T03:08:53.422000+00:00",
+    "duration_s": 450
+  },
+  "termination": {
+    "stop_reason": "error",
+    "error_message": "Upstream stream idle timeout after 45000ms",
+    "fallback_step": {
+      "reason": "timeout",
+      "detail": "Upstream stream idle timeout after 45000ms",
+      "from_model": "modelrelay/auto-fastest",
+      "chain_position": 1,
+      "final_outcome": "chain_exhausted"
+    }
+  },
+  "provider": {
+    "model_id": "auto-fastest",
+    "provider_id": "modelrelay"
+  },
+  "last_completed_turn": {
+    "ts": "2026-07-29T03:08:53.231Z",
+    "aborted": false,
+    "idle_timed_out": false,
+    "usage": {
+      "input": null,
+      "output": null,
+      "reasoning_tokens": null,
+      "total_tokens": null,
+      "cache_read": 0,
+      "cache_write": 0
+    }
+  },
+  "session_kind": "outstream_completed_then_fallback_exhausted"
+}

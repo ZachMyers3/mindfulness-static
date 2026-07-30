@@ -1,0 +1,208 @@
+---
+/**
+ * PricingCard.astro
+ * Card representing a single pricing tier on the pricing page. Per
+ * design-doc §9.2:
+ *   "Title, price (large), short tagline, bullet list of what's included,
+ *    primary CTA. Three cards side-by-side on >= 960px, stacked below."
+ *
+ * Props:
+ *   title     — tier name (required, e.g. "Drop-in")
+ *   price     — price text (required, e.g. "$25" or "$99 / month")
+ *   tagline?  — optional short tagline below the price
+ *   features? — optional array of strings (each rendered as a bullet item);
+ *               omitting this hides the features list entirely
+ *   ctaLabel  — CTA button label (required)
+ *   ctaHref   — CTA button destination (required)
+ *   featured? — optional flag; when true, the card is visually elevated
+ *               (e.g. for the "most popular" tier)
+ *   class?    — optional additional class for styling
+ *
+ * Notes:
+ *   - CTA uses the Button component for visual + a11y consistency.
+ *   - `featured` adds a thicker border + a "Most popular" ribbon so the
+ *     elevated card stands out without changing the grid.
+ */
+import Button from './Button.astro';
+
+interface Props {
+  title: string;
+  price: string;
+  tagline?: string;
+  features?: string[];
+  ctaLabel: string;
+  ctaHref: string;
+  featured?: boolean;
+  class?: string;
+}
+
+const {
+  title,
+  price,
+  tagline,
+  features = [],
+  ctaLabel,
+  ctaHref,
+  featured = false,
+  class: className,
+} = Astro.props;
+
+const hasFeatures = features.length > 0;
+---
+
+<article
+  class:list={[
+    'pricing-card',
+    featured && 'pricing-card--featured',
+    className,
+  ]}
+  aria-label={`${title} pricing tier${featured ? ' (most popular)' : ''}`}
+>
+  {featured && <p class="pricing-card__ribbon" aria-hidden="true">Most popular</p>}
+
+  <header class="pricing-card__header">
+    <h3 class="pricing-card__title">{title}</h3>
+    <p class="pricing-card__price">{price}</p>
+    {tagline && <p class="pricing-card__tagline">{tagline}</p>}
+  </header>
+
+  {hasFeatures && (
+    <ul class="pricing-card__features">
+      {features.map((f) => (
+        <li class="pricing-card__feature">
+          <span class="pricing-card__check" aria-hidden="true">✓</span>
+          <span class="pricing-card__feature-text">{f}</span>
+        </li>
+      ))}
+    </ul>
+  )}
+
+  <div class="pricing-card__cta">
+    <Button
+      href={ctaHref}
+      variant={featured ? 'primary' : 'secondary'}
+    >
+      {ctaLabel}
+    </Button>
+  </div>
+</article>
+
+<style>
+  .pricing-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e5e0db;
+    border-radius: 8px;
+    padding: 2rem 1.75rem 1.75rem;
+    height: 100%;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .pricing-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .pricing-card--featured {
+    border: 2px solid #3a7268;
+    background: linear-gradient(180deg, #f4f8f6 0%, #fff 35%);
+  }
+
+  .pricing-card--featured:hover {
+    transform: translateY(-2px);
+  }
+
+  .pricing-card__ribbon {
+    position: absolute;
+    top: -0.875rem;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    padding: 0.25rem 0.875rem;
+    background: #3a7268;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+
+  .pricing-card__header {
+    text-align: center;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #e5e0db;
+  }
+
+  .pricing-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.3;
+    margin: 0 0 0.75rem;
+    color: #1a1a1a;
+  }
+
+  .pricing-card__price {
+    font-size: clamp(2rem, 3vw + 1rem, 2.75rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin: 0 0 0.5rem;
+    color: #3a7268;
+  }
+
+  .pricing-card__tagline {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin: 0;
+    color: #666;
+  }
+
+  .pricing-card__features {
+    list-style: none;
+    margin: 0 0 1.5rem;
+    padding: 0;
+    flex: 1;
+  }
+
+  .pricing-card__feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #1a1a1a;
+  }
+
+  .pricing-card__check {
+    flex: 0 0 auto;
+    color: #3a7268;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+
+  .pricing-card__feature-text {
+    flex: 1;
+  }
+
+  .pricing-card__cta {
+    margin-top: auto;
+    text-align: center;
+  }
+
+  .pricing-card__cta :global(.button) {
+    width: 100%;
+    text-align: center;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pricing-card,
+    .pricing-card--featured {
+      transition: none;
+    }
+  }
+</style>

@@ -16,10 +16,22 @@
 
 ## Editing the site
 
+**Visual editor (recommended for page/journal copy):**
+
+```bash
+npm run dev
+# open http://localhost:4321/_writenex
+```
+
+[Writenex](https://writenex.com/astro) is a WYSIWYG editor wired to the
+`pages` and `journal` Markdown collections. It only runs during `astro
+dev` (never in production builds). Config: `writenex.config.ts`.
+
 **Where everything lives:**
 
 | What you want to edit                            | Where it is                                  |
 |--------------------------------------------------|----------------------------------------------|
+| Page / journal body copy                         | Writenex at `/_writenex`, or the `.md` files below |
 | Business name, tagline, nav, footer, hours, email | `src/content/site.json`                      |
 | Page body copy (Home, About, Offerings, …)       | `src/content/pages/<slug>.md` (frontmatter + Markdown) |
 | Journal / blog posts                             | `src/content/journal/<slug>.md`              |
@@ -29,27 +41,25 @@
 **Edit → live workflow:**
 
 ```bash
-# 1. Edit a page or site.json
-vim src/content/site.json               # adjust hours, phone, etc.
-vim src/content/pages/about.md          # rewrite the About page body
-
-# 2. Validate locally (optional but recommended)
+# 1. Edit via Writenex (pages/journal) or site.json
 npm run dev                             # http://localhost:4321
+#    → http://localhost:4321/_writenex  # visual editor
+vim src/content/site.json               # hours, phone, nav, etc.
 
-# 3. Push to develop (NOT main — main is human-gated)
+# 2. Push to develop (NOT main — main is human-gated)
 git checkout develop
 git add .
 git commit -m "Update About copy + hours"
 git push origin develop
 
-# 4. The pipeline handles the rest: Mason commits to a feature branch,
+# 3. The pipeline handles the rest: Mason commits to a feature branch,
 #    Inspector reviews it, on approval the driver auto-merges into
 #    develop (Rule 7). When you're ready to ship, cut a PR develop→main.
 ```
 
 **What you can edit yourself** vs **what needs Mason (the engineer):**
 
-- ✅ Safe: text in `site.json`, body copy in any `.md` file, photo files
+- ✅ Safe: Writenex edits, text in `site.json`, body copy in any `.md` file, photo files
   under `src/assets/`, font or color token values in `src/styles/main.css`.
 - ⚠️ Needs Mason: component code (`src/components/*.astro`), page templates
   (`src/pages/*.astro`), schemas (`src/content.config.ts`), Astro config.
@@ -63,12 +73,13 @@ npm install
 npm run dev          # http://localhost:4321
 npm run build        # builds to ./dist (host-agnostic output)
 npm run preview      # serves ./dist locally
-npm test             # Vitest unit suite (when added)
-npm run test:e2e     # Playwright E2E (when added)
+npm test             # Vitest unit suite
+npm run test:e2e     # Playwright E2E
+npm run test:lighthouse # Lighthouse CI (perf/access/seo ≥95)
 npm run lint         # ESLint + Prettier check
 ```
 
-Requires **Node 20 LTS** (see `.nvmrc`).
+Requires **Node 22+** (see `.nvmrc`).
 
 ## Deploy
 
@@ -80,7 +91,7 @@ The build output (`./dist`) is host-agnostic. Pick any of:
 - **Cloudflare Pages** (free tier generous, edge cache — recommended).
 
 For each: connect the repo, set the production branch to `main`, build
-command to `npm run build`, build directory to `dist`, Node version to 20.
+command to `npm run build`, build directory to `dist`, Node version to 22.
 
 See **`DEPLOY.md`** for one-line notes per host.
 

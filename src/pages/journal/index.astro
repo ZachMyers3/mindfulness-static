@@ -1,0 +1,175 @@
+---
+/**
+ * src/pages/journal/index.astro
+ * Journal list page. Lists every non-draft `journal` post in reverse-
+ * chronological order with a short excerpt/link to the detail page.
+ *
+ * Per design doc §9.3: "Draft journal post. Excluded from production
+ * builds by getCollection('journal', ({ data }) =>
+ * import.meta.env.PROD ? !data.draft : true). Listed in dev so the
+ * author can preview."
+ */
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../lib/site';
+import { withBase } from '../../lib/url';
+
+const posts = (await getCollection('journal', ({ data }) =>
+  import.meta.env.PROD ? !data.draft : true
+)).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const siteName = site.business.name;
+const pageTitle = 'Journal';
+const description = `Essays and notes from ${siteName} on mindfulness, movement, and the practice of showing up.`;
+---
+
+<BaseLayout title={pageTitle} description={description} noindex={true}>
+  <section class="journal-index" aria-labelledby="journal-index-heading">
+    <header class="journal-index__header">
+      <p class="journal-index__eyebrow">Journal</p>
+      <h1 id="journal-index-heading" class="journal-index__title">Notes from the practice</h1>
+      <p class="journal-index__lede">
+        Short essays on mindfulness, movement, and the small habits that
+        compound over time.
+      </p>
+    </header>
+
+    {posts.length === 0 ? (
+      <p class="journal-index__empty">No journal posts yet — check back soon.</p>
+    ) : (
+      <ol class="journal-index__list" reversed={false}>
+        {posts.map((post) => (
+          <li class="journal-index__item">
+            <article class="journal-card">
+              <p class="journal-card__meta">
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                  })}
+                </time>
+              </p>
+              <h2 class="journal-card__title">
+                <a href={withBase(`/journal/${post.id}/`)} class="journal-card__link">{post.data.title}</a>
+              </h2>
+              <p class="journal-card__description">{post.data.description}</p>
+              {post.data.tags && post.data.tags.length > 0 && (
+                <ul class="journal-card__tags" aria-label="Tags">
+                  {post.data.tags.map((tag) => (
+                    <li class="journal-card__tag">#{tag}</li>
+                  ))}
+                </ul>
+              )}
+            </article>
+          </li>
+        ))}
+      </ol>
+    )}
+  </section>
+</BaseLayout>
+
+<style>
+  .journal-index {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .journal-index__header {
+    margin-bottom: 2.5rem;
+    text-align: left;
+  }
+
+  .journal-index__eyebrow {
+    font-size: 0.875rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-primary, #3a7268);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+
+  .journal-index__title {
+    font-size: clamp(2rem, 3vw + 1rem, 2.75rem);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .journal-index__lede {
+    font-size: 1.125rem;
+    color: var(--color-ink-muted, #444);
+    line-height: 1.6;
+  }
+
+  .journal-index__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .journal-index__empty {
+    font-size: 1rem;
+    color: var(--color-ink-muted, #444);
+    padding: 1rem 0;
+  }
+
+  .journal-card {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border, #e5e0db);
+  }
+
+  .journal-card:last-child {
+    border-bottom: 0;
+  }
+
+  .journal-card__meta {
+    font-size: 0.875rem;
+    color: var(--color-ink-muted, #666);
+    margin-bottom: 0.5rem;
+  }
+
+  .journal-card__title {
+    font-size: 1.5rem;
+    line-height: 1.25;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  .journal-card__link {
+    color: var(--color-ink, #1a1a1a);
+    text-decoration: none;
+  }
+
+  .journal-card__link:hover,
+  .journal-card__link:focus {
+    color: var(--color-primary, #3a7268);
+    text-decoration: underline;
+  }
+
+  .journal-card__description {
+    color: var(--color-ink-muted, #444);
+    line-height: 1.6;
+  }
+
+  .journal-card__tags {
+    list-style: none;
+    padding: 0;
+    margin: 0.75rem 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .journal-card__tag {
+    font-size: 0.8125rem;
+    color: var(--color-primary, #3a7268);
+    background: var(--color-surface-muted, #f8f5f0);
+    padding: 0.125rem 0.625rem;
+    border-radius: 999px;
+  }
+</style>

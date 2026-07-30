@@ -1,0 +1,53 @@
+---
+/**
+ * SeoHead.astro
+ * SEO meta tags for the site — title, description, OG, Twitter, theme-color, canonical, and robots.
+ * Props:
+ *   title       - Page title (full context appended via BaseLayout)
+ *   description - Meta description
+ *   image?      - Absolute URL for OG/Twitter image (defaults to site open graph image)
+ *   noindex?   - If true, add <meta name="robots" content="noindex">
+ */
+import { formatTitle } from '../lib/site';
+
+export interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  noindex?: boolean;
+}
+
+const baseUrl = 'https://mindfulnessandmovement.example.com';
+const defaultImage = `${baseUrl}/og-default.jpg`;
+const { title, description, image = defaultImage, noindex } = Astro.props;
+const fullTitle = formatTitle(title);
+---
+
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url.href} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={image} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:site_name" content="Mindfulness and Movement" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={Astro.url.href} />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={image} />
+
+<!-- Canonical -->
+<link rel="canonical" href={Astro.url.href} />
+
+<!-- Theme color -->
+<meta name="theme-color" content="#3a7268" />
+
+<!-- Robots -->
+{noindex && <meta name="robots" content="noindex" />}

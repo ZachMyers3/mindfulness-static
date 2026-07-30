@@ -1,0 +1,178 @@
+---
+/**
+ * FaqAccordion.astro
+ * FAQ list rendered with native <details>/<summary> per design-doc §9.2:
+ *   "Pure HTML <details>/<summary>. Zero JS, accessible by default, native
+ *    keyboard support."
+ *
+ * Props:
+ *   items  — array of { q: string, a: string } (required)
+ *   title? — optional section heading above the list
+ *   class? — optional additional class for the wrapper
+ *
+ * Notes:
+ *   - Native <details>/<summary> provides keyboard support (Enter/Space
+ *     toggles, Tab moves through items), screen-reader semantics, and
+ *     state announcement for free — no JS required.
+ *   - Each item gets a stable id (faq-{i}) so that the <summary> can
+ *     reference it via aria-controls if we want to add explicit linkage
+ *     later. The native pattern is already accessible without that, so
+ *     we only set it as a defensive id target.
+ */
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  items: FaqItem[];
+  title?: string;
+  class?: string;
+}
+
+const { items, title, class: className } = Astro.props;
+---
+
+<section class:list={['faq', className]} aria-label={title ?? 'Frequently asked questions'}>
+  {title && <h2 class="faq__title">{title}</h2>}
+
+  {items.length === 0 && (
+    <p class="faq__empty">No frequently asked questions yet — check back soon.</p>
+  )}
+
+  {items.length > 0 && (
+    <ul class="faq__list">
+      {items.map((item, i) => (
+        <li class="faq__item">
+          <details class="faq__details">
+            <summary
+              class="faq__summary"
+              id={`faq-summary-${i}`}
+              aria-controls={`faq-panel-${i}`}
+            >
+              <span class="faq__question">{item.q}</span>
+              <span class="faq__icon" aria-hidden="true">+</span>
+            </summary>
+            <div
+              class="faq__panel"
+              id={`faq-panel-${i}`}
+              role="region"
+              aria-labelledby={`faq-summary-${i}`}
+            >
+              <p class="faq__answer">{item.a}</p>
+            </div>
+          </details>
+        </li>
+      ))}
+    </ul>
+  )}
+</section>
+
+<style>
+  .faq {
+    max-width: 800px;
+    margin: 2rem auto;
+  }
+
+  .faq__title {
+    font-size: 1.75rem;
+    line-height: 1.2;
+    margin: 0 0 1.25rem;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+  }
+
+  .faq__empty {
+    color: #666;
+    font-style: italic;
+  }
+
+  .faq__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid #e5e0db;
+  }
+
+  .faq__item {
+    border-bottom: 1px solid #e5e0db;
+  }
+
+  .faq__details {
+    /* Native <details> — no display tweaks needed for the open state. */
+  }
+
+  /* Hide the default disclosure triangle so we can style our own. */
+  .faq__details > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1rem 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    font-weight: 600;
+    font-size: 1.05rem;
+    line-height: 1.4;
+    color: #1a1a1a;
+    transition: color 0.15s ease;
+  }
+
+  .faq__details > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq__details > summary:hover {
+    color: #3a7268;
+  }
+
+  .faq__details > summary:focus-visible {
+    outline: 2px solid #3a7268;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .faq__question {
+    flex: 1;
+  }
+
+  .faq__icon {
+    flex: 0 0 auto;
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #eaf1ee;
+    color: #3a7268;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+  }
+
+  .faq__details[open] .faq__icon {
+    transform: rotate(45deg);
+    background: #3a7268;
+    color: #fff;
+  }
+
+  .faq__panel {
+    padding: 0 0.25rem 1.25rem;
+  }
+
+  .faq__answer {
+    margin: 0;
+    color: #444;
+    font-size: 0.975rem;
+    line-height: 1.6;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .faq__details > summary,
+    .faq__icon {
+      transition: none;
+    }
+  }
+</style>

@@ -1,0 +1,57 @@
+# Publish the static Astro build to GitHub Pages.
+#
+# One-time setup: Settings → Pages → Source = "GitHub Actions".
+# Optional repo variables (Settings → Secrets and variables → Actions → Variables):
+#   SITE       — canonical URL (default: https://<owner>.github.io/<repo>)
+#   BASE_PATH  — Astro base path (default: /<repo>; set to "/" for a custom domain)
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: npm
+
+      # @writenex/astro peers Astro 4/5; this project is on Astro 7 (.npmrc also sets this).
+      - run: npm ci --legacy-peer-deps
+
+      - name: Build
+        env:
+          # Prefer repo Variables when set (e.g. custom domain); otherwise project Pages URL.
+          SITE: ${{ vars.SITE || format('https://{0}.github.io/{1}', github.repository_owner, github.event.repository.name) }}
+          BASE_PATH: ${{ vars.BASE_PATH || format('/{0}', github.event.repository.name) }}
+        run: npm run build
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

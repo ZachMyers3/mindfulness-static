@@ -1,0 +1,98 @@
+/**
+ * tokens.css
+ * Design tokens for the Mindfulness and Movement brand.
+ * Colors: sage-600 #3a7268 (primary), mauve-600 #72576f (secondary), cream-50/cream-950 neutrals
+ * Fonts: Raleway (sans) + Black Mango (display)
+ */
+
+:root {
+  /* Colors — Stillpoint Studio palette (per doc §11) */
+  --color-sage-50: #f4f7f6;
+  --color-sage-100: #e8efe9;
+  --color-sage-200: #d1dfd3;
+  --color-sage-300: #aabca7;
+  --color-sage-400: #7d967a;
+  --color-sage-500: #5a7558;
+  --color-sage-600: #3a7268;  /* primary */
+  --color-sage-700: #2d5a50;
+  --color-sage-800: #23453d;
+  --color-sage-900: #1e3a33;
+  --color-sage-950: #0f1e1a;
+
+  --color-mauve-50: #f8f2f6;
+  --color-mauve-100: #f0e4eb;
+  --color-mauve-200: #dfc9d9;
+  --color-mauve-300: #c7a0bd;
+  --color-mauve-400: #a6709a;
+  --color-mauve-500: #894e7e;
+  --color-mauve-600: #72576f;  /* secondary */
+  --color-mauve-700: #5d4559;
+  --color-mauve-800: #4c3847;
+  --color-mauve-900: #3f303b;
+  --color-mauve-950: #221a1f;
+
+  --color-cream-50: #fffdf8;
+  --color-cream-100: #fbf7ef;
+  --color-cream-200: #f4eedb;
+  --color-cream-300: #e9e0c9;
+  --color-cream-400: #dcd0b0;
+  --color-cream-500: #c9bc99;
+  --color-cream-600: #a89d7b;
+  --color-cream-700: #827a5e;
+  --color-cream-750: #7a7253;  /* AA-compliant muted text on cream-50/100 (4.95:1) */
+  --color-cream-800: #68624c;
+  --color-cream-900: #55503f;
+  --color-cream-950: #2e2c22;
+
+  /* Semantic aliases */
+  --color-primary: var(--color-sage-600);
+  --color-primary-hover: var(--color-sage-700);
+  --color-primary-light: var(--color-sage-50);
+  --color-secondary: var(--color-mauve-600);
+  --color-secondary-hover: var(--color-mauve-700);
+  --color-surface: var(--color-cream-50);
+  --color-surface-alt: var(--color-cream-100);
+  --color-ink: var(--color-cream-950);
+  --color-muted: var(--color-cream-750);
+  --color-border: var(--color-sage-400);
+  --color-focus: var(--color-primary);
+
+  /* Typography */
+  --font-sans: 'Raleway Variable', 'Raleway Variable Fallback', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Black Mango', 'Black Mango Fallback', var(--font-sans);
+  --font-serif: Georgia, Cambria, 'Times New Roman', serif;
+
+  /* Spacing scale */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+
+  /* Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Container */
+  --container-max: 1280px;
+  --container-padding: 1.5rem;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+
+  /* Z-index */
+  --z-header: 100;
+  --z-skip-link: 1000;
+  --z-modal: 200;
+}

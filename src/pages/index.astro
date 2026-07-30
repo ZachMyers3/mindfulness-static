@@ -1,0 +1,32 @@
+---
+/**
+ * src/pages/index.astro
+ * Homepage — loads the `pages/home` Markdown entry and renders it inside
+ * BaseLayout with a full-bleed Hero component.
+ */
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import heroYoga from '../assets/hero-yoga.jpg';
+
+const entry = await getEntry('pages', 'home');
+if (!entry) {
+  throw new Error('pages/home entry not found in src/content/pages/home.md');
+}
+const { Content } = await render(entry);
+const { title, description, noindex } = entry.data;
+---
+
+<BaseLayout title={title} description={description} noindex={noindex}>
+  <Hero
+    title={title}
+    tagline={description}
+    image={heroYoga}
+    alt="Sunlight streaming through studio windows onto yoga mats"
+    ctaLabel="View Schedule"
+    ctaHref="/schedule/"
+  />
+  <article class="home-body prose">
+    <Content />
+  </article>
+</BaseLayout>

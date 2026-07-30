@@ -7,7 +7,7 @@
 slug = "yoga-wellness-site"        # matches ~/.openclaw/shared/projects/index.md H2
 human_name = "Mindfulness and Movement"
 repo = "/home/openclaw/dev/mindfulness-static"
-remote_url = ""                    # filled in once we push to GitHub
+remote_url = "https://github.com/ZachMyers3/mindfulness-static"
 
 [agents]
 # Defaults are the durable agent IDs. Override only if a project genuinely

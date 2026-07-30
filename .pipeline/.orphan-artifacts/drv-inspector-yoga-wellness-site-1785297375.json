@@ -1,0 +1,37 @@
+{
+  "recovered_at": "2026-07-29T03:58:07.327362+00:00",
+  "project": "yoga-wellness-site",
+  "lane": "inspector",
+  "agent_id": "inspector",
+  "session_id": "drv-inspector-yoga-wellness-site-1785297375",
+  "session_file": "/home/openclaw/.openclaw/agents/inspector/sessions/drv-inspector-yoga-wellness-site-1785297375.jsonl",
+  "trajectory_file": "/home/openclaw/.openclaw/agents/inspector/sessions/drv-inspector-yoga-wellness-site-1785297375.trajectory.jsonl",
+  "runtime": {
+    "started_at": "2026-07-29T03:56:28.376000+00:00",
+    "ended_at": "2026-07-29T03:57:33.601000+00:00",
+    "duration_s": 65
+  },
+  "termination": {
+    "stop_reason": "error",
+    "error_message": "Unterminated string in JSON at position 333 (line 1 column 334)",
+    "fallback_step": null
+  },
+  "provider": {
+    "model_id": "auto-fastest",
+    "provider_id": "modelrelay"
+  },
+  "last_completed_turn": {
+    "ts": "2026-07-29T03:57:33.322Z",
+    "aborted": false,
+    "idle_timed_out": false,
+    "usage": {
+      "input": 59707,
+      "output": 1224,
+      "reasoning_tokens": 964,
+      "total_tokens": 60931,
+      "cache_read": 0,
+      "cache_write": 0
+    }
+  },
+  "session_kind": "unknown"
+}

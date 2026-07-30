@@ -1,0 +1,45 @@
+/**
+ * Black Mango @font-face kit.
+ * Import from fonts.css after dropping licensed .woff2 files into
+ * public/fonts/black-mango/ (see that folder's README for filenames).
+ */
+
+@font-face {
+  font-family: 'Black Mango';
+  src: url('/fonts/black-mango/BlackMango-Variable.woff2') format('woff2-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Black Mango';
+  src: url('/fonts/black-mango/BlackMango-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Black Mango';
+  src: url('/fonts/black-mango/BlackMango-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Black Mango';
+  src: url('/fonts/black-mango/BlackMango-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Black Mango';
+  src: url('/fonts/black-mango/BlackMango-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

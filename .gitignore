@@ -27,3 +27,12 @@ pnpm-debug.log*
 # Playwright / test artifacts
 test-results/
 playwright-report/
+
+# Writenex visual editor (local version snapshots)
+.writenex/
+
+# Pipeline runtime state (lane lock + driver orphans)
+.pipeline/.frontend-lock.d/
+.pipeline/.backend-lock.d/
+.pipeline/.orphan-notified-*
+

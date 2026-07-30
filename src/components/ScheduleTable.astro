@@ -1,0 +1,170 @@
+---
+/**
+ * ScheduleTable.astro
+ * Props: `rows` — array of { day, time, class, teacher?, level? }
+ * Renders a 7-row table on desktop, 7 stacked cards on mobile.
+ * Per §9.2 spec.
+ */
+interface Props {
+  rows: {
+    day: string;
+    time: string;
+    class: string;
+    teacher?: string;
+    level?: string;
+  }[];
+}
+
+const { rows } = Astro.props;
+---
+
+{rows.length === 0 ? (
+  <p class="schedule-table__empty">No classes scheduled.</p>
+) : (
+  <div class="schedule-table">
+    {/* Desktop table */}
+    <table class="schedule-table__desktop">
+      <thead>
+        <tr>
+          <th scope="col">Day</th>
+          <th scope="col">Time</th>
+          <th scope="col">Class</th>
+          <th scope="col">Teacher</th>
+          <th scope="col">Level</th>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row) => (
+          <tr>
+            <td class="schedule-table__day">{row.day}</td>
+            <td class="schedule-table__time">{row.time}</td>
+            <td class="schedule-table__class">{row.class}</td>
+            <td class="schedule-table__teacher">{row.teacher ?? '—'}</td>
+            <td class="schedule-table__level">{row.level ?? '—'}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    {/* Mobile stacked cards */}
+    <ul class="schedule-table__mobile">
+      {rows.map((row) => (
+        <li class="schedule-table__card">
+          <div class="schedule-table__card-header">
+            <span class="schedule-table__day">{row.day}</span>
+            <span class="schedule-table__time">{row.time}</span>
+          </div>
+          <div class="schedule-table__card-body">
+            <h3 class="schedule-table__class">{row.class}</h3>
+            {row.teacher && <p class="schedule-table__teacher">Teacher: {row.teacher}</p>}
+            {row.level && <p class="schedule-table__level">Level: {row.level}</p>}
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+)}
+
+<style>
+  .schedule-table__empty {
+    color: #666;
+    font-style: italic;
+    padding: 2rem 0;
+  }
+
+  /* Desktop table — hidden on mobile */
+  .schedule-table__desktop {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+  }
+
+  .schedule-table__desktop th {
+    text-align: left;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #666;
+    padding: 0.5rem 0.75rem;
+    border-bottom: 2px solid #e5e0db;
+  }
+
+  .schedule-table__desktop td {
+    padding: 0.75rem;
+    border-bottom: 1px solid #f0ebe5;
+    vertical-align: top;
+  }
+
+  .schedule-table__desktop tr:hover td {
+    background: #f8f5f0;
+  }
+
+  .schedule-table__desktop .schedule-table__day {
+    font-weight: 600;
+    color: #3a7268;
+    white-space: nowrap;
+  }
+
+  .schedule-table__desktop .schedule-table__class {
+    font-weight: 500;
+  }
+
+  /* Mobile cards — hidden on desktop */
+  .schedule-table__mobile {
+    display: none;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 0.75rem;
+  }
+
+  .schedule-table__card {
+    background: #fffdf8;
+    border: 1px solid #e5e0db;
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+
+  .schedule-table__card-header {
+    background: #f8f5f0;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .schedule-table__card .schedule-table__day {
+    font-weight: 600;
+    color: #3a7268;
+  }
+
+  .schedule-table__card .schedule-table__time {
+    font-size: 0.9rem;
+    color: #666;
+  }
+
+  .schedule-table__card-body {
+    padding: 0.75rem 1rem;
+  }
+
+  .schedule-table__card-body .schedule-table__class {
+    margin: 0 0 0.25rem;
+  }
+
+  .schedule-table__card-body p {
+    margin: 0.15rem 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+
+  /* Responsive switch */
+  @media (max-width: 767px) {
+    .schedule-table__desktop {
+      display: none;
+    }
+    .schedule-table__mobile {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+</style>

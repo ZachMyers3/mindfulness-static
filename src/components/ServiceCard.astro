@@ -1,0 +1,230 @@
+---
+/**
+ * ServiceCard.astro
+ * Card representing a single service / offering on the home and offerings
+ * pages. Per design-doc §9.2:
+ *   "Image (4:3), title (H3), 1–2 sentence description, optional 'from $X'
+ *    price or '60 min' duration, optional 'Learn more' link. Renders 3-up on
+ *    >= 768px, stacked on mobile."
+ *
+ * Props:
+ *   title       — service name (required)
+ *   description — 1–2 sentence blurb (required)
+ *   image?      — image source URL/path (optional; card falls back to a
+ *                 tinted placeholder block when omitted)
+ *   alt?        — alt text for the image (required when image given;
+ *                 decorative use `alt=""`)
+ *   href?       — optional "Learn more" link destination
+ *   ctaLabel?   — optional CTA label override (defaults to "Learn more")
+ *   meta?       — optional short meta line ("from $25", "60 min", etc.)
+ *   class?      — optional additional class for styling
+ *
+ * Notes:
+ *   - Card is wrapped in an <article> for semantics (one self-contained
+ *     unit of content per card).
+ *   - When href is given, the entire card is wrapped in an <a>; the
+ *     card-wide link is the most usable pattern for tiles on touch.
+ *   - When href is absent, only the explicit CTA link is clickable (the
+ *     image/title/description are not focusable).
+ */
+import { withBase } from '../lib/url';
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+  alt?: string;
+  href?: string;
+  ctaLabel?: string;
+  meta?: string;
+  class?: string;
+}
+
+const {
+  title,
+  description,
+  image,
+  alt,
+  href: rawHref,
+  ctaLabel = 'Learn more',
+  meta,
+  class: className,
+} = Astro.props;
+const href = rawHref ? withBase(rawHref) : undefined;
+
+const hasImage = Boolean(image);
+const hasLink = Boolean(href);
+const hasMeta = Boolean(meta);
+---
+
+<article class:list={['service-card', className, hasLink && 'service-card--linked']}>
+  {hasImage && (
+    <div class="service-card__image-wrap">
+      <img
+        src={image}
+        alt={alt ?? ''}
+        class="service-card__image"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  )}
+
+  {!hasImage && (
+    <div class="service-card__image-wrap service-card__image-wrap--placeholder" aria-hidden="true">
+      <span class="service-card__placeholder-mark">{title.charAt(0)}</span>
+    </div>
+  )}
+
+  <div class="service-card__body">
+    <h3 class="service-card__title">
+      {hasLink ? (
+        <a href={href} class="service-card__title-link">{title}</a>
+      ) : (
+        title
+      )}
+    </h3>
+
+    <p class="service-card__description">{description}</p>
+
+    {hasMeta && <p class="service-card__meta">{meta}</p>}
+
+    {hasLink && (
+      <a href={href} class="service-card__cta" aria-label={`${ctaLabel} about ${title}`}>
+        {ctaLabel} <span aria-hidden="true" class="service-card__cta-arrow">→</span>
+      </a>
+    )}
+  </div>
+</article>
+
+<style>
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e5e0db;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: box-shadow 0.15s ease, transform 0.15s ease;
+  }
+
+  .service-card--linked:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .service-card__image-wrap {
+    aspect-ratio: 4 / 3;
+    background: #f8f5f0;
+    overflow: hidden;
+  }
+
+  .service-card__image-wrap--placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #eaf1ee 0%, #ece4eb 100%);
+  }
+
+  .service-card__placeholder-mark {
+    font-size: 3rem;
+    font-weight: 600;
+    color: #3a7268;
+    opacity: 0.6;
+    line-height: 1;
+  }
+
+  .service-card__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .service-card__body {
+    padding: 1.25rem 1.5rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .service-card__title {
+    font-size: 1.25rem;
+    line-height: 1.3;
+    margin: 0 0 0.5rem;
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+  }
+
+  .service-card__title-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .service-card__title-link:hover,
+  .service-card__title-link:focus-visible {
+    color: #3a7268;
+    text-decoration: underline;
+  }
+
+  .service-card__title-link:focus-visible {
+    outline: 2px solid #3a7268;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .service-card__description {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin: 0 0 0.75rem;
+    color: #444;
+    flex: 1;
+  }
+
+  .service-card__meta {
+    font-size: 0.875rem;
+    line-height: 1.4;
+    margin: 0 0 1rem;
+    color: #72576f;
+    font-weight: 600;
+  }
+
+  .service-card__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #3a7268;
+    text-decoration: none;
+    align-self: flex-start;
+  }
+
+  .service-card__cta:hover {
+    color: #2d5d54;
+    text-decoration: underline;
+  }
+
+  .service-card__cta:focus-visible {
+    outline: 2px solid #3a7268;
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .service-card__cta-arrow {
+    transition: transform 0.15s ease;
+  }
+
+  .service-card__cta:hover .service-card__cta-arrow {
+    transform: translateX(2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .service-card {
+      transition: none;
+    }
+    .service-card__cta-arrow {
+      transition: none;
+    }
+  }
+</style>

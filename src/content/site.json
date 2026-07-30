@@ -1,0 +1,51 @@
+{
+  "business": {
+    "name": "Mindfulness and Movement",
+    "tagline": "Movement, breath, rest.",
+    "description": "A short paragraph used in <meta> and on the homepage."
+  },
+  "nav": [
+    { "label": "About", "href": "/about/" },
+    { "label": "Classes", "href": "/offerings/" },
+    { "label": "Schedule", "href": "/schedule/" },
+    { "label": "Pricing", "href": "/pricing/" },
+    { "label": "Journal", "href": "/journal/" },
+    { "label": "Contact", "href": "/contact/" }
+  ],
+  "contact": {
+    "address": {
+      "street": "123 Placeholder Ave",
+      "city": "Anytown",
+      "region": "ST",
+      "postalCode": "00000",
+      "country": "US"
+    },
+    "phone": "+1-555-555-5555",
+    "email": "hello@example.com",
+    "mapUrl": "https://www.openstreetmap.org/?mlat=...&mlon=...&zoom=17"
+  },
+  "hours": [
+    { "day": "Monday", "open": "06:00", "close": "20:00" },
+    { "day": "Tuesday", "open": "06:00", "close": "20:00" },
+    { "day": "Wednesday", "open": "06:00", "close": "20:00" },
+    { "day": "Thursday", "open": "06:00", "close": "20:00" },
+    { "day": "Friday", "open": "06:00", "close": "20:00" },
+    { "day": "Saturday", "open": "08:00", "close": "16:00" },
+    { "day": "Sunday", "open": null, "close": null, "closed": true }
+  ],
+  "social": [
+    { "label": "Instagram", "href": "https://instagram.com/example" },
+    { "label": "Substack", "href": "https://example.substack.com" }
+  ],
+  "announcement": {
+    "text": "Closed July 4–6 for retreat.",
+    "enabled": false
+  },
+  "footer": {
+    "tagline": "A short line for the bottom of every page.",
+    "legalLinks": [
+      { "label": "Privacy", "href": "/privacy/" },
+      { "label": "Terms", "href": "/terms/" }
+    ]
+  }
+}

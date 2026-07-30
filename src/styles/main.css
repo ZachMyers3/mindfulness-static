@@ -1,0 +1,36 @@
+/**
+ * main.css
+ * Design-system entry-point stylesheet for Mindfulness and Movement.
+ *
+ * This file is the single import target for the global styles (referenced
+ * from `src/layouts/BaseLayout.astro`). It composes:
+ *   1. tokens.css  — design tokens (color palette, typography stack, spacing,
+ *                    radius, transitions, z-index). Implements §11 / §15.5.
+ *   2. global.css  — modern CSS reset + base typography + the `.prose` class
+ *                    used by Markdown-rendered body content, plus
+ *                    `prefers-reduced-motion` media queries.
+ *
+ * Palette (stillpoint-studio, per doc §11 / §15.5):
+ *   sage-50..950   — primary brand
+ *     sage-600     #3a7268  (primary action color)
+ *   mauve-50..950  — secondary brand
+ *     mauve-600    #72576f  (secondary action color)
+ *   cream-50..950  — neutrals (surface + ink)
+ *     cream-50     #fffdf8  (page background)
+ *     cream-950    #2e2c22  (body text)
+ *
+ * Typography (per doc §11, updated):
+ *   sans      Raleway (UI / body)
+ *   display   Black Mango (headings)
+ *
+ * NOTE: The ledger item-32 spec asks for a Tailwind v4 `@theme static { ... }`
+ * block. This project has chosen to ship plain CSS custom properties (see
+ * tokens.css) — every component uses `<style>` blocks with `var(--…)`
+ * references. Tailwind v4 is deferred to a future batch; migration would
+ * not change component markup (only `<style>` bodies), so the palette
+ * values here are the canonical source of truth either way.
+ */
+
+@import './fonts.css';
+@import './tokens.css';
+@import './global.css';

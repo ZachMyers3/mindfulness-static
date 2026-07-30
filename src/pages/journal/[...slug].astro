@@ -1,0 +1,160 @@
+---
+/**
+ * src/pages/journal/[...slug].astro
+ * Journal detail page (dynamic route). Renders a single journal post
+ * inside BaseLayout.
+ *
+ * Per design doc §9.3: "Draft journal post. Excluded from production
+ * builds by getCollection('journal', ({ data }) =>
+ * import.meta.env.PROD ? !data.draft : true). Listed in dev so the
+ * author can preview."
+ *
+ * Slug source: with the glob loader, each entry's `id` is the file path
+ * relative to the `base` directory (e.g. "welcome" for
+ * src/content/journal/welcome.md). getStaticPaths uses that id verbatim.
+ */
+export const prerender = true;
+
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../lib/site';
+import { withBase } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('journal', ({ data }) =>
+    import.meta.env.PROD ? !data.draft : true
+  );
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const { title, description, pubDate, tags } = post.data;
+
+const siteName = site.business.name;
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+const isoDate = pubDate.toISOString();
+---
+
+<BaseLayout title={title} description={description} noindex={true}>
+  <article class="journal-post">
+    <header class="journal-post__header">
+      <p class="journal-post__meta">
+        <time datetime={isoDate}>{formattedDate}</time>
+        <a href={withBase('/journal/')} class="journal-post__back">← All journal posts</a>
+      </p>
+      <h1 class="journal-post__title">{title}</h1>
+      <p class="journal-post__description">{description}</p>
+      {tags && tags.length > 0 && (
+        <ul class="journal-post__tags" aria-label="Tags">
+          {tags.map((tag) => (
+            <li class="journal-post__tag">#{tag}</li>
+          ))}
+        </ul>
+      )}
+    </header>
+
+    <div class="journal-post__body prose">
+      <Content />
+    </div>
+
+    <footer class="journal-post__footer">
+      <a href={withBase('/journal/')} class="journal-post__back">← Back to the journal</a>
+      <p class="journal-post__site">— {siteName}</p>
+    </footer>
+  </article>
+</BaseLayout>
+
+<style>
+  .journal-post {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem 5rem;
+  }
+
+  .journal-post__header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--color-border, #e5e0db);
+  }
+
+  .journal-post__meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: var(--color-ink-muted, #666);
+    margin-bottom: 1rem;
+  }
+
+  .journal-post__back {
+    color: var(--color-primary, #3a7268);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .journal-post__back:hover,
+  .journal-post__back:focus {
+    text-decoration: underline;
+  }
+
+  .journal-post__title {
+    font-size: clamp(2rem, 3vw + 1rem, 2.75rem);
+    line-height: 1.15;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+  }
+
+  .journal-post__description {
+    font-size: 1.125rem;
+    color: var(--color-ink-muted, #444);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+
+  .journal-post__tags {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .journal-post__tag {
+    font-size: 0.8125rem;
+    color: var(--color-primary, #3a7268);
+    background: var(--color-surface-muted, #f8f5f0);
+    padding: 0.125rem 0.625rem;
+    border-radius: 999px;
+  }
+
+  .journal-post__body {
+    margin-bottom: 3rem;
+  }
+
+  .journal-post__footer {
+    border-top: 1px solid var(--color-border, #e5e0db);
+    padding-top: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .journal-post__site {
+    color: var(--color-ink-muted, #666);
+    font-style: italic;
+    margin: 0;
+  }
+</style>
