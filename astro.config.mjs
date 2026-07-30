@@ -23,7 +23,7 @@ export default defineConfig({
   },
   compressHTML: true,
   markdown: {
-    // MDX inherits this processor (and its rehype plugins).
+    // remark/rehype pipeline so we can rewrite absolute links for `base`.
     processor: unified({
       rehypePlugins: [[rehypeBaseLinks, BASE_PATH]],
     }),

@@ -27,7 +27,7 @@ const ROUTES = [
 test('home page renders brand name from site.json', async ({ page }) => {
   await page.goto('/');
   // The header contains a link with the business name
-  const brandLink = page.getByRole('link', { name: 'Mindfulness and Movement' });
+  const brandLink = page.getByRole('link', { name: 'Mindfulness & Movement' });
   await expect(brandLink).toBeVisible();
 });
 

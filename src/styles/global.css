@@ -38,6 +38,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Quicksand ampersand inside the brand wordmark. */
+.brand-amp {
+  font-family: var(--font-amp);
+  font-weight: 500;
+  letter-spacing: 0;
+  padding-inline: 0.05em;
+}
+
 /* Headings use the display face (Black Mango) site-wide. */
 h1,
 h2,

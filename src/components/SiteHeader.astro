@@ -8,6 +8,7 @@
  */
 import { site } from '../lib/site';
 import { withBase } from '../lib/url';
+import BrandName from './BrandName.astro';
 
 const { business, nav } = site;
 const currentPath = Astro.url.pathname;
@@ -16,7 +17,7 @@ const currentPath = Astro.url.pathname;
 <header class="site-header" role="banner">
   <div class="site-header__inner">
     <a href={withBase('/')} class="site-header__logo" aria-label={`${business.name} — home`}>
-      {business.name}
+      <BrandName name={business.name} />
     </a>
 
     {/* Desktop navigation */}

@@ -8,7 +8,7 @@ describe('site.json validates against schema', () => {
   it('does not throw on the fixture site.json', () => {
     // If site.ts module loaded successfully, SiteSchema.parse(raw) passed.
     expect(site).toBeDefined();
-    expect(site.business.name).toBe('Mindfulness and Movement');
+    expect(site.business.name).toBe('Mindfulness & Movement');
   });
 
   it('requires trailing slashes on nav and legal hrefs', () => {

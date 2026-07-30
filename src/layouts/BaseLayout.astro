@@ -13,6 +13,8 @@ import SiteHeader from '../components/SiteHeader.astro';
 import SiteFooter from '../components/SiteFooter.astro';
 import '../styles/main.css';
 import ralewayLatin from '@fontsource-variable/raleway/files/raleway-latin-wght-normal.woff2?url';
+import quicksandLatin from '@fontsource-variable/quicksand/files/quicksand-latin-wght-normal.woff2?url';
+import blackMangoRegular from '../assets/fonts/black-mango/BlackMango-Regular.woff2?url';
 
 interface Props {
   title: string;
@@ -31,6 +33,20 @@ const { title, description, noindex = false } = Astro.props;
     <link
       rel="preload"
       href={ralewayLatin}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={quicksandLatin}
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
+    <link
+      rel="preload"
+      href={blackMangoRegular}
       as="font"
       type="font/woff2"
       crossorigin

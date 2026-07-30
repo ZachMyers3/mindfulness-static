@@ -1,5 +1,5 @@
 ---
-title: "Welcome to Mindfulness and Movement"
+title: "Welcome to Mindfulness & Movement"
 description: "A journey of mindfulness and movement for body and mind."
 pubDate: 2026-07-27
 heroImage: "/assets/journal-wellness.jpg"
@@ -8,7 +8,7 @@ tags: ["mindfulness", "yoga", "wellness"]
 draft: false
 ---
 
-# Welcome to Mindfulness and Movement
+# Welcome to Mindfulness & Movement
 
 
 We are delighted to welcome you to our sanctuary of mindfulness and movement.

@@ -10,6 +10,7 @@
  */
 import { site } from '../lib/site';
 import { withBase } from '../lib/url';
+import BrandName from './BrandName.astro';
 
 const { business, contact, hours, social, footer } = site;
 const year = new Date().getFullYear();
@@ -28,7 +29,7 @@ function formatTime(t: string | null): string {
     <div class="site-footer__grid">
       {/* Column 1: Studio */}
       <div class="site-footer__col">
-        <h2 class="site-footer__heading">{business.name}</h2>
+        <h2 class="site-footer__heading"><BrandName name={business.name} /></h2>
         <p class="site-footer__tagline">{footer.tagline}</p>
         <address class="site-footer__address">
           {contact.address.street}<br />

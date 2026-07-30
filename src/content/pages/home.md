@@ -1,12 +1,12 @@
 ---
-title: Mindfulness and Movement
+title: "Mindfulness & Movement"
 description: "A quiet practice of movement, breath, and rest in {{TODO_ZACH: city}}. Accessible yoga and breathwork for steady, embodied living."
 draft: false
 ---
 
 ## A practice of returning
 
-Mindfulness and Movement is a small studio built around a simple idea: that the body is a
+Mindfulness & Movement is a small studio built around a simple idea: that the body is a
 place we already live, and that returning to it — slowly, with kindness — is the practice.
 
 We teach movement as a way of being present. Breath as a way of settling. Rest as a way
