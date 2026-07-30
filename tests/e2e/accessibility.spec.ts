@@ -2,7 +2,7 @@
  * Axe-core accessibility tests for yoga-wellness-site (item-47).
  *
  * Runs @axe-core/playwright against every public route; fails on
- * serious or critical violations.
+ * serious/critical violations and missing page-level h1s.
  */
 import { test, expect } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
@@ -32,11 +32,14 @@ test.describe('axe-core accessibility audit', () => {
         .withTags(['wcag2aa', 'wcag21aa', 'best-practice'])
         .analyze();
 
-      const seriousViolations = accessibilityScanResults.violations.filter(
-        (v) => v.impact === 'serious' || v.impact === 'critical',
+      const failingViolations = accessibilityScanResults.violations.filter(
+        (v) =>
+          v.impact === 'serious' ||
+          v.impact === 'critical' ||
+          // Every public page must expose a single h1 (axe best-practice).
+          v.id === 'page-has-heading-one',
       );
 
-      // Report all violations for visibility, but only fail on serious/critical
       if (accessibilityScanResults.violations.length > 0) {
         console.log(
           `axe violations on ${route}:`,
@@ -50,7 +53,7 @@ test.describe('axe-core accessibility audit', () => {
         );
       }
 
-      expect(seriousViolations).toEqual([]);
+      expect(failingViolations).toEqual([]);
     });
   }
 });

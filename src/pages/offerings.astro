@@ -2,13 +2,11 @@
 /**
  * src/pages/offerings.astro
  * Offerings page — loads the `pages/offerings` Markdown entry and renders
- * it inside BaseLayout. ServiceCard blocks specified in design-doc §9.2
- * will be slotted in once the components batch (items 22-28) lands;
- * for now the page faithfully renders the Markdown body so the route is
- * live and SEO-indexable.
+ * it inside BaseLayout with a PageHeader (h1) above the body.
  */
 import { getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHeader from '../components/PageHeader.astro';
 
 const entry = await getEntry('pages', 'offerings');
 if (!entry) {
@@ -19,6 +17,7 @@ const { title, description, noindex = false } = entry.data;
 ---
 
 <BaseLayout title={title} description={description} noindex={noindex}>
+  <PageHeader title={title} description={description} />
   <article class="prose">
     <Content />
   </article>
