@@ -1,63 +1,21 @@
 ---
-title: "Schedule"
-description: "Weekly class schedule for Mindfulness & Movement. Slow yoga, breathwork, and quiet gathering in {{TODO_ZACH: city}}."
+title: Schedule & Class Descriptions
+description: Schedule & Class Descriptions
 draft: false
 ---
 
-## The weekly rhythm
+![](/assets/pages/photo-2026-09-02-23-23-12-mtkyoomg.jpg)
 
-Our schedule is small on purpose. A few well-held classes each week, repeated at
-predictable times, so the body can learn to find its way back. If you are new, the
-simplest way to begin is to pick one class and let it become a rhythm.
+# **Class Descriptions**
 
-The studio opens ten minutes before each class. Please arrive in time to settle — the
-door closes promptly when the practice begins so the room can be quiet.
+**Flow** - A breath-led movement practice that links poses into one continuous, flowing sequence. Expect to build heat, strengthen and stretch the whole body and mind, and sync each movement with your breath. Suitable for all levels - modifications offered throughout.
 
-> If a class is full, [send a note](/contact/) and we will add you to the list. Cancellations
-> free up spots most weeks.
+Reset - This free 15 minute class blends gentle stretching, calming breathwork, and a short guided meditation to help you recharge in the middle of your day. Bring your lunch if needed - eat, relax, and leave feeling refreshed and ready for the rest of your day.
 
-## Weekly classes
+**Stretch** - A quiet, deeply restorative practice built around long-held, passive stretches - typically 3 to 5 minutes each - that target the connective tissue and deeper layers of the body rather than just the muscles. Poses are supported with props so you can fully relax into each shape. Expect stillness, slow breathing, and space to unwind both body and mind. If you are sore from a workout or want to increase flexibility this class is for you. All levels welcome
 
-Class times and types are listed below. All classes are {{TODO_ZACH: duration, e.g.
-"60 minutes"}} unless otherwise noted. Please check the [announcement banner](#) on the
-home page for any temporary changes to the schedule.
+**Relax** - A slow, fully supported practice designed for complete relaxation. Using bolsters, blankets, and blocks, you'll settle into a small number of gentle, passive poses held for extended periods - allowing the body to fully release tension while the nervous system shifts into rest mode
 
-### Mornings
+**Mommy & Me** - Carving out one-on-one time with your child can feel impossible. This class is your standing invitation to pause and reconnect. Together we’ll practice simple breathwork, calming meditation, and playful poses designed for parent and child to do side by side. No experience needed, just come as you are!
 
-- **{{TODO_ZACH: weekday, e.g. Monday}} — {{TODO_ZACH: HH:MM}}** — Slow yoga
-- **{{TODO_ZACH: weekday, e.g. Wednesday}} — {{TODO_ZACH: HH:MM}}** — Slow yoga
-- **{{TODO_ZACH: weekday, e.g. Friday}} — {{TODO_ZACH: HH:MM}}** — Breathwork
-  ({{TODO_ZACH: duration, e.g. 30 minutes}})
-
-### Evenings
-
-- **{{TODO_ZACH: weekday, e.g. Tuesday}} — {{TODO_ZACH: HH:MM}}** — Slow yoga
-- **{{TODO_ZACH: weekday, e.g. Thursday}} — {{TODO_ZACH: HH:MM}}** — Slow yoga
-
-### Weekend
-
-- **{{TODO_ZACH: weekday, e.g. Saturday}} — {{TODO_ZACH: HH:MM}}** — Longer practice
-  ({{TODO_ZACH: duration, e.g. 75 minutes}})
-
-{{TODO_ZACH: add or remove slots to match the actual weekly schedule.}}
-
-## Quiet gatherings
-
-Quiet gatherings are held on the {{TODO_ZACH: weekday, e.g. first Saturday}} of each
-month from {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}. They are free for current
-students and {{TODO_ZACH: drop-in fee}} for visitors. The next date is listed on the
-[home page](/).
-
-## What to know before you come
-
-- **First class is free.** New students are always welcome. Just [send a note](/contact/)
-  so we know you are coming.
-- **Bring nothing but yourself.** Mats, blocks, blankets, and bolsters are in the room.
-- **Arrive ten minutes early.** The door closes when the practice begins.
-- **Eat lightly beforehand.** A small meal an hour or two before is fine; a large one
-  is not.
-- **Tell us if you are injured or pregnant.** The teacher will offer alternatives for
-  every posture.
-
-If you have a question that isn't answered here, [send us a note](/contact/). We are glad
-to answer.
+**Private Lessons** - Aerial hammock or any of the classes listed above are offered as one on one lessons. we make a personalized plan together so you can achieve your goals! We also plan this around your schedule!

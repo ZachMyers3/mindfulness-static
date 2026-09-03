@@ -1,0 +1,143 @@
+---
+/**
+ * BrandAtmosphere.astro
+ * Decorative background layer that reproduces the coming-soon hero field:
+ *   1. two soft radial washes tinted to the logo's sage + plum peaks,
+ *      over a cream linear gradient;
+ *   2. a tiled peak motif (the logo silhouette repeated at ~5% opacity);
+ *   3. an optional oversized peak watermark bleeding off the bottom edge,
+ *      mirroring the logo's front/back triangle pair.
+ *
+ * Purely presentational — always rendered aria-hidden. The parent must
+ * establish a stacking context (`position: relative; isolation: isolate`)
+ * and place its own content at `z-index: 1` or above.
+ *
+ * Props:
+ *   watermark?  — render the oversized peak pair (default true)
+ *   align?      — which side the watermark sits on (default 'right')
+ *   class?      — optional additional class
+ */
+interface Props {
+  watermark?: boolean;
+  align?: 'left' | 'right';
+  class?: string;
+}
+
+const { watermark = true, align = 'right', class: className } = Astro.props;
+---
+
+<div
+  class:list={['atmosphere', `atmosphere--${align}`, className]}
+  aria-hidden="true"
+>
+  {watermark && (
+    <svg
+      class="atmosphere__watermark"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 260 200"
+      preserveAspectRatio="xMidYMax meet"
+      focusable="false"
+    >
+      <polygon class="atmosphere__peak-sage" points="50,180 100,30 150,180" />
+      <polygon class="atmosphere__peak-plum" points="100,180 150,65 200,180" />
+    </svg>
+  )}
+</div>
+
+<style>
+  /* Logo hues. Sage matches --color-sage-600; the plum is the logo's own
+     #5b3a56, which sits between mauve-700 and mauve-800 in the token scale. */
+  .atmosphere {
+    --atmosphere-sage: 58, 114, 104;
+    --atmosphere-plum: 91, 58, 86;
+
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background:
+      radial-gradient(
+        ellipse 55% 150% at 20% 12%,
+        rgba(var(--atmosphere-sage), 0.22),
+        transparent 65%
+      ),
+      radial-gradient(
+        ellipse 50% 140% at 80% 92%,
+        rgba(var(--atmosphere-plum), 0.18),
+        transparent 62%
+      ),
+      linear-gradient(
+        165deg,
+        var(--color-cream-50) 0%,
+        var(--color-cream-100) 48%,
+        var(--color-cream-200) 100%
+      );
+  }
+
+  .atmosphere--left {
+    background:
+      radial-gradient(
+        ellipse 55% 150% at 80% 12%,
+        rgba(var(--atmosphere-sage), 0.22),
+        transparent 65%
+      ),
+      radial-gradient(
+        ellipse 50% 140% at 20% 92%,
+        rgba(var(--atmosphere-plum), 0.18),
+        transparent 62%
+      ),
+      linear-gradient(
+        195deg,
+        var(--color-cream-50) 0%,
+        var(--color-cream-100) 48%,
+        var(--color-cream-200) 100%
+      );
+  }
+
+  /* Tiled peak motif — the logo shape repeated as a faint texture. */
+  .atmosphere::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Cpath d='M0 120 L40 40 L80 120' fill='none' stroke='%233a7268' stroke-opacity='0.04' stroke-width='1'/%3E%3Cpath d='M40 120 L70 55 L100 120' fill='none' stroke='%235b3a56' stroke-opacity='0.05' stroke-width='1'/%3E%3C/svg%3E");
+    background-size: 140px 140px;
+    opacity: 0.9;
+  }
+
+  /* Peak pair, anchored to the bottom edge so the triangles read as
+     landforms. Sized with `meet` so both peaks stay fully visible even in
+     the shortest banner. */
+  .atmosphere__watermark {
+    position: absolute;
+    bottom: 0;
+    width: min(15rem, 23%);
+    height: auto;
+    max-height: 88%;
+    opacity: 0.5;
+  }
+
+  .atmosphere--right .atmosphere__watermark {
+    right: 2%;
+  }
+
+  .atmosphere--left .atmosphere__watermark {
+    left: 2%;
+    transform: scaleX(-1);
+  }
+
+  .atmosphere__peak-sage {
+    fill: rgba(var(--atmosphere-sage), 0.14);
+  }
+
+  .atmosphere__peak-plum {
+    fill: rgba(var(--atmosphere-plum), 0.11);
+  }
+
+  @media (max-width: 767px) {
+    .atmosphere__watermark {
+      width: min(9rem, 31%);
+      opacity: 0.4;
+    }
+  }
+</style>

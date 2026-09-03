@@ -1,7 +1,8 @@
 ---
-title: "Mindfulness & Movement"
-description: "A quiet practice of movement, breath, and rest in {{TODO_ZACH: city}}. Accessible yoga and breathwork for steady, embodied living."
+title: Mindfulness & Movement
+description: "A quiet practice of movement, breath, and rest in Wooster. Accessible yoga and breathwork for steady, embodied living."
 draft: false
+heroImage: /assets/pages/website-pic-mtkwo0n5.png
 ---
 
 ## A practice of returning

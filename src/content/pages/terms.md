@@ -1,50 +1,38 @@
 ---
-title: "Terms"
-description: "The terms of service for Mindfulness & Movement — participation, cancellations, and liability."
+title: FAQ & Terms
+description: The terms of service for Mindfulness & Movement — participation, cancellations, and liability.
 draft: false
 ---
 
-{{TODO_ZACH: lawyer review}}
+## What to know before you come
+
+* **Bring water and your favorite mat if you have one, otherwise we have extra!** All other props that you will need are in the studio.
+* **Wear comfortable clothing.** Clothing that you can move freely in.
+* **Classes are generally done barefoot  on a mat.** You are more than welcome to wear socks if desired. If other footwear is recommended we will post that in the class description.
+* **Let us know if you are injured or pregnant.** The teacher will offer alternatives if applicable.
+* **Every class is designed to meet you where you are.** Whether you're just beginning or you are years into your practice, you'll always find room to slow down or amp up.
+* **Please sign up in advance if you can, drop ins are also welcome.** If you cancel, your pass will go back on to your account. Please contact us if you need a full refund.
+* **Parking.** There is a parking lot in front of our front door or on the side of our building. If you are facing the building from the street these are on the left side of our building.
+* **Class sizes.** We can have up to 20 students in a class. We strive to have a warm welcoming environment with the hope that students inspire students!
+* **All are welcome.** \<3
+
+If you have a question that isn't answered here, please contact us. We are happy to help!
+
+
+
+{{TODO ELISSA: lawyer review}}
 
 ## Service disclaimer
 
-Yoga and breathwork are offered for general wellbeing and education. They are not a
+Classes/Events are offered for the experience, general wellbeing, and education. They are not a
 substitute for medical, psychological, or physiotherapy care. If you have a condition
 or are under treatment, please consult your provider before joining a class and let
-your teacher know what would be useful for them to understand.
-
-## Your responsibility
-
-You are responsible for participating within your own range. Every posture and every
-breath has alternatives — please use the ones that serve you, and stop any practice
-that causes sharp pain, dizziness, or distress. The teacher is there to offer
-options; you are there to choose among them.
+your instructor know what would be useful for them to understand. We would love to work with you and your provider to find the class that works best for you.
 
 ## Cancellation policy
 
-{{TODO_ZACH: cancellation policy, e.g. "If you need to cancel a class, please let us
-know at least 12 hours in advance so we can offer the spot to someone on the waitlist.
-Cancellations within 12 hours are charged in full; later cancellations are not."}}
-
-{{TODO_ZACH: package refund policy, e.g. "Class packages are non-refundable once
-purchased but remain valid for six months. Monthly unlimited can be paused or
-cancelled at any time; paused plans resume on the date you choose."}}
+You will not be penalized for a cancellation for regularly scheduled classes. Your pass will go back on to your account. If you need a full refund please contact us directly. Special events will have their own cancellation policy posted in the event description.
 
 ## Liability waiver
 
-Yoga and breathwork involve physical activity. You participate at your own risk. By
-attending a class you confirm that you are physically able to take part and that you
-accept responsibility for any injury or loss that may result from your participation,
-to the extent permitted by law.
-
-If you have a recent injury, are pregnant, or have a medical condition, please tell
-the teacher before class so the practice can be offered safely for you.
-
-## Governing law
-
-These terms are governed by the laws of **{{TODO_ZACH: governing jurisdiction}}**. If
-any part of them is found unenforceable, the rest remain in effect.
-
-## Contact
-
-For questions about these terms, please email **{{TODO_ZACH: contact email}}**.
+Add this

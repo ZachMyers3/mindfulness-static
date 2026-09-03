@@ -1,52 +1,21 @@
 ---
-title: "About the studio"
-description: "Mindfulness & Movement is a small practice space in {{TODO_ZACH: city}} built around steady, embodied, accessible teaching."
+title: About the studio
+description: Mindfulness and Movement  is a studio ready to create experiences designed to improve the wellbeing for people of all ages and to help them reconnect with themselves and their community
 draft: false
 ---
 
 ## A practice, not a product
 
-Mindfulness & Movement was founded with a single room and a single rule: teach what you
-have lived, not what you have read. The room is a little bigger now, and the rule is the
-same.
+ We strive to offer a variety of classes and experiences designed to support the whole person. We currently have Flow, Relax, Stretch, Mommy and Me, and Reset classes weekly. We also offer private classes and Aerial Hammock Lessons, kids programming, and special events. Our goal is to create a welcoming space where people can move their bodies, quiet their minds, build confidence, and connect with others.
 
-We are not a brand. We are a practice — a place where the body is invited to slow down,
-the breath is invited to lengthen, and the nervous system is invited to come home. The
-teaching is unhurried. The room is quiet. The work is offered rather than performed.
+## The Founder&#x20;
 
-## What we believe
+The studio is led by me, Elissa Myers. I didn't grow up with the language for mental health - it wasn't talked about much back then. But somehow, without knowing what I was doing, I found ways to move through it anyway. Soccer. Hiking. Climbing trees. Anything that got me outside and in my body was where I felt most like myself, long before I had words for why.
 
-**That the body is not a project.** There is nothing to fix, optimise, or transform here.
-The body you arrive with is the body you practice with.
+That thread never left me. It just evolved - into aerial hammock, into vinyasa flow, into the stillness of relaxation and yin classes. After ten years of practicing, learning, and eventually becoming certified to teach it all, I've come to understand that keeping my physical and mental health in balance isn't one thing - it's a whole toolkit, built slowly, one practice at a time.
 
-**That the breath is the practice.** Breath is the one constant we carry from the mat to
-the day. The postures are a vehicle for noticing it.
+Now I want to open that toolkit up. I can't wait to share what's helped me most with this community - and even more than that, I want to hear what's helped you. Because sanity doesn't come from one right answer. It comes from all of us comparing notes, trading practices, and building something bigger together.
 
-**That rest is not a reward.** Rest is part of the work. We build it into every class, and
-we treat it as the practice it is, not a break between poses.
+Outside the studio, my life is full, messy, and joyful! It's carving out time to spend with my husband, my high school sweetheart, Zach. It's homeschooling my two kids and watching them learn not just from books, but from the land, the seasons, and the world right outside our door. We live on a mini farm, and there's something grounding  and regulating about tending it. Beyond the farm, life is family, friends, good food, a little adventure, and travel whenever we can get it. I love a table full of people, a new place to explore, and a meal worth savoring. It's all part of the same balance I chase on the mat - finding joy in movement, in stillness, in connection, and in the wonder of just being present for it all.
 
-**That accessibility is not a feature.** It is the foundation. Every posture has options.
-Every class has chairs, blocks, and blankets. Every new student is welcomed, not assessed.
-
-**That small is enough.** A small room with a small group and a small teaching staff is
-not a limitation. It is the point.
-
-## The teacher
-
-The studio is led by your teacher, a long-time practitioner who came to yoga through
-breathwork and stayed through the body. The teaching draws from a decade of practice
-across Hatha, Vinyasa, and Yin, and from earlier work in {{TODO_ZACH: background, e.g.
-"somatic therapy and trauma-aware facilitation"}}.
-
-Your teacher is not a guru. There is no mythology here, no lineage chart on the wall, no
-language of master and student. There is a practice, and a willingness to share it.
-
-## The room
-
-The studio is a {{TODO_ZACH: short description of the physical space, e.g. "small,
-sun-filled room on a quiet street"}}. There is space for {{TODO_ZACH: capacity}} students
-in a class. The windows open. The temperature is comfortable. The music, when there is
-any, is quiet.
-
-If you have questions before you arrive, [send a note](/contact/) and we will be glad to
-answer them.
+##

@@ -1,69 +1,39 @@
 ---
-title: "Contact"
-description: "How to reach Mindfulness & Movement — by email, in person, or by post."
+title: Contact
+description: We would love to hear from you!
 draft: false
 ---
 
 ## Come say hello
 
-If you have a question about a class, a body, a schedule, or anything else, the simplest
-way to reach us is by email. We read every message and reply within {{TODO_ZACH: reply
-window, e.g. "two business days"}}. The door is also open in person during studio hours
-— please feel free to stop by.
+You are welcome to visit the studio before or after any scheduled class! If you would like to arrange a dedicated time to meet our instructors, ask questions, or receive a tour of the studio, please email [**MindfulnessandMovementOhio@gmail.com**](mailto:MindfulnessandMovmentOhio@gmail.com) or call/text **(330) 789-3217**.
 
-We do not run a chatbot, a contact form, or a phone tree. There is just an inbox and a
-small number of human beings reading it.
+We are happy to meet with you, answer any questions you may have, and help you find the classes and experiences that best meet your needs.
 
-## By email
+## Email:&#x20;
 
-The studio inbox is **{{TODO_ZACH: contact email, e.g. hello@example.com}}**. This is the
-best address for almost everything — questions about classes, scheduling, pricing,
-accessibility, and what to expect on your first visit.
+[MindfulnessandMovementOhio@gmail.com](mailto:MindfulnessandMovementOhio@gmail.com)
 
-For privacy-specific questions, please use **{{TODO_ZACH: privacy contact email}}**
-instead, so we can keep those messages separate from general correspondence.
+## **Phone Number:**
 
-## By phone
+(330) 789-3217
 
-If you prefer to talk, you can reach the studio at **{{TODO_ZACH: phone number, e.g.
-+1-555-555-5555}}**. Please leave a voicemail if no one picks up — calls are returned
-between classes.
+## Location:
 
-{{TODO_ZACH: phone hours, e.g. "Phone hours are 9am–5pm, Tuesday through Saturday."}}
+336 S Market St, Wooster, OH 44691&#x20;
 
-## In person
+[https://maps.app.goo.gl/9Jzmkg7F1AfUA3oR8](https://maps.app.goo.gl/9Jzmkg7F1AfUA3oR8)
 
-The studio is at:
-
-> {{TODO_ZACH: street address}}
-> {{TODO_ZACH: city}}, {{TODO_ZACH: state or region}} {{TODO_ZACH: postal code}}
-> {{TODO_ZACH: country code, e.g. US}}
-
-[Open in OpenStreetMap]({{TODO_ZACH: OpenStreetMap link}})
-
-The building is {{TODO_ZACH: access note, e.g. "step-free from the street, with a ramp
-at the side entrance"}}. The studio is on the {{TODO_ZACH: floor, e.g. "second floor"}}.
+We are located directly to the right of OTW Music in downtown Wooster.&#x20;
 
 ## Studio hours
 
-The studio is open during the following hours. Classes run within these windows — the
-full schedule is on the [schedule](/schedule/) page.
+The studio is open during the following hours. Classes run within these windows so please be mindful of this when visiting - the full class schedule is on the [schedule](/schedule/) page.
 
-- **Monday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Tuesday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Wednesday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Thursday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Friday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Saturday** — {{TODO_ZACH: HH:MM}} to {{TODO_ZACH: HH:MM}}
-- **Sunday** — Closed
-
-The studio is closed on {{TODO_ZACH: closed days, e.g. "Sundays and major holidays"}}.
-
-## A welcome
-
-If this is your first time writing to a yoga studio, you are welcome. You don't need to
-know what you want. A simple "I'm curious, can you tell me what to expect" is a
-perfectly good first message and we will write back with whatever seems useful.
-
-There is no audition, no intake form, and no commitment beyond showing up. The mat is
-not a place to perform. It is a place to remember what you already are.
+* **Monday** - 11:15am-1:00pm
+* **Tuesday**  - 5:00pm-7:30pm
+* **Wednesday** - 5:45am-7:00am & 11:15am-1:00pm
+* **Thursday** - 4:15pm-7:30pm
+* **Friday** - 11:15am-1:00pm
+* **Saturday** - 10:00am-11:30am
+* **Sunday** - Closed

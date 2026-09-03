@@ -7,7 +7,6 @@
 import { getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import heroYoga from '../assets/hero-yoga.jpg';
 
 const entry = await getEntry('pages', 'home');
 if (!entry) {
@@ -21,8 +20,7 @@ const { title, description, noindex } = entry.data;
   <Hero
     title={title}
     tagline={description}
-    image={heroYoga}
-    alt="Sunlight streaming through studio windows onto yoga mats"
+    background="brand"
     ctaLabel="View Schedule"
     ctaHref="/schedule/"
   />

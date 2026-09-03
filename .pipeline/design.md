@@ -1,1 +1,0 @@
-/home/openclaw/.openclaw/workspace-design-doc-writer/outputs/design-docs/yoga-wellness-site-2026-07-26.md
