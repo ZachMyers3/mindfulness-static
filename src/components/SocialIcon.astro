@@ -1,0 +1,59 @@
+---
+/**
+ * Brand mark for a social link. Matched from the link label or URL so
+ * site.json can add networks without extra config.
+ */
+interface Props {
+  label: string;
+  href?: string;
+}
+
+const { label, href = '' } = Astro.props;
+const key = `${label} ${href}`.toLowerCase();
+const network = key.includes('instagram')
+  ? 'instagram'
+  : key.includes('facebook')
+    ? 'facebook'
+    : key.includes('tiktok')
+      ? 'tiktok'
+      : key.includes('youtube')
+        ? 'youtube'
+        : key.includes('twitter') || /\bx\.com\b/.test(key)
+          ? 'x'
+          : null;
+---
+
+{network === 'instagram' && (
+  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z" />
+  </svg>
+)}
+{network === 'facebook' && (
+  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M22 12.07C22 6.48 17.52 2 11.93 2S1.86 6.48 1.86 12.07c0 5.02 3.66 9.18 8.44 9.93v-7.03H7.9v-2.9h2.4V9.41c0-2.38 1.42-3.69 3.58-3.69 1.04 0 2.12.19 2.12.19v2.34h-1.2c-1.18 0-1.54.73-1.54 1.48v1.78h2.63l-.42 2.9h-2.21V22c4.78-.75 8.44-4.91 8.44-9.93z" />
+  </svg>
+)}
+{network === 'tiktok' && (
+  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M14.7 3c.2 1.7.9 3.2 2.1 4.3 1.1 1.1 2.6 1.7 4.2 1.9v3.2c-1.5 0-2.9-.4-4.2-1.1-.5-.3-1-.6-1.5-.9v6.2c0 3.3-2.6 6.1-5.9 6.3-1.5.1-3-.4-4.2-1.4-2.1-1.8-2.8-4.8-1.7-7.3.9-2 2.8-3.3 5-3.5.3 0 .6 0 .9.1v3.3c-.3-.1-.6-.1-.9-.1-1.7.1-3 1.5-3 3.2 0 1.8 1.5 3.2 3.3 3.2 1.7 0 3.1-1.3 3.2-3V3h2.7z" />
+  </svg>
+)}
+{network === 'youtube' && (
+  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31.5 31.5 0 0 0 0 12a31.5 31.5 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31.5 31.5 0 0 0 24 12a31.5 31.5 0 0 0-.5-5.8zM9.8 15.5V8.5L15.7 12l-5.9 3.5z" />
+  </svg>
+)}
+{network === 'x' && (
+  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M14.3 10.5 22.2 1.5h-1.9l-6.8 7.8L8 1.5H1.5l8.3 12L1.5 22.5h1.9l7.3-8.3 5.8 8.3H22.5zm-2.6 2.9-.8-1.2L4.1 2.9h2.9l5.4 7.7.8 1.2 7 10h-2.9z" />
+  </svg>
+)}
+
+<style>
+  .social-icon {
+    width: 1.15rem;
+    height: 1.15rem;
+    flex-shrink: 0;
+    fill: currentColor;
+  }
+</style>

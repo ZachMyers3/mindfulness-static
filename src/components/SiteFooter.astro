@@ -3,14 +3,15 @@
  * SiteFooter.astro
  * Reads `site.contact`, `site.hours`, `site.social`, and `site.footer`
  * to render a 3-column layout (§9.2 spec):
- *   1. Studio — tagline + address
- *   2. Visit  — hours, phone (tel:), email (mailto:)
+ *   1. Studio — tagline, address, phone (tel:), email (mailto:)
+ *   2. Visit  — hours
  *   3. Connect — social links
  * Bottom row: legalLinks + © {year} {business.name}
  */
 import { site } from '../lib/site';
 import { withBase } from '../lib/url';
 import BrandName from './BrandName.astro';
+import SocialIcon from './SocialIcon.astro';
 
 const { business, contact, hours, social, footer } = site;
 const year = new Date().getFullYear();
@@ -21,6 +22,16 @@ function formatTime(t: string | null): string {
   const period = h >= 12 ? 'PM' : 'AM';
   const hr12 = h % 12 || 12;
   return m === 0 ? `${hr12} ${period}` : `${hr12}:${String(m).padStart(2, '0')} ${period}`;
+}
+
+function hourSlots(h: (typeof hours)[number]): string[] {
+  if (h.closed) return ['Closed'];
+  const slots = h.periods?.length
+    ? h.periods
+    : h.open && h.close
+      ? [{ open: h.open, close: h.close }]
+      : [];
+  return slots.map((slot) => `${formatTime(slot.open)} – ${formatTime(slot.close)}`);
 }
 ---
 
@@ -35,6 +46,10 @@ function formatTime(t: string | null): string {
           {contact.address.street}<br />
           {contact.address.city}, {contact.address.region} {contact.address.postalCode}
         </address>
+        <p class="site-footer__contact-links">
+          <a href={`tel:${contact.phone.replace(/[^+\d]/g, '')}`}>{contact.phone}</a><br />
+          <a href={`mailto:${contact.email}`}>{contact.email}</a>
+        </p>
       </div>
 
       {/* Column 2: Visit */}
@@ -45,15 +60,16 @@ function formatTime(t: string | null): string {
             <li>
               <span class="site-footer__day">{h.day}</span>
               <span class="site-footer__time">
-                {h.closed ? 'Closed' : `${formatTime(h.open)} – ${formatTime(h.close)}`}
+                {hourSlots(h).map((slot, i) => (
+                  <Fragment>
+                    {i > 0 && <br />}
+                    {slot}
+                  </Fragment>
+                ))}
               </span>
             </li>
           ))}
         </ul>
-        <p class="site-footer__contact-links">
-          <a href={`tel:${contact.phone.replace(/[^+\d]/g, '')}`}>{contact.phone}</a><br />
-          <a href={`mailto:${contact.email}`}>{contact.email}</a>
-        </p>
       </div>
 
       {/* Column 3: Connect */}
@@ -62,7 +78,10 @@ function formatTime(t: string | null): string {
         <ul class="site-footer__social">
           {social.map((s) => (
             <li>
-              <a href={s.href} rel="noopener noreferrer" target="_blank">{s.label}</a>
+              <a href={s.href} rel="noopener noreferrer" target="_blank">
+                <SocialIcon label={s.label} href={s.href} />
+                {s.label}
+              </a>
             </li>
           ))}
         </ul>
@@ -132,7 +151,7 @@ function formatTime(t: string | null): string {
 
   .site-footer__hours {
     list-style: none;
-    margin: 0 0 1rem;
+    margin: 0;
     padding: 0;
   }
 
@@ -153,6 +172,10 @@ function formatTime(t: string | null): string {
     text-align: right;
   }
 
+  .site-footer__contact-links {
+    margin: 0.75rem 0 0;
+  }
+
   .site-footer__contact-links a {
     color: var(--color-cream-300);
     text-decoration: none;
@@ -168,7 +191,14 @@ function formatTime(t: string | null): string {
     padding: 0;
   }
 
+  .site-footer__social li + li {
+    margin-top: 0.45rem;
+  }
+
   .site-footer__social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     color: var(--color-cream-300);
     text-decoration: none;
   }

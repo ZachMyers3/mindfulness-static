@@ -1,0 +1,13 @@
+Points on 8 ft x 8 ft plot (origin at bottom-left)
+
+1. Start of triangle 1:              (0' 0",  0' 0")
+2. Top of triangle 1:                (2' 8",  8' 0")
+3. Top of triangle intersection:     (4' 5 4/32",  3' 5 21/32")
+4. Top of triangle 2:                (5' 4",  6' 1 19/32")
+5. End of triangle 2:                (8' 0",  0' 0")
+6. Bottom intersection (left):       (2' 8",  0' 0")
+7. Bottom intersection (right):      (5' 4",  0' 0")
+
+Notes:
+- Values from exact geometry, then inches rounded to nearest 1/32".
+- Exact inch values left whole (e.g. 2' 8", 5' 4").

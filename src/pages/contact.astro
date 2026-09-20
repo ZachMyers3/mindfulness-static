@@ -6,7 +6,7 @@
  */
 import { getEntry, render } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import PageHeader from '../components/PageHeader.astro';
+import Hero from '../components/Hero.astro';
 import JsonLd from '../components/JsonLd.astro';
 import { site } from '../lib/site';
 
@@ -15,7 +15,8 @@ if (!entry) {
   throw new Error('pages/contact entry not found in src/content/pages/contact.md');
 }
 const { Content } = await render(entry);
-const { title, description, noindex = false } = entry.data;
+const { title, description, noindex = false, heroImage, heroAlt } = entry.data;
+const heroSrc = heroImage || undefined;
 
 // Build LocalBusiness structured data from site.json
 const localBusiness = {
@@ -33,21 +34,33 @@ const localBusiness = {
     "postalCode": site.contact.address.postalCode,
     "addressCountry": site.contact.address.country,
   },
-  "openingHoursSpecification": site.hours
-    .filter((h) => !h.closed && h.open && h.close)
-    .map((h) => ({
+  "openingHoursSpecification": site.hours.flatMap((h) => {
+    if (h.closed) return [];
+    const slots = h.periods?.length
+      ? h.periods
+      : h.open && h.close
+        ? [{ open: h.open, close: h.close }]
+        : [];
+    return slots.map((slot) => ({
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": h.day,
-      "opens": h.open,
-      "closes": h.close,
-    })),
+      "opens": slot.open,
+      "closes": slot.close,
+    }));
+  }),
   "sameAs": site.social.map((s) => s.href),
 };
 ---
 
 <BaseLayout title={title} description={description} noindex={noindex}>
   <JsonLd data={localBusiness} />
-  <PageHeader title={title} description={description} />
+  <Hero
+    title={title}
+    tagline={description}
+    image={heroSrc}
+    alt={heroAlt}
+    background={heroSrc ? 'image' : 'brand'}
+  />
   <article class="prose">
     <Content />
   </article>

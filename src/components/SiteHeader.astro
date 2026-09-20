@@ -73,6 +73,8 @@ const currentPath = Astro.url.pathname;
 
 <style>
   .site-header {
+    position: relative;
+    z-index: 20;
     border-bottom: 1px solid #e5e0db;
     background: #fffdf8;
   }
@@ -222,6 +224,7 @@ const currentPath = Astro.url.pathname;
     }
     .site-header__mobile-menu[open] .site-header__nav-mobile {
       position: absolute;
+      z-index: 21;
       top: 100%;
       left: 0;
       right: 0;

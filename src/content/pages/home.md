@@ -1,47 +1,26 @@
 ---
 title: Mindfulness & Movement
-description: "A quiet practice of movement, breath, and rest in Wooster. Accessible yoga and breathwork for steady, embodied living."
+description: This space is for you - however you show up.
 draft: false
-heroImage: /assets/pages/website-pic-mtkwo0n5.png
+heroImage: /assets/pages/website-pic-mua5fo16.png
 ---
 
-## A practice of returning
+## Mission Statement:
 
-Mindfulness & Movement is a small studio built around a simple idea: that the body is a
-place we already live, and that returning to it — slowly, with kindness — is the practice.
+To create experiences designed to improve the wellbeing for people of all ages and to help them reconnect with themselves and their community.
 
-We teach movement as a way of being present. Breath as a way of settling. Rest as a way
-of letting the nervous system come home. The room is calm, the pace is unhurried, and the
-work is offered rather than performed.
+We are a mindfulness and movement studio offering a variety of classes and experiences designed to support the whole person. We currently have Flow, Relax, Stretch, Mommy and Me, and Reset classes weekly. We also offer private classes and Aerial Hammock Lessons, kids programming, and wellness experiences. Our goal is to create a welcoming space where people can move their bodies, quiet their minds, build confidence, and connect with others.&#x20;
 
-## What you'll find here
-
-Slow, accessible yoga classes that meet you where you are — whether you are brand new to
-the mat or twenty years in. Breathwork sessions that take ten minutes and stay with you
-for the rest of the day. Quiet gatherings that are not performances: no music, no
-performance pressure, no expectation of anywhere else to be.
-
-We do not teach hot yoga. We do not teach power yoga. We do not teach anything that asks
-the body for more than the breath can give. The poses are real, the sequencing is real,
-and the room is real — there is no spectacle here, only practice.
-
-## A welcome, not a pitch
-
-If you are curious, the first class is on us. Come as you are. Wear what is comfortable.
-Bring a willingness to notice, and a willingness to leave the rest at the door.
-
-> The mat is not a place to become something. It is a place to remember what you already are.
-
-Learn [about the studio](/about/), see the [classes we offer](/offerings/), or
-[check the schedule](/schedule/) for what is next on the calendar.
+&#x20; <img height="213" width="142" src="/assets/pages/mindfulness-2026-56-mua5o0e3.jpg" />   <img height="213" width="142" src="/assets/pages/mindfulness-2026-233-mua5o6zh.jpg" />   <img height="213" width="142" src="/assets/pages/mindfulness-2026-175-mua5odge.jpg" />   <img height="213" width="142" src="/assets/pages/mindfulness-2026-98-mua5s703.jpg" />
 
 ## How to begin
 
-The simplest way to begin is to come to a class. We offer a gentle welcome to every
-newcomer: an introduction to the room, a few minutes before the practice starts to settle
-in, and a teacher who will offer options for every body. Nothing is required of you
-beyond showing up.
+The simplest way to begin is to come to a class or stop in for a visit before or after any class! Another option is to email, call, or text any questions you may have! &#x20;
 
-If you are not quite ready to step onto the mat, you are welcome to read the [practice
-notes on the journal](/journal/), or [send a note with any questions](/contact/). There is
-no urgency here. The practice has been waiting for you, and it will keep.
+Email: [MindfulnessandMovementOhio@gmail.com](mailto:MindfulnessandMovementOhio@gmail.com)
+
+Phone: 330-789-3217
+
+Please visit the app to book classes:
+
+[https://app.mindfulnessandmovement.org/about](https://app.mindfulnessandmovement.org/about)

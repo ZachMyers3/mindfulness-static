@@ -34,6 +34,7 @@
     :root {
       --color-sage: #3a7268;
       --color-sage-soft: #5a7558;
+      --color-sage-hover: #2d5a50;
       --color-sage-deep: #23453d;
       --color-plum: #5b3a56;
       --color-plum-soft: #72576f;
@@ -166,6 +167,59 @@
       animation: rule-grow 0.9s ease 0.85s both;
     }
 
+    .coming-soon__note {
+      font-size: clamp(0.85rem, 0.3vw + 0.78rem, 0.95rem);
+      color: var(--color-muted);
+      margin-top: 1.5rem;
+      margin-bottom: 1rem;
+      animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.05s both;
+    }
+
+    .coming-soon__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 4px;
+      background: var(--color-sage);
+      color: var(--color-cream);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.2;
+      letter-spacing: 0.01em;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(58, 114, 104, 0.22);
+      animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 1.05s both;
+      transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .coming-soon__cta:hover,
+    .coming-soon__cta:focus-visible {
+      background: var(--color-sage-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(58, 114, 104, 0.28);
+    }
+
+    .coming-soon__cta:focus-visible {
+      outline: 2px solid var(--color-plum);
+      outline-offset: 3px;
+    }
+
+    .coming-soon__cta-arrow {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+      transition: transform 0.2s ease;
+    }
+
+    .coming-soon__cta:hover .coming-soon__cta-arrow,
+    .coming-soon__cta:focus-visible .coming-soon__cta-arrow {
+      transform: translateX(3px);
+    }
+
     @keyframes rise-in {
       from { opacity: 0; transform: translateY(1rem); }
       to { opacity: 1; transform: translateY(0); }
@@ -197,10 +251,22 @@
       .coming-soon__logo .peak-sage,
       .coming-soon__logo .peak-plum,
       .coming-soon__headline,
-      .coming-soon__rule {
+      .coming-soon__rule,
+      .coming-soon__note,
+      .coming-soon__cta {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
+      }
+
+      .coming-soon__cta,
+      .coming-soon__cta-arrow {
+        transition: none;
+      }
+
+      .coming-soon__cta:hover .coming-soon__cta-arrow,
+      .coming-soon__cta:focus-visible .coming-soon__cta-arrow {
+        transform: none;
       }
     }
   </style>
@@ -219,6 +285,14 @@
       </h1>
       <p class="coming-soon__headline">Coming Soon</p>
       <div class="coming-soon__rule" aria-hidden="true"></div>
+      <p class="coming-soon__note">Scheduling is live now</p>
+      <a class="coming-soon__cta" href="https://app.mindfulnessandmovement.org">
+        Book a Class or Event
+        <svg class="coming-soon__cta-arrow" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+          <path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.75"
+                stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
     </div>
   </main>
 </body>

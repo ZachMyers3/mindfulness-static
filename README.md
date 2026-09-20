@@ -27,6 +27,9 @@ npm run dev
 `pages` and `journal` Markdown collections. It only runs during `astro
 dev` (never in production builds). Config: `writenex.config.ts`.
 
+Crop hero photos at `http://localhost:4321/tools/hero-crop/` (dev only).
+Choose a page and apply the crop, or download a JPEG.
+
 **Where everything lives:**
 
 | What you want to edit                            | Where it is                                  |
@@ -37,6 +40,7 @@ dev` (never in production builds). Config: `writenex.config.ts`.
 | Journal / blog posts                             | `src/content/journal/<slug>.md`              |
 | Brand colors, fonts                              | `src/styles/main.css` (`@theme static { … }`) |
 | Photo placeholders                               | `src/assets/` (swap files; no code changes)  |
+| Hero photo crop (pick a page and apply)          | `http://localhost:4321/tools/hero-crop/` (dev only) |
 
 **Edit → live workflow:**
 

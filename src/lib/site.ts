@@ -27,6 +27,10 @@ const SiteSchema = z.object({
     open: z.string().regex(/^\d{2}:\d{2}$/).nullable(),
     close: z.string().regex(/^\d{2}:\d{2}$/).nullable(),
     closed: z.boolean().optional(),
+    periods: z.array(z.object({
+      open: z.string().regex(/^\d{2}:\d{2}$/),
+      close: z.string().regex(/^\d{2}:\d{2}$/),
+    })).optional(),
   })).length(7),
   social: z.array(z.object({ label: z.string(), href: z.string().url() })),
   announcement: z.object({

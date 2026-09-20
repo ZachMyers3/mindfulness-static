@@ -43,14 +43,16 @@ interface Props {
 const {
   title,
   description,
-  image,
+  image: imageProp,
   alt,
   breadcrumb,
   background = 'brand',
   class: className,
 } = Astro.props;
 
-const hasImage = Boolean(image);
+const image = imageProp || undefined;
+const imageSrc = image ? withBase(image) : undefined;
+const hasImage = Boolean(imageSrc);
 const crumbs = breadcrumb ?? [];
 const isBrand = background === 'brand';
 ---
@@ -95,7 +97,7 @@ const isBrand = background === 'brand';
     {hasImage && (
       <div class="page-header__image-wrap">
         <img
-          src={image}
+          src={imageSrc}
           alt={alt ?? ''}
           class="page-header__image"
           loading="eager"

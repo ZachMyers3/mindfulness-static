@@ -13,14 +13,17 @@ if (!entry) {
   throw new Error('pages/home entry not found in src/content/pages/home.md');
 }
 const { Content } = await render(entry);
-const { title, description, noindex } = entry.data;
+const { title, description, noindex, heroImage, heroAlt } = entry.data;
+const heroSrc = heroImage || undefined;
 ---
 
 <BaseLayout title={title} description={description} noindex={noindex}>
   <Hero
     title={title}
     tagline={description}
-    background="brand"
+    image={heroSrc}
+    alt={heroAlt}
+    background={heroSrc ? 'image' : 'brand'}
     ctaLabel="View Schedule"
     ctaHref="/schedule/"
   />

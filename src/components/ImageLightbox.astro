@@ -1,0 +1,317 @@
+---
+/**
+ * ImageLightbox.astro
+ * Progressive enhancement for images inside `.prose` (Markdown body /
+ * gallery). Click or Enter opens a dialog; wheel, pinch, or buttons zoom.
+ * Hero images live outside `.prose` and are left alone.
+ */
+---
+
+<dialog class="lightbox" aria-labelledby="lightbox-title">
+  <h2 id="lightbox-title" class="lightbox__title">Image viewer</h2>
+  <button type="button" class="lightbox__icon-btn lightbox__close" data-lightbox-close>
+    Close
+  </button>
+  <div class="lightbox__stage" data-lightbox-stage>
+    <img class="lightbox__img" data-lightbox-img alt="" />
+  </div>
+  <div class="lightbox__toolbar">
+    <button type="button" class="lightbox__icon-btn" data-lightbox-prev>Previous</button>
+    <button type="button" class="lightbox__icon-btn" data-lightbox-zoom-out>Zoom out</button>
+    <button type="button" class="lightbox__icon-btn" data-lightbox-zoom-in>Zoom in</button>
+    <button type="button" class="lightbox__icon-btn" data-lightbox-next>Next</button>
+  </div>
+</dialog>
+
+<script>
+  const dialog = document.querySelector<HTMLDialogElement>('.lightbox');
+  const stage = document.querySelector<HTMLElement>('[data-lightbox-stage]');
+  const viewer = document.querySelector<HTMLImageElement>('[data-lightbox-img]');
+  const title = document.querySelector<HTMLElement>('#lightbox-title');
+  if (!dialog || !stage || !viewer || !title) {
+    // No-op when the lightbox markup is missing.
+  } else {
+    const sources = [...document.querySelectorAll<HTMLImageElement>('.prose img')];
+    const MIN = 1;
+    const MAX = 4;
+    const STEP = 0.35;
+
+    let index = 0;
+    let scale = 1;
+    let tx = 0;
+    let ty = 0;
+    let pointers = new Map<number, { x: number; y: number }>();
+    let pinchStart = 0;
+    let scaleStart = 1;
+    let dragStart: { x: number; y: number; tx: number; ty: number } | null = null;
+
+    function applyTransform() {
+      viewer.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+      stage.classList.toggle('is-zoomed', scale > 1.01);
+    }
+
+    function fitFrame() {
+      const nw = viewer.naturalWidth;
+      const nh = viewer.naturalHeight;
+      if (!nw || !nh) return;
+
+      const chromeX = 24;
+      const chromeY = 96;
+      const maxW = Math.min(window.innerWidth * 0.96, 72 * 16) - chromeX;
+      const maxH = Math.min(window.innerHeight * 0.92, window.innerHeight - 48) - chromeY;
+      const fit = Math.min(maxW / nw, maxH / nh);
+      stage.style.width = `${Math.max(160, Math.round(nw * fit))}px`;
+      stage.style.height = `${Math.max(160, Math.round(nh * fit))}px`;
+    }
+
+    function setScale(next: number, originX?: number, originY?: number) {
+      const clamped = Math.min(MAX, Math.max(MIN, next));
+      if (originX !== undefined && originY !== undefined && scale !== clamped) {
+        const rect = viewer.getBoundingClientRect();
+        const cx = originX - (rect.left + rect.width / 2);
+        const cy = originY - (rect.top + rect.height / 2);
+        const ratio = clamped / scale;
+        tx = cx - (cx - tx) * ratio;
+        ty = cy - (cy - ty) * ratio;
+      }
+      scale = clamped;
+      if (scale === MIN) {
+        tx = 0;
+        ty = 0;
+      }
+      applyTransform();
+    }
+
+    function onViewerReady() {
+      scale = MIN;
+      tx = 0;
+      ty = 0;
+      applyTransform();
+      fitFrame();
+    }
+
+    function show(i: number) {
+      if (!sources.length) return;
+      index = (i + sources.length) % sources.length;
+      const src = sources[index];
+      const nextSrc = src.currentSrc || src.src;
+      viewer.alt = src.alt || '';
+      title.textContent = src.alt ? src.alt : `Image ${index + 1} of ${sources.length}`;
+      if (viewer.src === nextSrc && viewer.complete) {
+        onViewerReady();
+        return;
+      }
+      viewer.src = nextSrc;
+    }
+
+    function open(i: number) {
+      show(i);
+      if (!dialog.open) dialog.showModal();
+      if (viewer.complete && viewer.naturalWidth) onViewerReady();
+    }
+
+    function close() {
+      dialog.close();
+      viewer.removeAttribute('src');
+      stage.style.width = '';
+      stage.style.height = '';
+    }
+
+    viewer.addEventListener('load', onViewerReady);
+    window.addEventListener('resize', () => {
+      if (dialog.open) fitFrame();
+    });
+
+    sources.forEach((img, i) => {
+      img.classList.add('prose__zoomable');
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', img.alt ? `View larger: ${img.alt}` : 'View larger image');
+      img.addEventListener('click', () => open(i));
+      img.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          open(i);
+        }
+      });
+    });
+
+    dialog.querySelector('[data-lightbox-close]')?.addEventListener('click', close);
+    dialog.querySelector('[data-lightbox-zoom-in]')?.addEventListener('click', () =>
+      setScale(scale + STEP),
+    );
+    dialog.querySelector('[data-lightbox-zoom-out]')?.addEventListener('click', () =>
+      setScale(scale - STEP),
+    );
+    dialog.querySelector('[data-lightbox-prev]')?.addEventListener('click', () => show(index - 1));
+    dialog.querySelector('[data-lightbox-next]')?.addEventListener('click', () => show(index + 1));
+
+    dialog.addEventListener('click', (event) => {
+      if (event.target === dialog) close();
+    });
+
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowRight') show(index + 1);
+      if (event.key === 'ArrowLeft') show(index - 1);
+      if (event.key === '+' || event.key === '=') setScale(scale + STEP);
+      if (event.key === '-' || event.key === '_') setScale(scale - STEP);
+    });
+
+    stage.addEventListener(
+      'wheel',
+      (event) => {
+        if (!dialog.open) return;
+        event.preventDefault();
+        const delta = event.deltaY > 0 ? -STEP : STEP;
+        setScale(scale + delta, event.clientX, event.clientY);
+      },
+      { passive: false },
+    );
+
+    stage.addEventListener('pointerdown', (event) => {
+      stage.setPointerCapture(event.pointerId);
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (pointers.size === 1) {
+        dragStart = { x: event.clientX, y: event.clientY, tx, ty };
+      }
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        pinchStart = Math.hypot(a.x - b.x, a.y - b.y);
+        scaleStart = scale;
+        dragStart = null;
+      }
+    });
+
+    stage.addEventListener('pointermove', (event) => {
+      if (!pointers.has(event.pointerId)) return;
+      pointers.set(event.pointerId, { x: event.clientX, y: event.clientY });
+      if (pointers.size === 2) {
+        const [a, b] = [...pointers.values()];
+        const dist = Math.hypot(a.x - b.x, a.y - b.y);
+        if (pinchStart > 0) setScale(scaleStart * (dist / pinchStart));
+        return;
+      }
+      if (dragStart && scale > MIN) {
+        tx = dragStart.tx + (event.clientX - dragStart.x);
+        ty = dragStart.ty + (event.clientY - dragStart.y);
+        applyTransform();
+      }
+    });
+
+    function endPointer(event: PointerEvent) {
+      pointers.delete(event.pointerId);
+      if (pointers.size < 2) pinchStart = 0;
+      if (pointers.size === 0) dragStart = null;
+    }
+
+    stage.addEventListener('pointerup', endPointer);
+    stage.addEventListener('pointercancel', endPointer);
+    stage.addEventListener('dblclick', (event) => {
+      if (scale > MIN) setScale(MIN);
+      else setScale(2.2, event.clientX, event.clientY);
+    });
+  }
+</script>
+
+<style>
+  .lightbox {
+    display: none;
+    flex-direction: column;
+    width: max-content;
+    height: max-content;
+    max-width: 96vw;
+    max-height: 92vh;
+    padding: 2.75rem 0.75rem 0.65rem;
+    border: 0;
+    border-radius: 10px;
+    background: #111;
+    color: #fffdf8;
+    overflow: hidden;
+  }
+
+  .lightbox[open] {
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    translate: -50% -50%;
+  }
+
+  .lightbox::backdrop {
+    background: rgba(17, 17, 17, 0.72);
+  }
+
+  .lightbox__title {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  .lightbox__stage {
+    position: relative;
+    flex: 0 0 auto;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    touch-action: none;
+    cursor: zoom-in;
+  }
+
+  .lightbox__stage.is-zoomed {
+    cursor: grab;
+  }
+
+  .lightbox__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    object-fit: contain;
+    object-position: center;
+    transform-origin: center center;
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .lightbox__close {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 2;
+  }
+
+  .lightbox__toolbar {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-self: center;
+    width: auto;
+    max-width: 100%;
+    padding: 0.6rem 0 0.1rem;
+  }
+
+  .lightbox__icon-btn {
+    appearance: none;
+    border: 0;
+    border-radius: 999px;
+    background: rgba(255, 253, 248, 0.14);
+    color: #fffdf8;
+    font-family: system-ui, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 600;
+    padding: 0.45rem 0.85rem;
+    cursor: pointer;
+  }
+
+  .lightbox__icon-btn:hover,
+  .lightbox__icon-btn:focus-visible {
+    background: rgba(255, 253, 248, 0.28);
+  }
+</style>

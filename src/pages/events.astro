@@ -1,0 +1,31 @@
+---
+/**
+ * src/pages/events.astro
+ * Events page — loads the `pages/events` Markdown entry and renders
+ * it inside BaseLayout with the same full-bleed Hero as the homepage.
+ */
+import { getEntry, render } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+
+const entry = await getEntry('pages', 'events');
+if (!entry) {
+  throw new Error('pages/events entry not found in src/content/pages/events.md');
+}
+const { Content } = await render(entry);
+const { title, description, noindex = false, heroImage, heroAlt } = entry.data;
+const heroSrc = heroImage || undefined;
+---
+
+<BaseLayout title={title} description={description} noindex={noindex}>
+  <Hero
+    title={title}
+    tagline={description}
+    image={heroSrc}
+    alt={heroAlt}
+    background={heroSrc ? 'image' : 'brand'}
+  />
+  <article class="prose">
+    <Content />
+  </article>
+</BaseLayout>

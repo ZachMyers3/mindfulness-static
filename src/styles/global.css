@@ -173,6 +173,109 @@ h6 {
   max-width: 100%;
   height: auto;
   border-radius: var(--radius-md);
+  cursor: zoom-in;
+}
+
+/* Schedule only: photo left, copy right, next class on a new row.
+   Matches how Markdown actually renders:
+     <img> then <p>text</p>
+     or <p><img></p> then <p>text</p>
+     or <p><img> text…</p> (same paragraph)
+   Direct children default to full width; only an image immediately
+   followed by a paragraph shares the two-column grid. */
+.prose-schedule {
+  display: grid;
+  grid-template-columns: minmax(8rem, 11rem) minmax(0, 1fr);
+  column-gap: 1.25rem;
+  align-items: center;
+}
+
+.prose-schedule > * {
+  grid-column: 1 / -1;
+  max-width: 100%;
+}
+
+.prose-schedule > img:has(+ p),
+.prose-schedule > p:has(> img:only-child):has(+ p) {
+  grid-column: 1;
+  width: auto;
+  max-width: 100%;
+  margin: 0.35rem 0 1.75rem;
+}
+
+.prose-schedule > img + p,
+.prose-schedule > p:has(> img:only-child) + p {
+  grid-column: 2;
+  min-width: 0;
+  margin: 0.35rem 0 1.75rem;
+}
+
+.prose-schedule > img:has(+ p),
+.prose-schedule > p:has(> img:only-child):has(+ p) img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.prose-schedule > p:has(> img:only-of-type):not(:has(> img:only-child)) {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.prose-schedule > p:has(> img:only-of-type):not(:has(> img:only-child)) > img {
+  flex: 0 0 min(11rem, 38%);
+  width: min(11rem, 38%);
+  height: auto;
+}
+
+.prose-schedule .media-row,
+.prose-schedule .split {
+  display: grid;
+  grid-template-columns: minmax(8rem, 11rem) minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: center;
+  margin: var(--space-6) 0;
+}
+
+.prose-schedule .media-row > p,
+.prose-schedule .split > p {
+  margin: 0;
+}
+
+.prose-schedule .media-row img,
+.prose-schedule .split img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .prose-schedule {
+    grid-template-columns: 1fr;
+  }
+
+  .prose-schedule > img:has(+ p),
+  .prose-schedule > p:has(> img:only-child):has(+ p),
+  .prose-schedule > img + p,
+  .prose-schedule > p:has(> img:only-child) + p {
+    grid-column: 1;
+  }
+
+  .prose-schedule > img:has(+ p),
+  .prose-schedule > p:has(> img:only-child):has(+ p) {
+    width: min(16rem, 100%);
+    margin: 0 0 0.75rem;
+  }
+
+  .prose-schedule > p:has(> img:only-of-type):not(:has(> img:only-child)) {
+    display: block;
+  }
+
+  .prose-schedule .media-row,
+  .prose-schedule .split {
+    grid-template-columns: 1fr;
+  }
 }
 
 .prose hr {
