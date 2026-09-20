@@ -5,7 +5,7 @@ import { defineConfig } from '@writenex/astro';
  * Open http://localhost:4321/_writenex while `npm run dev` is running.
  *
  * site.json is still edited by hand (or in your IDE) — Writenex covers
- * the pages + journal Markdown collections only.
+ * the pages Markdown collection only.
  */
 export default defineConfig({
   collections: [
@@ -23,21 +23,6 @@ export default defineConfig({
         heroAlt: { type: 'string' },
         lastUpdated: { type: 'date' },
         noindex: { type: 'boolean', default: false },
-        draft: { type: 'boolean', default: false },
-      },
-    },
-    {
-      name: 'journal',
-      path: 'src/content/journal',
-      filePattern: '{slug}.md',
-      previewUrl: '/journal/{slug}/',
-      schema: {
-        title: { type: 'string', required: true },
-        description: { type: 'string', required: true },
-        pubDate: { type: 'date', required: true },
-        heroImage: { type: 'image' },
-        heroAlt: { type: 'string' },
-        tags: { type: 'array', items: 'string' },
         draft: { type: 'boolean', default: false },
       },
     },

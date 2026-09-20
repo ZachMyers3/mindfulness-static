@@ -159,7 +159,7 @@ After the first deploy, verify:
   or [OpenGraph debugger](https://www.opengraph.xyz/) — confirm the
   `og-default.jpg` renders.
 - [ ] **Sitemap:** visit `https://<your-domain>/sitemap-index.xml` — confirm
-  it lists all public routes (no draft journal posts).
+  it lists all public routes.
 - [ ] **robots.txt:** visit `https://<your-domain>/robots.txt` — confirm it
   allows crawling and points at the sitemap.
 - [ ] **Lighthouse:** run Lighthouse on the live URL; target ≥95 across

@@ -16,7 +16,6 @@ const ROUTES = [
   '/contact/',
   '/privacy/',
   '/terms/',
-  '/journal/',
   '/404/',
 ];
 

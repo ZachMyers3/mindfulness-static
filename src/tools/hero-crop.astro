@@ -34,10 +34,6 @@ const targets = listHeroTargets(process.cwd());
           <input type="radio" name="preset" value="home" checked />
           Pages <span>12:5 · 1920×800 · full-bleed</span>
         </label>
-        <label>
-          <input type="radio" name="preset" value="journal" />
-          Journal <span>16:9 · 1600×900</span>
-        </label>
       </fieldset>
 
       <p class="hint" data-hint>
@@ -59,7 +55,7 @@ const targets = listHeroTargets(process.cwd());
           <option value="">Choose a page</option>
           {targets.map((target) => (
             <option value={`${target.collection}:${target.slug}`}>
-              {target.title} ({target.collection === 'journal' ? 'Journal' : 'Page'} · {target.previewUrl})
+              {target.title} ({target.previewUrl})
             </option>
           ))}
         </select>
@@ -81,7 +77,7 @@ const targets = listHeroTargets(process.cwd());
       import Cropper from 'cropperjs';
       import 'cropperjs/dist/cropper.css';
 
-      type PresetId = 'home' | 'inner' | 'journal';
+      type PresetId = 'home' | 'inner';
 
       const PRESETS: Record<
         PresetId,
@@ -99,16 +95,10 @@ const targets = listHeroTargets(process.cwd());
           height: 800,
           hint: 'Used on every site page. Height follows the headline, so 12:5 is a desktop target, not an exact match on every screen.',
         },
-        journal: {
-          ratio: 16 / 9,
-          width: 1600,
-          height: 900,
-          hint: 'Matches the journal post hero (16:9).',
-        },
       };
 
       type Target = {
-        collection: 'pages' | 'journal';
+        collection: 'pages';
         slug: string;
         title: string;
         heroImage?: string;
@@ -206,8 +196,7 @@ const targets = listHeroTargets(process.cwd());
           for (const target of targets) {
             const option = document.createElement('option');
             option.value = `${target.collection}:${target.slug}`;
-            const kind = target.collection === 'journal' ? 'Journal' : 'Page';
-            option.textContent = `${target.title} (${kind} · ${target.previewUrl})`;
+            option.textContent = `${target.title} (${target.previewUrl})`;
             targetSelect.append(option);
           }
         } catch (error) {

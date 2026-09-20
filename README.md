@@ -16,7 +16,7 @@
 
 ## Editing the site
 
-**Visual editor (recommended for page/journal copy):**
+**Visual editor (recommended for page copy):**
 
 ```bash
 npm run dev
@@ -24,7 +24,7 @@ npm run dev
 ```
 
 [Writenex](https://writenex.com/astro) is a WYSIWYG editor wired to the
-`pages` and `journal` Markdown collections. It only runs during `astro
+`pages` Markdown collection. It only runs during `astro`
 dev` (never in production builds). Config: `writenex.config.ts`.
 
 Crop hero photos at `http://localhost:4321/tools/hero-crop/` (dev only).
@@ -34,10 +34,9 @@ Choose a page and apply the crop, or download a JPEG.
 
 | What you want to edit                            | Where it is                                  |
 |--------------------------------------------------|----------------------------------------------|
-| Page / journal body copy                         | Writenex at `/_writenex`, or the `.md` files below |
+| Page body copy                                   | Writenex at `/_writenex`, or the `.md` files below |
 | Business name, tagline, nav, footer, hours, email | `src/content/site.json`                      |
 | Page body copy (Home, About, Offerings, …)       | `src/content/pages/<slug>.md` (frontmatter + Markdown) |
-| Journal / blog posts                             | `src/content/journal/<slug>.md`              |
 | Brand colors, fonts                              | `src/styles/main.css` (`@theme static { … }`) |
 | Photo placeholders                               | `src/assets/` (swap files; no code changes)  |
 | Hero photo crop (pick a page and apply)          | `http://localhost:4321/tools/hero-crop/` (dev only) |
@@ -45,7 +44,7 @@ Choose a page and apply the crop, or download a JPEG.
 **Edit → live workflow:**
 
 ```bash
-# 1. Edit via Writenex (pages/journal) or site.json
+# 1. Edit via Writenex (pages) or site.json
 npm run dev                             # http://localhost:4321
 #    → http://localhost:4321/_writenex  # visual editor
 vim src/content/site.json               # hours, phone, nav, etc.
@@ -107,8 +106,7 @@ mindfulness-static/
 │   ├── assets/               # photos, fonts
 │   ├── components/           # Astro components (Button, Hero, …)
 │   ├── content/
-│   │   ├── pages/            # one Markdown file per page
-│   │   └── journal/          # journal / blog posts
+│   │   └── pages/            # one Markdown file per page
 │   ├── content.config.ts     # Zod schemas for content collections
 │   ├── layouts/              # BaseLayout, etc.
 │   ├── lib/                  # site.ts (parsed site.json)

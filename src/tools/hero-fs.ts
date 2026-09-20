@@ -5,8 +5,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-export type HeroCollection = 'pages' | 'journal';
-export type HeroPreset = 'home' | 'inner' | 'journal';
+export type HeroCollection = 'pages';
+export type HeroPreset = 'home' | 'inner';
 
 export interface HeroTarget {
   collection: HeroCollection;
@@ -87,13 +87,11 @@ function upsertField(frontmatter: string, key: string, value: string): string {
   return `${frontmatter.replace(/\s+$/, '')}\n${line}`;
 }
 
-function previewUrl(collection: HeroCollection, slug: string): string {
-  if (collection === 'journal') return `/journal/${slug}/`;
+function previewUrl(_collection: HeroCollection, slug: string): string {
   return slug === 'home' ? '/' : `/${slug}/`;
 }
 
-function presetFor(collection: HeroCollection, _slug: string): HeroPreset {
-  if (collection === 'journal') return 'journal';
+function presetFor(_collection: HeroCollection, _slug: string): HeroPreset {
   return 'home';
 }
 
@@ -121,7 +119,7 @@ function listCollection(root: string, collection: HeroCollection): HeroTarget[] 
 }
 
 export function listHeroTargets(root: string): HeroTarget[] {
-  return [...listCollection(root, 'pages'), ...listCollection(root, 'journal')].sort(
+  return [...listCollection(root, 'pages')].sort(
     (a, b) => a.title.localeCompare(b.title),
   );
 }
@@ -140,7 +138,7 @@ function decodeJpeg(imageBase64: string): Buffer {
 
 export function applyHero(root: string, input: ApplyHeroInput): ApplyHeroResult {
   const { collection, slug } = input;
-  if (collection !== 'pages' && collection !== 'journal') {
+  if (collection !== 'pages') {
     throw new Error('Unknown collection');
   }
   if (!SLUG_RE.test(slug)) {

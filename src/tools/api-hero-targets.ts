@@ -1,5 +1,5 @@
 /**
- * Dev-only JSON list of pages/journal entries that can receive a hero image.
+ * Dev-only JSON list of pages that can receive a hero image.
  */
 import type { APIRoute } from 'astro';
 import { listHeroTargets } from './hero-fs';

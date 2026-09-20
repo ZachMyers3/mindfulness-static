@@ -20,7 +20,6 @@ const ROUTES = [
   '/contact/',
   '/privacy/',
   '/terms/',
-  '/journal/',
 ];
 
 // ── Test 5: home page renders brand name from site.json ──────────────
@@ -80,21 +79,6 @@ test('404 page renders for unknown route', async ({ page }) => {
   expect(res?.status()).toBe(404);
   // The 404 page should have some friendly copy
   await expect(page.locator('body')).toContainText(/not found|lost|oops/i);
-});
-
-// ── Test 11: draft journal post is excluded in production ────────────
-test('draft journal post is excluded from journal listing', async ({
-  page,
-}) => {
-  await page.goto('/journal/');
-  // The welcome post is not a draft (draft: false), so it should appear
-  await expect(
-    page.getByRole('link', { name: /welcome/i }),
-  ).toBeVisible();
-
-  // No draft posts should be visible (we only have one post, which is
-  // not a draft — this test primarily verifies the listing renders at all
-  // and the content collection filtering is active).
 });
 
 // ── Test 12: JSON-LD on /contact is valid LocalBusiness ──────────────

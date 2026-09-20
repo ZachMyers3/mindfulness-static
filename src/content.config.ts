@@ -14,17 +14,4 @@ const pages = defineCollection({
   }),
 });
 
-const journal = defineCollection({
-  loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/journal' }),
-  schema: z.object({
-    title: z.string().min(1),
-    description: z.string().min(1).max(200),
-    pubDate: z.coerce.date(),
-    heroImage: z.string().optional(),
-    heroAlt:   z.preprocess((value) => (value == null ? '' : value), z.string()).optional(),
-    tags: z.array(z.string()).default([]),
-    draft: z.boolean().default(false),
-  }),
-});
-
-export const collections = { pages, journal };
+export const collections = { pages };

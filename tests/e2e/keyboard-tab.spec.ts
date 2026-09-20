@@ -19,7 +19,6 @@ const PUBLIC_ROUTES = [
   '/contact/',
   '/privacy/',
   '/terms/',
-  '/journal/',
   '/404/',
 ];
 
@@ -27,7 +26,7 @@ const PUBLIC_ROUTES = [
 // (reserved for future per-route assertions; currently unused in tests)
  
 const _CONTENT_LINKS: Record<string, string[]> = {
-  '/': ['Go to contact', 'Read the journal'],
+  '/': ['Go to contact'],
   '/about/': [],
   '/offerings/': [],
   '/schedule/': [],
@@ -35,7 +34,6 @@ const _CONTENT_LINKS: Record<string, string[]> = {
   '/contact/': ['mailto:'],
   '/privacy/': [],
   '/terms/': [],
-  '/journal/': ['Welcome to'],
   '/404/': ['Go home', 'Get in touch'],
 };
  
