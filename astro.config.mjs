@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 import writenex from '@writenex/astro';
 import { unified } from '@astrojs/markdown-remark';
 import { rehypeBaseLinks } from './src/lib/rehype-base-links.ts';
+import { rehypeLazyImages } from './src/lib/rehype-lazy-images.ts';
 import { rehypeMediaRows } from './src/lib/rehype-media-rows.ts';
 
 // Public site URL + optional base path. Override at deploy time via env:
@@ -53,7 +54,7 @@ export default defineConfig({
   markdown: {
     // remark/rehype pipeline so we can rewrite absolute links for `base`.
     processor: unified({
-      rehypePlugins: [[rehypeBaseLinks, BASE_PATH], rehypeMediaRows],
+      rehypePlugins: [[rehypeBaseLinks, BASE_PATH], rehypeLazyImages, rehypeMediaRows],
     }),
   },
   // Writenex is a dev-only visual editor for Markdown collections

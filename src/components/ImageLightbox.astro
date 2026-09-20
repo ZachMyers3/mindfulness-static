@@ -94,7 +94,7 @@
       if (!sources.length) return;
       index = (i + sources.length) % sources.length;
       const src = sources[index];
-      const nextSrc = src.currentSrc || src.src;
+      const nextSrc = src.dataset.fullSrc || src.currentSrc || src.src;
       viewer.alt = src.alt || '';
       title.textContent = src.alt ? src.alt : `Image ${index + 1} of ${sources.length}`;
       if (viewer.src === nextSrc && viewer.complete) {

@@ -31,6 +31,14 @@ export function rehypeBaseLinks(base = '/') {
             node.properties.src = `${prefix}${src}`;
           }
         }
+        if (tag === 'img') {
+          for (const key of ['data-full-src', 'dataFullSrc'] as const) {
+            const full = node.properties[key];
+            if (typeof full === 'string' && full.startsWith('/') && !full.startsWith('//')) {
+              node.properties[key] = `${prefix}${full}`;
+            }
+          }
+        }
       }
       for (const child of node.children ?? []) walk(child);
     }

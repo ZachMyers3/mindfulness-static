@@ -8,9 +8,7 @@
 
 @font-face {
   font-family: 'Black Mango';
-  src:
-    url('../assets/fonts/black-mango/BlackMango-Regular.woff2') format('woff2'),
-    url('../assets/fonts/black-mango/BlackMango-Regular.ttf') format('truetype');
+  src: url('../assets/fonts/black-mango/BlackMango-Regular.woff2') format('woff2');
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
