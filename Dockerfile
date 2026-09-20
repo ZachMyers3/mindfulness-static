@@ -1,5 +1,7 @@
 # Build the static Astro site, then serve dist/ with nginx on port 8080.
-FROM node:22-bookworm-slim AS build
+# Pull official images via the GCR Hub mirror so GitHub Actions is not
+# subject to docker.io auth resets / anonymous rate limits.
+FROM mirror.gcr.io/library/node:22-bookworm-slim AS build
 
 WORKDIR /app
 
@@ -13,7 +15,7 @@ ENV SITE=$SITE
 ENV BASE_PATH=$BASE_PATH
 RUN npm run build
 
-FROM nginx:1.27-alpine
+FROM mirror.gcr.io/library/nginx:1.27-alpine
 
 COPY nginx.conf /etc/nginx/nginx.conf
 COPY --from=build /app/dist /usr/share/nginx/html
