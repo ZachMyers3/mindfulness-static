@@ -20,7 +20,9 @@ const network = key.includes('instagram')
         ? 'youtube'
         : key.includes('twitter') || /\bx\.com\b/.test(key)
           ? 'x'
-          : null;
+          : key.includes('booking') || key.includes('app.mindfulnessandmovement')
+            ? 'booking'
+            : null;
 ---
 
 {network === 'instagram' && (
@@ -46,6 +48,11 @@ const network = key.includes('instagram')
 {network === 'x' && (
   <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
     <path d="M14.3 10.5 22.2 1.5h-1.9l-6.8 7.8L8 1.5H1.5l8.3 12L1.5 22.5h1.9l7.3-8.3 5.8 8.3H22.5zm-2.6 2.9-.8-1.2L4.1 2.9h2.9l5.4 7.7.8 1.2 7 10h-2.9z" />
+  </svg>
+)}
+{network === 'booking' && (
+  <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M8 2a1 1 0 0 1 1 1v1h6V3a1 1 0 1 1 2 0v1h1a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V7a3 3 0 0 1 3-3h1V3a1 1 0 0 1 1-1zm11 8H5v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10z" />
   </svg>
 )}
 
