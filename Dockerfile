@@ -1,8 +1,23 @@
-# Lean static server for the Coming Soon page (~1–2 MB image).
-FROM busybox:1.37.0-uclibc
+# Build the static Astro site, then serve dist/ with nginx on port 8080.
+FROM node:22-bookworm-slim AS build
 
-COPY coming-soon.html /www/index.html
+WORKDIR /app
 
-USER nobody
+COPY package.json package-lock.json .npmrc ./
+RUN npm ci --legacy-peer-deps
+
+COPY . .
+ARG SITE=https://mindfulnessandmovement.example.com
+ARG BASE_PATH=/
+ENV SITE=$SITE
+ENV BASE_PATH=$BASE_PATH
+RUN npm run build
+
+FROM nginx:1.27-alpine
+
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY --from=build /app/dist /usr/share/nginx/html
+
+USER nginx
 EXPOSE 8080
-CMD ["httpd", "-f", "-p", "8080", "-h", "/www"]
+CMD ["nginx", "-g", "daemon off;"]
