@@ -1,6 +1,7 @@
 services:
-  coming-soon:
-    build: .
+  app:
+    container_name: mindfulness-and-movement-static
+    image: ghcr.io/zachmyers3/mindfulness-static:latest
     ports:
-      - "8079:8080"
+      - "8084:8080"
     restart: unless-stopped
