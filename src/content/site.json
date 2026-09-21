@@ -42,7 +42,7 @@
     { "day": "Sunday", "open": null, "close": null, "closed": true }
   ],
   "social": [
-    { "label": "Booking App", "href": "https://app.mindfulnessandmovement.com" },
+    { "label": "Booking App", "href": "https://app.mindfulnessandmovement.org" },
     { "label": "Instagram", "href": "https://www.instagram.com/mindfulnessandmovementohio/?hl=en" },
     { "label": "Facebook", "href": "https://www.facebook.com/profile.php?id=61593682237553" },
     { "label": "TikTok", "href": "https://www.tiktok.com/@mindfulnessandmovement" }
