@@ -1,12 +1,19 @@
 ---
 title: Events
 description: Check these out!
-draft: false
+draft: true
 heroImage: /assets/pages/hero-offerings-muaanrrn.jpg
-heroAlt: 
 ---
 
 Updated 9/20/2026
+
+<img height="442" width="295" src="/assets/pages/34-1--muannkv7.jpg" />
+
+<img height="447" width="298" src="/assets/pages/49-muano0wh.jpg" />
+
+## Kids Fall Fun Night - October 15th, 5:30-8:00PM
+
+Send your child in their favorite costume and they will enjoy fall themed activities while you have an evening out! We will have art, story time, games and movement. We will also end the night with Kids Karaoke! Send a packed dinner for your child and we will take care of the rest! Recommended age is 4-7. $20 per child.
 
 <img height="612" width="612" src="/assets/pages/candlelitrelax-oct2026-mua65chg.png" />
 
