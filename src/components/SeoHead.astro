@@ -9,6 +9,7 @@
  *   noindex?   - If true, add <meta name="robots" content="noindex">
  */
 import { formatTitle } from '../lib/site';
+import { withBase } from '../lib/url';
 
 export interface Props {
   title: string;
@@ -25,6 +26,7 @@ const fullTitle = formatTitle(title);
 
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
+<link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
