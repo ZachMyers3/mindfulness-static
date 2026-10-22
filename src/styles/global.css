@@ -324,6 +324,67 @@ h6 {
   font-weight: 600;
 }
 
+/* Schedule weekly grid — brand-aligned, fully centered */
+.prose-schedule table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--color-sage-200);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  overflow: hidden;
+}
+
+.prose-schedule th,
+.prose-schedule td {
+  text-align: center;
+  vertical-align: middle;
+  border: 0;
+  border-right: 1px solid var(--color-sage-200);
+  border-bottom: 1px solid var(--color-sage-200);
+  color: var(--color-ink);
+  padding: var(--space-3);
+}
+
+.prose-schedule th:last-child,
+.prose-schedule td:last-child {
+  border-right: 0;
+}
+
+.prose-schedule tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.prose-schedule th {
+  background: var(--color-sage-600);
+  color: var(--color-cream-50);
+  font-weight: 600;
+  font-size: 0.875rem;
+  letter-spacing: 0.02em;
+  border-right-color: var(--color-sage-700);
+  border-bottom-color: var(--color-sage-700);
+}
+
+.prose-schedule td:first-child,
+.prose-schedule th:first-child {
+  white-space: nowrap;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-sage-50);
+}
+
+.prose-schedule th:first-child {
+  color: var(--color-cream-50);
+  background: var(--color-sage-600);
+}
+
+.prose-schedule tbody tr:nth-child(even) td:not(:first-child) {
+  background: var(--color-cream-100);
+}
+
+.prose-schedule tbody tr:hover td:not(:first-child) {
+  background: var(--color-sage-100);
+}
+
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   *,

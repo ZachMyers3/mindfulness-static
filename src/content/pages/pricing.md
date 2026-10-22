@@ -15,7 +15,7 @@ For private group classes (3+ students) please email the studio or send a reques
 
 ## How to pay
 
-If you would like to pay with cash or Venmo, to avoid tax and fees, please book your class unpaid through our app and pay in studio before your class starts.
+If you would like to pay with cash to avoid tax and fees, please book your class unpaid through our app and pay in studio before your class starts.
 
 You can book and pay with a credit card through the app - tax and fees are included on the app. You will book your class and then pay for your purchase option separately. The purchase option that you choose will auto apply to your booking!
 

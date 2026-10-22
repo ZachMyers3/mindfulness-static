@@ -3,14 +3,14 @@ title: About the studio
 description: Get to know this space a little more.
 draft: true
 heroImage: /assets/pages/hero-about-mua6wmtb.jpg
-heroAlt: ""
+heroAlt: 
 ---
 
 ## The Studio
 
 <img height="557" width="836" src="/assets/pages/mindfulness-2026-6-mua507mn.jpg" />
 
- We strive to offer a variety of classes and experiences designed to support the whole person. We currently have Flow, Relax, Stretch, Mommy and Me, and Reset classes weekly. We also offer private classes and Aerial Hammock Lessons, kids programming, and special events. Our goal is to create a welcoming space where people can move their bodies, quiet their minds, build confidence, and connect with others.
+ We strive to offer a variety of classes and experiences designed to support the whole person. We currently have Flow, Relax, Stretch, Mommy and Me, Flow with Caregivers, and Reset classes weekly. We also offer private classes and Aerial Hammock Lessons, kids programming, and special events. Our goal is to create a welcoming space where people can move their bodies, quiet their minds, build confidence, and connect with others.
 
 ## The Founder&#x20;
 

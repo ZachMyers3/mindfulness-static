@@ -5,7 +5,16 @@ draft: true
 heroImage: /assets/pages/mindfulness-2026-73-mua6rj8t.jpg
 ---
 
-![](/assets/pages/photo-2026-09-02-23-23-12-mtkyoomg.jpg)
+\*Reset on October 29th is cancelled\*
+
+|                | Monday | Tuesday |  Wednesday |       Thursday       | Friday | Saturday |
+| :------------: | :----: | :-----: | :--------: | :------------------: | :----: | :------: |
+| 10:15-11:15 AM |        |         |            |                      |        |   Flow   |
+| 11:35-11:50 AM |        | Reset\* |            |        Reset\*       |        |          |
+| 12:05-12:50 PM |        |   Flow  |            | Flow with Caregivers |        |          |
+|  4:30-5:00 PM  |        |         | Mommy & Me |                      |        |          |
+|  5:15-6:15 PM  |  Flow  |         |    Flow    |                      |        |          |
+|  6:20-7:20 PM  |  Relax |         |   Stretch  |                      |        |          |
 
 # **Class Descriptions**
 
@@ -28,6 +37,10 @@ heroImage: /assets/pages/mindfulness-2026-73-mua6rj8t.jpg
 <img height="233" width="155" src="/assets/pages/mindfulness-2026-180-mua76ly7.jpg" />
 
 **Mommy & Me** - Carving out one-on-one time with your child can feel impossible. This class is your standing invitation to pause and reconnect. Together we’ll practice simple breathwork, calming meditation, and playful poses designed for parent and child to do side by side. No experience needed, just come as you are!
+
+<img height="233" width="155" src="/assets/pages/mindfulness-2026-63-mviwc216.jpg" />
+
+**Flow with Caregivers** - This is a Flow class that is specifically designed for caregivers. to slow down, move their bodies, and take a little time for themselves. Everyone is welcome, and if bringing your little ones is what makes it possible for you to join us, bring them along! They’re welcome to participate in the movement or do their own thing - snack, read books, play, or even nap. This is a space for caring for yourself while caring for others.
 
 <img height="237" width="158" src="/assets/pages/mindfulness-2026-228-mua77ay5.jpg" />
 

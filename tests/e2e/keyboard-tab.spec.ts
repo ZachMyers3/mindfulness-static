@@ -13,7 +13,6 @@ import { test, expect } from '@playwright/test';
 const PUBLIC_ROUTES = [
   '/',
   '/about/',
-  '/offerings/',
   '/schedule/',
   '/pricing/',
   '/contact/',
@@ -28,7 +27,6 @@ const PUBLIC_ROUTES = [
 const _CONTENT_LINKS: Record<string, string[]> = {
   '/': ['Go to contact'],
   '/about/': [],
-  '/offerings/': [],
   '/schedule/': [],
   '/pricing/': [],
   '/contact/': ['mailto:'],

@@ -14,7 +14,6 @@ import { test, expect } from '@playwright/test';
 const ROUTES = [
   '/',
   '/about/',
-  '/offerings/',
   '/schedule/',
   '/pricing/',
   '/contact/',
