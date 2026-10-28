@@ -5,9 +5,13 @@ draft: true
 heroImage: /assets/pages/hero-events-muaao37x.jpg
 ---
 
-Updated 10/21/2026
+Updated 10/27/2026
 
-This event is currently full but there will be more dates available soon!<img height="612" width="612" src="/assets/pages/candlelitrelax-oct2026-mua65chg.png" />
+![](/assets/pages/move-and-craft-3--mvrjsbmr.png)
+
+
+
+![](/assets/pages/image-fit-template-resize-mvrgyxoe.png)
 
 **Candlelit Relaxation Yoga**
 
@@ -18,3 +22,5 @@ Take a pause before the weekend and enjoy 90 minutes of gentle movement, stretch
 Led by Dee Black
 
 &#x20;                                                                      <img height="197" width="158" src="/assets/pages/dee-mua66rzn.jpg" />  <img height="198" width="298" src="/assets/pages/candle-stock-photo-mua6968m.jpg" />
+
+![](/assets/pages/move-and-craft-5--mvrjv055.png)
