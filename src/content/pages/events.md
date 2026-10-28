@@ -7,9 +7,7 @@ heroImage: /assets/pages/hero-events-muaao37x.jpg
 
 Updated 10/27/2026
 
-![](/assets/pages/move-and-craft-3--mvrjsbmr.png)
-
-
+![](/assets/pages/image-mvspzo8b.png)
 
 ![](/assets/pages/image-fit-template-resize-mvrgyxoe.png)
 
